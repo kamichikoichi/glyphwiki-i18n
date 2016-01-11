@@ -7,16 +7,10 @@ $dbh->do("INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(ve
 :754
 $DEBUG .= "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'エイリアス実体変更による自動更新', 0, '$old_buffer', '$ip', $current_related, 1)\n";
 $DEBUG .= "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'エイリアス実体変更による自動更新', 0, '$old_buffer', '$ip', $current_related, 1)\n";
-:1701
-my $interwiki_definition = '\[\[([\S  ]+?)\ (\S+?)\]\]';
-my $interwiki_definition = '\[\[([\S  ]+?)\ (\S+?)\]\]';
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/config.pl
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_left.pl
-:37
-$buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_JOIN">あなたにできること</a>|;
-$buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_JOIN">あなたにできること</a>|;
 :70
 $buffer .= qq|<li><a href="/idsedit.html">IDSエディタ</a>|;
 $buffer .= qq|<li><a href="/idsedit.html">IDSエディタ</a>|;
@@ -24,9 +18,6 @@ $buffer .= qq|<li><a href="/idsedit.html">IDSエディタ</a>|;
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_others.pl
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_right_general.pl
-:218
-$newversion = "最新";
-$newversion = "最新";
 :399
 $buffer .= qq|<div class="warning2 notice">このグリフ名は命名ルールに沿っていません。将来的に編集ができなくなります。別の名前を検討してください。</div><span style="font-size: 80%;">（このメッセージ↑↑↑はテスト中です。命名ルールに沿っていても表示される可能性があります。ご協力をよろしくお願いします）</span><hr>|;
 $buffer .= qq|<div class="warning2 notice">このグリフ名は命名ルールに沿っていません。将来的に編集ができなくなります。別の名前を検討してください。</div><span style="font-size: 80%;">（このメッセージ↑↑↑はテスト中です。命名ルールに沿っていても表示される可能性があります。ご協力をよろしくお願いします）</span><hr>|;
@@ -36,30 +27,9 @@ if($action eq "page" && $wiki_name eq "GlyphWiki:メインページ"){
 :592
 $buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:ロゴについて\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
 $buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:ロゴについて\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
-:1122
-$local_using =~ s/^Talk:/ノート:/;
-$local_using =~ s/^Talk:/ノート:/;
-:1123
-$local_using =~ s/^Glyphwiki-talk:/GlyphWiki-ノート:/;
-$local_using =~ s/^Glyphwiki-talk:/GlyphWiki-ノート:/;
-:1124
-$local_using =~ s/^User:/利用者:/;
-$local_using =~ s/^User:/利用者:/;
-:1125
-$local_using =~ s/^User-talk:/利用者-会話:/;
-$local_using =~ s/^User-talk:/利用者-会話:/;
-:1126
-$local_using =~ s/^Group:/グループ:/;
-$local_using =~ s/^Group:/グループ:/;
-:1127
-$local_using =~ s/^Group-talk:/グループ-ノート:/;
-$local_using =~ s/^Group-talk:/グループ-ノート:/;
 :1133
 $buffer .= qq|<h2>このグリフを収録するグループおよび引用するドキュメント一覧</h2>|;
 $buffer .= qq|<h2>このグリフを収録するグループおよび引用するドキュメント一覧</h2>|;
-:1550
-if($wiki_name !~ m/^$EXPR_DOCUMENT_PREFIX/ && $r_related ne "〓"){
-if($wiki_name !~ m/^$EXPR_DOCUMENT_PREFIX/ && $r_related ne "〓"){
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_right_others.pl
 :29
@@ -137,24 +107,9 @@ $buffer .= "<div class=\"texts\">${done}個のグリフを更新しました。<
 :657
 $buffer .= "<div class=\"texts\">更新したグリフはありません。<br><br><a href=\"/wiki/Special:Renewall?view=listup&target=$cgi_target\">部品引用グリフ一覧へ戻る</a></div>";
 $buffer .= "<div class=\"texts\">更新したグリフはありません。<br><br><a href=\"/wiki/Special:Renewall?view=listup&target=$cgi_target\">部品引用グリフ一覧へ戻る</a></div>";
-:862
-$buffer2 .= "最新";
-$buffer2 .= "最新";
-:864
-$buffer2 .= "<a href=\"/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hidemyself$hideauto$listtype$setuser\">最新</a>";
-$buffer2 .= "<a href=\"/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hidemyself$hideauto$listtype$setuser\">最新</a>";
-:872,878,884
-$buffer2 .= "）（";
-$buffer2 .= "）（";
 :909
 <description>最近付け加えられた変更はこのフィードで確認できます。</description>
 <description>最近付け加えられた変更はこのフィードで確認できます。</description>
-:1093
-$history_list .= "(最新版) ";
-$history_list .= "(最新版) ";
-:1096
-$history_list .= "(<a href=\"/wiki/$db_wiki_name?diff=$data[1]\">最新版</a>) ";
-$history_list .= "(<a href=\"/wiki/$db_wiki_name?diff=$data[1]\">最新版</a>) ";
 :1648,1689
 <li>その他、ログインに関する情報は<a href="/wiki/GlyphWiki:$URL_LOGIN">GlyphWiki:$WORD_LOGIN</a>を参照してください。 
 <li>その他、ログインに関する情報は<a href="/wiki/GlyphWiki:$URL_LOGIN">GlyphWiki:$WORD_LOGIN</a>を参照してください。 

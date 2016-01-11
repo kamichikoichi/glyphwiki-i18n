@@ -36,7 +36,7 @@ $URL_LICENSE = &url_encode("データ・記事のライセンス");
 $URL_LICENSE = &url_encode("许可协议");
 :800
 $URL_ABOUT = &url_encode("グリフウィキについて");
-$URL_ABOUT = &url_encode("关于字形百科");
+$URL_ABOUT = &url_encode("关于字形维基");
 :801
 $URL_PRIVACY = &url_encode("プライバシー・ポリシー");
 $URL_PRIVACY = &url_encode("隐私与政策");
@@ -278,6 +278,9 @@ $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_HOWTO">教程</a>|;
 :36
 $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_FAQ">よくある質問</a>|;
 $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_FAQ">常见问题</a>|;
+:37
+$buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_JOIN">あなたにできること</a>|;
+$buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_JOIN">加入我们</a>|;
 :38
 $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_BUG">バグ報告</a>|;
 $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_BUG">报告漏洞</a>|;
@@ -393,6 +396,9 @@ $buffer .= "<div class=\"query\"><span class=\"normal\">$db_wiki_name</span> 的
 :184
 $buffer .= "<div class=\"version\">版間での差分(日時はJST)</div>";
 $buffer .= "<div class=\"version\">版本之间的区别（日本标准时间）</div>";
+:218
+$newversion = "最新";
+$newversion = "最新"; # zhs
 :220
 $history_list .= "<li class=\"history\"><a class=\"notice\" href=\"/wiki/$url_db_wiki_name\@$data[1]\">".&local_localtime($data[3])."時点における${newversion}版</a> $temp $summary";
 $history_list .= "<li class=\"history\"><a class=\"notice\" href=\"/wiki/$url_db_wiki_name\@$data[1]\">".&local_localtime($data[3])."的版本(version ${newversion})</a> $temp $summary";
@@ -443,10 +449,10 @@ $buffer .= qq|<div class="warning">警告: あなたはこのページの古い�
 $buffer .= qq|<div class="warning">警告：您正在编辑一个旧版本。保存这篇文章会抹去新于此版本所作的所有改动。</div>|;
 :322
 $buffer .= qq|<div class="panel"><span class="warning">グリフウィキには現在この名前の項目はありません。</span><ul><li>グリフを新しく描くには、まず下のテキストボックスに内容を書き込んでください。その際、著作権に注意してください。その後、ページ下部の<span class="notice">■投稿する前に以下を確認して下さい■</span>以下の注意事項をよく確認した上で “$BUTTON_ACCEPT_AND_SUBMIT” ボタンを押してください。そうすればすぐに見えるようになります。<li>もしあなたがグリフウィキに初めて投稿するならば、先に<a href="/wiki/GlyphWiki:$URL_HOWTO">どうやって使うのか</a>を読んでください。<li><span class="notice">投稿のテストをしたい場合、<a href="/wiki/GlyphWiki:$URL_SANDBOX">サンドボックス</a>を利用してください。</span>一度作成した項目はあなたが削除することはできません。<li>他の項目から<a href="/wiki/Special:Search?action=fulltext&search=$url_db_wiki_name">&quot;$db_wiki_name&quot;を検索する</a>。</ul><hr><ul><li><span class="notice">この項目を作成したばかりなのにこのメッセージがでる場合、データベースの更新が遅れているために表示できないのかもしれません。</span>項目を書き直す前にしばらく待ってから、再読込してみてください。<li>以前この項目を作成したことがあるならば、この項目は<a href="/wiki/$URL_DELETE_LOG">既に削除されています</a>。<a href="/wiki/$URL_SAKUJO">$WORD_SAKUJO</a>に削除された理由が記載されているかもしれません。</ul></div>|;
-$buffer .= qq|<div class="panel"><span class="warning">字形百科目前还没有这个名字的项目。</span><ul><li>在以下文字框中填入新字形的代码。请注意勿侵犯著作权。此后请确认页面下方的<span class="notice">提交前请确认以下事项</span>，确认后再点击“$BUTTON_ACCEPT_AND_SUBMIT”按钮。提交后可以立即看到结果。<li>如果您还没有在字形百科上提交过，请先阅读<a href="/wiki/GlyphWiki:$URL_HOWTO">使用教程</a>。<li><span class="notice">如果只是做测试，请使用<a href="/wiki/GlyphWiki:$URL_SANDBOX">沙盒</a>。</span>此条目一旦新建，就不能被您完全删除。<li>请先在其他项目<a href="/wiki/Special:Search?action=fulltext&search=$url_db_wiki_name">&quot;$db_wiki_name&quot;搜索</a>避免重复。</ul><hr><ul><li><span class="notice">如果您刚刚创建了本条目，却出现了此消息，可能是因为数据库更新需要一点时间而不能立即反映。</span>请稍等后再刷新。<li>如果以前创建过这个条目，则它<a href="/wiki/$URL_DELETE_LOG">已经被删除</a>。请在<a href="/wiki/$URL_SAKUJO">$WORD_SAKUJO</a>查看被删除的原因。</ul></div>|;
+$buffer .= qq|<div class="panel"><span class="warning">字形维基目前还没有这个名字的项目。</span><ul><li>在以下文字框中填入新字形的代码。请注意勿侵犯著作权。此后请确认页面下方的<span class="notice">提交前请确认以下事项</span>，确认后再点击“$BUTTON_ACCEPT_AND_SUBMIT”按钮。提交后可以立即看到结果。<li>如果您还没有在字形维基上提交过，请先阅读<a href="/wiki/GlyphWiki:$URL_HOWTO">使用教程</a>。<li><span class="notice">如果只是做测试，请使用<a href="/wiki/GlyphWiki:$URL_SANDBOX">沙盒</a>。</span>此条目一旦新建，就不能被您完全删除。<li>请先在其他项目<a href="/wiki/Special:Search?action=fulltext&search=$url_db_wiki_name">&quot;$db_wiki_name&quot;搜索</a>避免重复。</ul><hr><ul><li><span class="notice">如果您刚刚创建了本条目，却出现了此消息，可能是因为数据库更新需要一点时间而不能立即反映。</span>请稍等后再刷新。<li>如果以前创建过这个条目，则它<a href="/wiki/$URL_DELETE_LOG">已经被删除</a>。请在<a href="/wiki/$URL_SAKUJO">$WORD_SAKUJO</a>查看被删除的原因。</ul></div>|;
 :324
 $buffer .= qq|<div class="panel"><span class="warning">グリフウィキには現在この名前の項目はありません。</span><ul><li>文章を新しく作成するには、まず下のテキストボックスに内容を書き込んでください。その際、著作権に注意してください。その後、ページ下部の<span class="notice">■投稿する前に以下を確認して下さい■</span>以下の注意事項をよく確認した上で “$BUTTON_ACCEPT_AND_SUBMIT” ボタンを押してください。そうすればすぐに見えるようになります。<li>もしあなたがグリフウィキに初めて投稿するならば、先に<a href="/wiki/GlyphWiki:$URL_HOWTO">どうやって使うのか</a>を読んでください。<li><span class="notice">投稿のテストをしたい場合、<a href="/wiki/GlyphWiki:$URL_SANDBOX">サンドボックス</a>を利用してください。</span>一度作成した項目はあなたが削除することはできません。<li>他の項目から<a href="/wiki/Special:Search?action=fulltext&search=$url_db_wiki_name">&quot;$db_wiki_name&quot;を検索する</a>。</ul><hr><ul><li><span class="notice">この項目を作成したばかりなのにこのメッセージがでる場合、データベースの更新が遅れているために表示できないのかもしれません。</span>項目を書き直す前にしばらく待ってから、再読込してみてください。<li>以前この項目を作成したことがあるならば、この項目は<a href="/wiki/$URL_DELETE_LOG">既に削除されています</a>。<a href="/wiki/$URL_SAKUJO">$WORD_SAKUJO</a>に削除された理由が記載されているかもしれません。</ul></div>|;
-$buffer .= qq|<div class="panel"><span class="warning">字形百科目前还没有这个名字的项目。</span><ul><li>在以下文字框中填入新文章。请注意勿侵犯著作权。此后请确认页面下方的<span class="notice">提交前请确认以下事项</span>，确认后再点击“$BUTTON_ACCEPT_AND_SUBMIT”按钮。提交后可以立即看到结果。<li>如果您还没有在字形百科上提交过，请先阅读<a href="/wiki/GlyphWiki:$URL_HOWTO">使用教程</a>。<li><span class="notice">如果只是做测试，请使用<a href="/wiki/GlyphWiki:$URL_SANDBOX">沙盒</a>。</span>此条目一旦新建，就不能被您完全删除。<li>请先在其他项目<a href="/wiki/Special:Search?action=fulltext&search=$url_db_wiki_name">&quot;$db_wiki_name&quot;搜索</a>避免重复。</ul><hr><ul><li><span class="notice">如果您刚刚创建了本条目，却出现了此消息，可能是因为数据库更新需要一点时间而不能立即反映。</span>请稍等后再刷新。<li>如果以前创建过这个条目，则它<a href="/wiki/$URL_DELETE_LOG">已经被删除</a>。请在<a href="/wiki/$URL_SAKUJO">$WORD_SAKUJO</a>查看被删除的原因。</ul></div>|;
+$buffer .= qq|<div class="panel"><span class="warning">字形维基目前还没有这个名字的项目。</span><ul><li>在以下文字框中填入新文章。请注意勿侵犯著作权。此后请确认页面下方的<span class="notice">提交前请确认以下事项</span>，确认后再点击“$BUTTON_ACCEPT_AND_SUBMIT”按钮。提交后可以立即看到结果。<li>如果您还没有在字形维基上提交过，请先阅读<a href="/wiki/GlyphWiki:$URL_HOWTO">使用教程</a>。<li><span class="notice">如果只是做测试，请使用<a href="/wiki/GlyphWiki:$URL_SANDBOX">沙盒</a>。</span>此条目一旦新建，就不能被您完全删除。<li>请先在其他项目<a href="/wiki/Special:Search?action=fulltext&search=$url_db_wiki_name">&quot;$db_wiki_name&quot;搜索</a>避免重复。</ul><hr><ul><li><span class="notice">如果您刚刚创建了本条目，却出现了此消息，可能是因为数据库更新需要一点时间而不能立即反映。</span>请稍等后再刷新。<li>如果以前创建过这个条目，则它<a href="/wiki/$URL_DELETE_LOG">已经被删除</a>。请在<a href="/wiki/$URL_SAKUJO">$WORD_SAKUJO</a>查看被删除的原因。</ul></div>|;
 :331
 $buffer .= qq|<div class="message">あなたがこのページを編集し始めた後に、他の誰かがこのページ(またはこのページの別の版)を変更しました。左のグリフが現在の最新の状態です。あなたの編集していたグリフは右側に示されていますので再度編集して下さい。あなたの編集した内容は、"投稿する"をクリックした時に実際に保存されます。</div>|;
 $buffer .= qq|<div class="message">有其他人在你开始编辑后修改了这个页面。左边是该字形最新的状态，右边是您编辑的字形。您需要重新编辑这个字形，再次点击“保存页面”才会保存。</div>|;
@@ -615,6 +621,24 @@ $buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&tar
 :1103
 $buffer .= qq|<h2>このグリフで引用している他のグリフ一覧</h2>|;
 $buffer .= qq|<h2>引用了本字形的其他字形</h2>|;
+:1122
+$local_using =~ s/^Talk:/ノート:/;
+# no operation
+:1123
+$local_using =~ s/^Glyphwiki-talk:/GlyphWiki-ノート:/;
+# no operation
+:1124
+$local_using =~ s/^User:/利用者:/;
+# no operation
+:1125
+$local_using =~ s/^User-talk:/利用者-会話:/;
+# no operation
+:1126
+$local_using =~ s/^Group:/グループ:/;
+# no operation
+:1127
+$local_using =~ s/^Group-talk:/グループ-ノート:/;
+# no operation
 :1167
 my $temp2 = &url_encode("旧部品の更新");
 my $temp2 = &url_encode("更新旧的部件");
@@ -644,7 +668,7 @@ $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/
 $buffer .= qq|<div class="panel"><span class="warning">这个名字可能没有遵循<a href="/wiki/GlyphWiki:$URL_GUIDE">命名规范</a>。请确认或者修正。</span><ul><li>baseparts- 前缀已经停用</ul></div>|;
 :1215
 $buffer .= qq|<div class="panel"><span class="warning">グリフウィキには現在この名前の項目はありません。</span><ul><li><a href="/wiki/$url_db_wiki_name?action=edit" class="recommend">&quot;$db_wiki_name&quot;という項目を新規作成する</a>。または<a href="/wiki/GlyphWiki:$URL_SEISAKUIRAI">制作依頼</a>する。<li>既存の項目から<a href="/wiki/Special:Search?action=fulltext&search=$url_db_wiki_name">&quot;$db_wiki_name&quot;を検索する</a>。</ul><hr><ul><li>もしこの項目を作成したことがあるのにこのメッセージがでる場合、データベースの更新が遅れているために表示できないか、既に削除されています（<a href="/wiki/$URL_SAKUJO">$WORD_SAKUJO</a>に削除された理由が記載されているかもしれません）。<a href="/wiki/$URL_DELETE_LOG">$WORD_DELETE_LOG</a>も確認してください。</ul></div>|;
-$buffer .= qq|<div class="panel"><span class="warning">字形百科还没有收录这个名字的项目。</span><ul><li><a href="/wiki/$url_db_wiki_name?action=edit" class="recommend">&quot;$db_wiki_name&quot;创建本项目</a>。请参考<a href="/wiki/GlyphWiki:$URL_SEISAKUIRAI">制作要求</a>。<li>请先在已有的项目中<a href="/wiki/Special:Search?action=fulltext&search=$url_db_wiki_name">&quot;$db_wiki_name&quot;搜索</a>。</ul><hr><ul><li>如果您刚刚创建了本条目，却出现了此消息，可能是因为数据库更新需要一点时间而不能立即反映。请稍等后再刷新。也有可能是因为被删除（<a href="/wiki/$URL_SAKUJO">$WORD_SAKUJO</a>记载了删除理由）。以及参考<a href="/wiki/$URL_DELETE_LOG">$WORD_DELETE_LOG</a>。</ul></div>|;
+$buffer .= qq|<div class="panel"><span class="warning">字形维基还没有收录这个名字的项目。</span><ul><li><a href="/wiki/$url_db_wiki_name?action=edit" class="recommend">&quot;$db_wiki_name&quot;创建本项目</a>。请参考<a href="/wiki/GlyphWiki:$URL_SEISAKUIRAI">制作要求</a>。<li>请先在已有的项目中<a href="/wiki/Special:Search?action=fulltext&search=$url_db_wiki_name">&quot;$db_wiki_name&quot;搜索</a>。</ul><hr><ul><li>如果您刚刚创建了本条目，却出现了此消息，可能是因为数据库更新需要一点时间而不能立即反映。请稍等后再刷新。也有可能是因为被删除（<a href="/wiki/$URL_SAKUJO">$WORD_SAKUJO</a>记载了删除理由）。以及参考<a href="/wiki/$URL_DELETE_LOG">$WORD_DELETE_LOG</a>。</ul></div>|;
 :1248
 $buffer .= qq|<h2>あなたのグリフ</h2>|;
 $buffer .= qq|<h2>您的字形</h2>|;
@@ -836,12 +860,21 @@ $buffer .= " | <a href=\"?user=\">解除用户限制</a>";
 :860
 $buffer2 .= "<div class=\"texts\">（";
 $buffer2 .= "<div class=\"texts\">查看（";
+:862
+$buffer2 .= "最新";
+$buffer2 .= "最新"; # zhs
+:864
+$buffer2 .= "<a href=\"/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hidemyself$hideauto$listtype$setuser\">最新</a>";
+$buffer2 .= "<a href=\"/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hidemyself$hideauto$listtype$setuser\">最新</a>"; #zhs
 :868
 $buffer2 .= "最古";
 $buffer2 .= "最早";
 :870
 $buffer2 .= "<a href=\"/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hidemyself$hideauto$listtype&dir=prev$setuser\">最古</a>";
 $buffer2 .= "<a href=\"/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hidemyself$hideauto$listtype&dir=prev$setuser\">最早</a>";
+:872,878,884
+$buffer2 .= "）（";
+$buffer2 .= "）（"; # zhs
 :874
 $buffer2 .= "新しい${limit}件";
 $buffer2 .= "新的${limit}个";
@@ -862,7 +895,7 @@ $buffer .= qq|<span class="text">更新されたページはありません。</
 $buffer .= qq|<span class="text">没有被更新的页面。</span>|;
 :907
 <title>GlyphWiki - 最近更新したページ</title>
-<title>字形百科 - 最近更新的页面</title>
+<title>字形维基 - 最近更新的页面</title>
 :1045
 if($temp eq "GlyphWiki:メインページ"){
 if($temp eq "GlyphWiki:主页"){
@@ -881,6 +914,12 @@ $buffer .= "<div class=\"texts\">凡例：日本标准时间</div>";
 :1054
 $buffer .= "<div class=\"texts\">凡例:(最新版) = 最新版との比較、(前の版) = 直前の版との比較、日時はJST</div>";
 $buffer .= "<div class=\"texts\">(最新版) = 与最新版比较, (前一版) = 与前一版比较，日本标准时间</div>";
+:1093
+$history_list .= "(最新版) ";
+$history_list .= "(最新版) "; 
+:1096
+$history_list .= "(<a href=\"/wiki/$db_wiki_name?diff=$data[1]\">最新版</a>) ";
+$history_list .= "(<a href=\"/wiki/$db_wiki_name?diff=$data[1]\">最新版</a>) "; # zhs
 :1099
 $history_list .= "(<a href=\"/wiki/$db_wiki_name\@$data[1]?diff=".($data[1] - 1)."\">前の版</a>) ";
 $history_list .= "(<a href=\"/wiki/$db_wiki_name\@$data[1]?diff=".($data[1] - 1)."\">前一版</a>) ";
@@ -919,7 +958,7 @@ $buffer .= "検索キーワードは2文字以上である必要があります�
 $buffer .= "搜索关键字必须大于2个字符。";
 :1271
 $message .= "<div class=\"texts\"><p>あなたのメールアドレスは確認されました。ログインしてウィキを使用できます。</p><p><a href=\"/wiki/Special:Userlogin\">ログイン</a></p></div>";
-$message .= "<div class=\"texts\"><p>您的电子邮箱地址已验证。现在就可以登录使用字形百科了。</p><p><a href=\"/wiki/Special:Userlogin\">log in</a></p></div>";
+$message .= "<div class=\"texts\"><p>您的电子邮箱地址已验证。现在就可以登录使用字形维基了。</p><p><a href=\"/wiki/Special:Userlogin\">log in</a></p></div>";
 :1273
 $message .= "<div class=\"texts\"><p>確認用コードが正しくありません。このコードは期限切れです。</p><p><a href=\"/wiki/\">$LINK_DEFAULT</a> に戻る。</p></div>";
 $message .= "<div class=\"texts\"><p>验证代码不正确。代码可能已经过期。</p><p>返回<a href=\"/wiki/\">$LINK_DEFAULT</a></p></div>";
@@ -970,7 +1009,7 @@ $message .= "<div class=\"texts\"><p>現在のメールアドレス登録状況�
 $message .= "<div class=\"texts\"><p>当前状态：邮箱地址未验证</p>";
 :1319
 $message .= "<p>このウィキではメールアドレスの正当性の確認が必要です。以下のボタンを押すと「GlyphWikiメールアドレスの確認」という件名の確認メールがあなたのメールアドレスに送られます。メールには確認用コードを含むリンクが書かれています。そのリンクを開くことによってメールアドレスの正当性が確認されます。</p><p><form method=\"post\"><input type=\"hidden\" name=\"page\" value=\"Special:Confirmemail\"><input type=\"submit\" name=\"buttons\" value=\"$BUTTON_CONFIRM_EMAIL\"></form></p>";
-$message .= "<p>字形百科需要验证邮箱才能使用邮箱通知功能。点击以下按钮向您的邮箱发送验证邮件。邮件会含有一个包含验证代码的链接，用浏览器打开这个链接就可以验证您的邮箱地址。</p><p><form method=\"post\"><input type=\"hidden\" name=\"page\" value=\"Special:Confirmemail\"><input type=\"submit\" name=\"buttons\" value=\"$BUTTON_CONFIRM_EMAIL\"></form></p>";
+$message .= "<p>字形维基需要验证邮箱才能使用邮箱通知功能。点击以下按钮向您的邮箱发送验证邮件。邮件会含有一个包含验证代码的链接，用浏览器打开这个链接就可以验证您的邮箱地址。</p><p><form method=\"post\"><input type=\"hidden\" name=\"page\" value=\"Special:Confirmemail\"><input type=\"submit\" name=\"buttons\" value=\"$BUTTON_CONFIRM_EMAIL\"></form></p>";
 :1323
 $message .= "（現在登録されているメールアドレスを上書きします）</p></div>";
 $message .= "（以上是当前登记的邮箱地址）</p></div>";
@@ -1000,10 +1039,10 @@ $message_login .= "パスワードが間違っています。再度入力して�
 $message_login .= "密码不正确，请重新输入。";
 :1501
 $message_login .= "グリフウィキではログインにクッキーを使います。しかし、ご使用のブラウザ等がクッキーを無効にしているようです。クッキーを有効にして、もう一度試してみてください。";
-$message_login .= "字形百科使用Cookie记录登录信息。您的浏览器不支持Cookie或者禁用了Cookie，请启用后再登录。";
+$message_login .= "字形维基使用Cookie记录登录信息。您的浏览器不支持Cookie或者禁用了Cookie，请启用后再登录。";
 :1503
 $message_login .= "利用者のアカウントは作成されましたが、ログインしていません。グリフウィキではログインにクッキーを使います。あなたはクッキーを無効な設定にしているようです。クッキーを有効にしてから作成した利用者名とパスワードでログインしてください。";
-$message_login .= "用户已创建，但是无法登录。字形百科使用Cookie记录登录信息。您的浏览器不支持Cookie或者禁用了Cookie，请启用后再用用户名和密码登录。";
+$message_login .= "用户已创建，但是无法登录。字形维基使用Cookie记录登录信息。您的浏览器不支持Cookie或者禁用了Cookie，请启用后再用用户名和密码登录。";
 :1513
 $message_login .= "メールの送信中にエラーが発生しました: 利用者 \"$cgi_name\" のメールアドレスは登録されていません。";
 $message_login .= "发送邮件失败：用户“$cgi_name”没有登记邮箱地址。";
@@ -1138,7 +1177,7 @@ my $title = "ログアウト";
 my $title = "登出";
 :1756
 <p><span class="notice">ログアウトしました。</span>このままグリフウィキを匿名で使い続けることができます。もう一度ログインして元の、あるいは別の利用者として使うこともできます。</p>
-<p><span class="notice">您已登出。</span> 您可以继续匿名使用字形百科，或者重新登录另一个账户。</p>
+<p><span class="notice">您已登出。</span> 您可以继续匿名使用字形维基，或者重新登录另一个账户。</p>
 :1757
 <p>※いくつかのページはブラウザのキャッシュをクリアするまでログインしているかのように表示されることがあります。</p>
 <p>※注意某些页面可能由于浏览器缓存还显示为已登录状态，清除缓存即可。</p>
