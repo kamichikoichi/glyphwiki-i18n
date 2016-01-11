@@ -1,6 +1,255 @@
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/common.pl
+:753
+$dbh->do("INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'エイリアス実体変更による自動更新', 0, '$old_buffer', '$ip', $current_related, 1)"); 
+$dbh->do("INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'エイリアス実体変更による自動更新', 0, '$old_buffer', '$ip', $current_related, 1)"); 
+:754
+$DEBUG .= "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'エイリアス実体変更による自動更新', 0, '$old_buffer', '$ip', $current_related, 1)\n";
+$DEBUG .= "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'エイリアス実体変更による自動更新', 0, '$old_buffer', '$ip', $current_related, 1)\n";
+:794
+$URL_USERNAME = &url_encode("ユーザー名");
+$URL_USERNAME = &url_encode("ユーザー名");
+:795
+$URL_SANDBOX = &url_encode("サンドボックス");
+$URL_SANDBOX = &url_encode("サンドボックス");
+:796
+$URL_SEISAKUIRAI = &url_encode("制作依頼");
+$URL_SEISAKUIRAI = &url_encode("制作依頼");
+:797
+$URL_HENSHU = &url_encode("編集の仕方");
+$URL_HENSHU = &url_encode("編集の仕方");
+:798
+$URL_YOUYAKU = &url_encode("常に要約欄に記入する");
+$URL_YOUYAKU = &url_encode("常に要約欄に記入する");
+:799
+$URL_LICENSE = &url_encode("データ・記事のライセンス");
+$URL_LICENSE = &url_encode("データ・記事のライセンス");
+:800
+$URL_ABOUT = &url_encode("グリフウィキについて");
+$URL_ABOUT = &url_encode("グリフウィキについて");
+:801
+$URL_PRIVACY = &url_encode("プライバシー・ポリシー");
+$URL_PRIVACY = &url_encode("プライバシー・ポリシー");
+:802
+$URL_MENSEKI = &url_encode("免責事項");
+$URL_MENSEKI = &url_encode("免責事項");
+:803
+$URL_RELATED = &url_encode("関連字");
+$URL_RELATED = &url_encode("関連字");
+:804
+$URL_VARIANT = &url_encode("異体字");
+$URL_VARIANT = &url_encode("異体字");
+:805
+$URL_BUG = &url_encode("バグ報告");
+$URL_BUG = &url_encode("バグ報告");
+:806
+$URL_JOIN = &url_encode("あなたにできること");
+$URL_JOIN = &url_encode("あなたにできること");
+:807
+$URL_FAQ = &url_encode("よくある質問");
+$URL_FAQ = &url_encode("よくある質問");
+:808
+$URL_HOWTO = &url_encode("どうやって使うのか");
+$URL_HOWTO = &url_encode("どうやって使うのか");
+:809
+$URL_FONT = &url_encode("フォント生成");
+$URL_FONT = &url_encode("フォント生成");
+:810
+$URL_ALIAS = &url_encode("エイリアス");
+$URL_ALIAS = &url_encode("エイリアス");
+:811
+$URL_CAPTCHA = &url_encode("キャプチャ");
+$URL_CAPTCHA = &url_encode("キャプチャ");
+:812
+$URL_NEWS = &url_encode("お知らせ");
+$URL_NEWS = &url_encode("お知らせ");
+:813
+$URL_IDOBATA = &url_encode("井戸端");
+$URL_IDOBATA = &url_encode("井戸端");
+:814
+$URL_GUIDE = &url_encode("命名ガイドライン");
+$URL_GUIDE = &url_encode("命名ガイドライン");
+:815
+$URL_METADATA = &url_encode("メタ情報");
+$URL_METADATA = &url_encode("メタ情報");
+:817
+$WORD_QUERY = "問い合わせ";
+$WORD_QUERY = "問い合わせ";
+:819
+$WORD_EDITOR = "専用エディタで編集する";
+$WORD_EDITOR = "専用エディタで編集する";
+:821
+$WORD_DESCRIPTION = "説明";
+$WORD_DESCRIPTION = "説明";
+:823
+$WORD_DEFAULT = "メインページ";
+$WORD_DEFAULT = "メインページ";
+:826
+$WORD_CONFIRM_EMAIL = "確認用コードを送信する";
+$WORD_CONFIRM_EMAIL = "確認用コードを送信する";
+:829
+$WORD_REGISTER_EMAIL = "メールアドレスを登録する";
+$WORD_REGISTER_EMAIL = "メールアドレスを登録する";
+:832
+$WORD_NEW_PASSWORD = "新しいパスワードをメールで送る";
+$WORD_NEW_PASSWORD = "新しいパスワードをメールで送る";
+:835
+$WORD_LOGIN = "ログイン";
+$WORD_LOGIN = "ログイン";
+:839
+$WORD_FROM = "出典: フリーグリフデータベース『グリフウィキ(GlyphWiki)』";
+$WORD_FROM = "出典: フリーグリフデータベース『グリフウィキ(GlyphWiki)』";
+:841
+$TAB_KAISETSU = "解説";
+$TAB_KAISETSU = "解説";
+:842
+$TAB_SPECIAL = "特別ページ";
+$TAB_SPECIAL = "特別ページ";
+:843
+$TAB_EDIT = "編集";
+$TAB_EDIT = "編集";
+:844
+$TAB_VIEW_SOURCE = "ソースを表示";
+$TAB_VIEW_SOURCE = "ソースを表示";
+:845
+$TAB_GLYPH = "グリフ";
+$TAB_GLYPH = "グリフ";
+:846
+$TAB_RECENT = "履歴";
+$TAB_RECENT = "履歴";
+:847
+$TAB_GROUP = "グループ";
+$TAB_GROUP = "グループ";
+:848
+$TAB_NOTE = "ノート";
+$TAB_NOTE = "ノート";
+:849
+$TAB_USER = "利用者ページ";
+$TAB_USER = "利用者ページ";
+:850
+$LABEL_RECENT = "履歴";
+$LABEL_RECENT = "履歴";
+:851
+$LABEL_KAIWA = "会話";
+$LABEL_KAIWA = "会話";
+:852
+$LABEL_USER = "利用者";
+$LABEL_USER = "利用者";
+:853
+$LABEL_ANONYMOUS = "匿名利用者";
+$LABEL_ANONYMOUS = "匿名利用者";
+:855
+$WORD_MUSTRELATE = "関連付けるべきグリフ";
+$WORD_MUSTRELATE = "関連付けるべきグリフ";
+:859
+$WORD_HOGOKIROKU = "保護記録";
+$WORD_HOGOKIROKU = "保護記録";
+:863
+$WORD_HOGO = "保護されたページ";
+$WORD_HOGO = "保護されたページ";
+:867
+$WORD_SAKUJO = "削除の方針";
+$WORD_SAKUJO = "削除の方針";
+:871
+$WORD_DELETE_LOG = "削除記録";
+$WORD_DELETE_LOG = "削除記録";
+:875
+$WORD_ACCEPT_AND_SUBMIT = "以上の記述を完全に理解し同意したうえで投稿する";
+$WORD_ACCEPT_AND_SUBMIT = "以上の記述を完全に理解し同意したうえで投稿する";
+:878
+$WORD_PREVIEW = "プレビューを実行";
+$WORD_PREVIEW = "プレビューを実行";
+:882
+$WORD_KENSAKU = "検索";
+$WORD_KENSAKU = "検索";
+:886
+$WORD_HYOUJI = "表示";
+$WORD_HYOUJI = "表示";
+:898
+$label =~ s/Talk:/ノート:/;
+$label =~ s/Talk:/ノート:/;
+:899
+$label =~ s/GlyphWiki-talk:/GlyphWiki-ノート:/;
+$label =~ s/GlyphWiki-talk:/GlyphWiki-ノート:/;
+:900
+$label =~ s/User:/利用者:/;
+$label =~ s/User:/利用者:/;
+:901
+$label =~ s/User-talk:/利用者-会話:/;
+$label =~ s/User-talk:/利用者-会話:/;
+:902
+$label =~ s/Group:/グループ:/;
+$label =~ s/Group:/グループ:/;
+:903
+$label =~ s/Group-talk:/グループ-ノート:/;
+$label =~ s/Group-talk:/グループ-ノート:/;
+:910
+$label =~ s/利用者:/User:/;
+$label =~ s/利用者:/User:/;
+:911
+$label =~ s/利用者-会話:/User-talk:/;
+$label =~ s/利用者-会話:/User-talk:/;
+:912
+$label =~ s/グループ:/Group:/;
+$label =~ s/グループ:/Group:/;
+:913
+$label =~ s/グループ-ノート:/Group-talk:/; 
+$label =~ s/グループ-ノート:/Group-talk:/; 
+:914
+$label =~ s/GlyphWiki-ノート:/GlyphWiki-talk:/; 
+$label =~ s/GlyphWiki-ノート:/GlyphWiki-talk:/; 
+:915
+$label =~ s/ノート:/Talk:/;
+$label =~ s/ノート:/Talk:/;
+:1012
+return sprintf("%04d年%d月%d日(%s) %02d:%02d", $year + 1900, $mon + 1, $mday, qw(日 月 火 水 木 金 土)[$wday], $hour, $min);
+return sprintf("%04d年%d月%d日(%s) %02d:%02d", $year + 1900, $mon + 1, $mday, qw(日 月 火 水 木 金 土)[$wday], $hour, $min);
+:1110
+my $subject = 'Password reminder from GlyphWiki (グリフウィキからのパスワードのお知らせ)';
+my $subject = 'Password reminder from GlyphWiki (グリフウィキからのパスワードのお知らせ)';
+:1112
+どなたか（$ip のIPアドレスの使用者）がグリフウィキ（http://glyphwiki.org/）
+どなたか（$ip のIPアドレスの使用者）がグリフウィキ（http://glyphwiki.org/）
+:1113
+のログイン用パスワードの再発行を依頼しました。
+のログイン用パスワードの再発行を依頼しました。
+:1115
+利用者 "$name" のパスワードを "$temp_password" に変更しました。
+利用者 "$name" のパスワードを "$temp_password" に変更しました。
+:1116
+ログインして別のパスワードに変更してください。
+ログインして別のパスワードに変更してください。
+:1484
+my $subject = 'GlyphWiki メールアドレスの確認';
+my $subject = 'GlyphWiki メールアドレスの確認';
+:1492
+どなたか（IPアドレス $ip の使用者）がこのメールアドレスを
+どなたか（IPアドレス $ip の使用者）がこのメールアドレスを
+:1493
+GlyphWiki のアカウント "$name" に登録しました。
+GlyphWiki のアカウント "$name" に登録しました。
+:1495
+このアカウントがあなたのものであるか確認してください。
+このアカウントがあなたのものであるか確認してください。
+:1496
+あなたの登録したアカウントであるならば、GlyphWiki
+あなたの登録したアカウントであるならば、GlyphWiki
+:1497
+のメール通知機能を有効にするために、以下のURLにアクセスしてください:
+のメール通知機能を有効にするために、以下のURLにアクセスしてください:
+:1501
+もし GlyphWiki について身に覚えがない場合は、リンクを開かないでください。
+もし GlyphWiki について身に覚えがない場合は、リンクを開かないでください。
+:1502
+確認用コードは $expire に期限切れになります。
+確認用コードは $expire に期限切れになります。
+:1701
+my $interwiki_definition = '\[\[([\S  ]+?)\ (\S+?)\]\]';
+my $interwiki_definition = '\[\[([\S  ]+?)\ (\S+?)\]\]';
+:1805
+unshift(@tocresult, qq(<div class="toc"><h1>目次</h1>));
+unshift(@tocresult, qq(<div class="toc"><h1>目次</h1>));
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/config.pl
 

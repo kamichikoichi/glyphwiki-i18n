@@ -15,6 +15,10 @@ $temp = sprintf("<div class=\"texts\"><p>作字率 ：%d\% (已作：%d字、未
 $temp2 = sprintf("グリフ実装率：%d\% [済%d、未%d]", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
 $temp2 = sprintf("作字率：%d\% [已%d、未%d]", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
 
+!/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/common.pl
+
+!/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/config.pl
+
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_left.pl
 :21
 $buffer .= qq|ナビゲーション|;
