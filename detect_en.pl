@@ -58,7 +58,7 @@ close $fh;
 @files = ();
 push(@files, "/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi");
 opendir($dh, "/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/") or die $!;
-foreach(grep(/(common|page).*\.pl$/, readdir($dh))){
+foreach(grep(/(common|config|page.+)\.pl$/, readdir($dh))){
   if($_ !~ m/^(en|ko|zhs)./){
     push(@files, "/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/$_");
   }
