@@ -1,5 +1,9 @@
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi
 
+!/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/common.pl
+
+!/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/config.pl
+
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_left.pl
 :37
 $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_JOIN">あなたにできること</a>|;

@@ -59,6 +59,8 @@ $WORD_MUSTRELATE = "関連付けるべきグリフ";
 my $interwiki_definition = '\[\[([\S  ]+?)\ (\S+?)\]\]';
 my $interwiki_definition = '\[\[([\S  ]+?)\ (\S+?)\]\]';
 
+!/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/config.pl
+
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_left.pl
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_others.pl
