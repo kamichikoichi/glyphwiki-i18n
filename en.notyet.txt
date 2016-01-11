@@ -1,0 +1,249 @@
+!/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi
+:737
+($new_version, $registered_time) = &put_page($DBH, $db_wiki_name, $user, $nadata, "エイリアス入れ替え", $env_remoteaddress, $narelated, -1, 0);
+($new_version, $registered_time) = &put_page($DBH, $db_wiki_name, $user, $nadata, "エイリアス入れ替え", $env_remoteaddress, $narelated, -1, 0);
+:744
+($new_version, $registered_time) = &put_page($DBH, $oname, $user, $ntdata, "エイリアス入れ替え（自動更新）", $env_remoteaddress, $orelated, -1, 0);
+($new_version, $registered_time) = &put_page($DBH, $oname, $user, $ntdata, "エイリアス入れ替え（自動更新）", $env_remoteaddress, $orelated, -1, 0);
+:749
+($new_version, $registered_time) = &put_page($DBH, $target, $user, $ntdata, "エイリアス入れ替え（自動更新）", $env_remoteaddress, $ntrelated, -1, 0);
+($new_version, $registered_time) = &put_page($DBH, $target, $user, $ntdata, "エイリアス入れ替え（自動更新）", $env_remoteaddress, $ntrelated, -1, 0);
+
+!/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/common.pl
+:794
+$URL_USERNAME = &url_encode("ユーザー名");
+$URL_USERNAME = &url_encode("ユーザー名");
+:795
+$URL_SANDBOX = &url_encode("サンドボックス");
+$URL_SANDBOX = &url_encode("サンドボックス");
+:796
+$URL_SEISAKUIRAI = &url_encode("制作依頼");
+$URL_SEISAKUIRAI = &url_encode("制作依頼");
+:797
+$URL_HENSHU = &url_encode("編集の仕方");
+$URL_HENSHU = &url_encode("編集の仕方");
+:798
+$URL_YOUYAKU = &url_encode("常に要約欄に記入する");
+$URL_YOUYAKU = &url_encode("常に要約欄に記入する");
+:803
+$URL_RELATED = &url_encode("関連字");
+$URL_RELATED = &url_encode("関連字");
+:804
+$URL_VARIANT = &url_encode("異体字");
+$URL_VARIANT = &url_encode("異体字");
+:805
+$URL_BUG = &url_encode("バグ報告");
+$URL_BUG = &url_encode("バグ報告");
+:809
+$URL_FONT = &url_encode("フォント生成");
+$URL_FONT = &url_encode("フォント生成");
+:810
+$URL_ALIAS = &url_encode("エイリアス");
+$URL_ALIAS = &url_encode("エイリアス");
+:811
+$URL_CAPTCHA = &url_encode("キャプチャ");
+$URL_CAPTCHA = &url_encode("キャプチャ");
+:814
+$URL_GUIDE = &url_encode("命名ガイドライン");
+$URL_GUIDE = &url_encode("命名ガイドライン");
+:815
+$URL_METADATA = &url_encode("メタ情報");
+$URL_METADATA = &url_encode("メタ情報");
+:829
+$WORD_REGISTER_EMAIL = "メールアドレスを登録する";
+$WORD_REGISTER_EMAIL = "メールアドレスを登録する";
+:855
+$WORD_MUSTRELATE = "関連付けるべきグリフ";
+$WORD_MUSTRELATE = "関連付けるべきグリフ";
+:1701
+my $interwiki_definition = '\[\[([\S  ]+?)\ (\S+?)\]\]';
+my $interwiki_definition = '\[\[([\S  ]+?)\ (\S+?)\]\]';
+
+!/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_left.pl
+
+!/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_others.pl
+
+!/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_right_general.pl
+:145
+$post_temp = " 別字形";
+$post_temp = " 別字形";
+:148
+$sqlh = &sql_prepare($dbh, "SELECT data FROM wiki WHERE name = 'GlyphWiki:グリフの説明' AND username = 'kamichi' ORDER BY timestamp DESC LIMIT 1");
+$sqlh = &sql_prepare($dbh, "SELECT data FROM wiki WHERE name = 'GlyphWiki:グリフの説明' AND username = 'kamichi' ORDER BY timestamp DESC LIMIT 1");
+:304
+$buffer .= qq|<div class="warning">存在しない版が指定されました。代替として最新版が表示されています。</div>|;
+$buffer .= qq|<div class="warning">存在しない版が指定されました。代替として最新版が表示されています。</div>|;
+:306
+$buffer .= qq|<div class="warning">存在しない版が指定されました。最新版に対する編集となります。</div>|;
+$buffer .= qq|<div class="warning">存在しない版が指定されました。最新版に対する編集となります。</div>|;
+:395
+$buffer .= qq|<div class=\"warning2\">UCS関連グリフの関連字に別の文字の割り当てや未定義（〓）とすることはできません。別の文字を関連付けたい場合は<a class=\"notice\" href=\"/wiki/GlyphWiki:$URL_MUSTRELATE\">$WORD_MUSTRELATE</a>に記述して異体字としての関連付けを申請してください。</div><hr>|;
+$buffer .= qq|<div class=\"warning2\">UCS関連グリフの関連字に別の文字の割り当てや未定義（〓）とすることはできません。別の文字を関連付けたい場合は<a class=\"notice\" href=\"/wiki/GlyphWiki:$URL_MUSTRELATE\">$WORD_MUSTRELATE</a>に記述して異体字としての関連付けを申請してください。</div><hr>|;
+:407
+$buffer .= qq|<div class=\"warning2\">他のグリフがこのグリフ（あるいはこのグリフの古い版）を引用しているので実際には削除できません。</div><hr>|;
+$buffer .= qq|<div class=\"warning2\">他のグリフがこのグリフ（あるいはこのグリフの古い版）を引用しているので実際には削除できません。</div><hr>|;
+:414
+$buffer .= qq|<div class=\"warning2\">エイリアスの対象グリフはバージョンを指定できません。このままでは登録はできません。バージョン指定を外すか、エイリアスではなく実体化する必要があります（専用エディタで部品を分解してください）。</div><hr>|;
+$buffer .= qq|<div class=\"warning2\">エイリアスの対象グリフはバージョンを指定できません。このままでは登録はできません。バージョン指定を外すか、エイリアスではなく実体化する必要があります（専用エディタで部品を分解してください）。</div><hr>|;
+:482
+$buffer .= qq|<div class="message">このグリフは<a href="/wiki/GlyphWiki:$URL_ALIAS">エイリアス</a>（他のグリフの別名）に指定されています。このまま編集を行うと独立したグリフ（あるいは別のグリフに対するエイリアス）となり、<span class="notice">現在指しているグリフとの関係は解消されます</span>。現在指しているグリフとの関係を継続する場合は、<a class="notice" href="$alias_to?action=edit">実体となるグリフを編集</a>してください。</div>|;
+$buffer .= qq|<div class="message">このグリフは<a href="/wiki/GlyphWiki:$URL_ALIAS">エイリアス</a>（他のグリフの別名）に指定されています。このまま編集を行うと独立したグリフ（あるいは別のグリフに対するエイリアス）となり、<span class="notice">現在指しているグリフとの関係は解消されます</span>。現在指しているグリフとの関係を継続する場合は、<a class="notice" href="$alias_to?action=edit">実体となるグリフを編集</a>してください。</div>|;
+:500
+$buffer .= qq|<div class="compare"><table><tr><td>保存された版<td>あなたのグリフ<tr><td><img src="/glyph/$temp_name.png"><td><img src="/get_preview_glyph.cgi?data=$cgi_textbox"></table></div>|;
+$buffer .= qq|<div class="compare"><table><tr><td>保存された版<td>あなたのグリフ<tr><td><img src="/glyph/$temp_name.png"><td><img src="/get_preview_glyph.cgi?data=$cgi_textbox"></table></div>|;
+:510
+$buffer .= qq|<div class="texts" style="margin: 1em 0 0 1em;"><a class="wiki" href=\"/wiki/$alias_to\">$alias_to</a> の<a href="/wiki/GlyphWiki:$URL_ALIAS">エイリアス</a>（別名）|;
+$buffer .= qq|<div class="texts" style="margin: 1em 0 0 1em;"><a class="wiki" href=\"/wiki/$alias_to\">$alias_to</a> の<a href="/wiki/GlyphWiki:$URL_ALIAS">エイリアス</a>（別名）|;
+:511
+$buffer .= qq| <a href="?action=swap">（このグリフが実体となるようにエイリアスを入れ替え）</a></div>|;
+$buffer .= qq| <a href="?action=swap">（このグリフが実体となるようにエイリアスを入れ替え）</a></div>|;
+:549
+$temp =~ s/----\r\nMETADATA\r\n----\r\n/* メタ情報\r\n/;
+$temp =~ s/----\r\nMETADATA\r\n----\r\n/* メタ情報\r\n/;
+:553
+if($action eq "page" && $wiki_name eq "GlyphWiki:メインページ"){
+if($action eq "page" && $wiki_name eq "GlyphWiki:メインページ"){
+:554
+$buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:ロゴについて\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
+$buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:ロゴについて\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
+:710
+$buffer .= qq|法務省 戸籍統一文字情報 <a href="http://kosekimoji.moj.go.jp/kosekimojidb/mjko/PeopleList/EXECUTE?ihid_clickedButtonName=iimag_Moji\&ihid_SelectedKskMjBng=$parent_code\&ihid_SearchCount=0">文字情報</a><br>|;
+$buffer .= qq|法務省 戸籍統一文字情報 <a href="http://kosekimoji.moj.go.jp/kosekimojidb/mjko/PeopleList/EXECUTE?ihid_clickedButtonName=iimag_Moji\&ihid_SelectedKskMjBng=$parent_code\&ihid_SearchCount=0">文字情報</a><br>|;
+:719
+$buffer .= qq|<ul><li><a href="http://www.cns11643.gov.tw/AIDB/query_general_view.do?page=$1\&code=$2">台湾国家発展委員会 全字庫</a> <img src=\"/images/external.png\"> (<a href="http://www.cns11643.gov.tw/MAIDB/welcome.do">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
+$buffer .= qq|<ul><li><a href="http://www.cns11643.gov.tw/AIDB/query_general_view.do?page=$1\&code=$2">台湾国家発展委員会 全字庫</a> <img src=\"/images/external.png\"> (<a href="http://www.cns11643.gov.tw/MAIDB/welcome.do">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
+:913
+$buffer_related .= "<p><a href=\"/springGraph.swf?code=$related_code_springgraph\">ばねグラフで異体字を表示する</a> | <span class=\"disable\">異体字の異体字をすべてたどって表示する</span></p>"
+$buffer_related .= "<p><a href=\"/springGraph.swf?code=$related_code_springgraph\">ばねグラフで異体字を表示する</a> | <span class=\"disable\">異体字の異体字をすべてたどって表示する</span></p>"
+:984
+$buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&target=$wiki_name">部品グリフを別のグリフに置き換える</a></div>|;
+$buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&target=$wiki_name">部品グリフを別のグリフに置き換える</a></div>|;
+:1103
+$buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>諸橋轍次『大漢和辞典』番号は <a href="/wiki/dkw-$num0$num1">dkw-$num0$num1</a> のように数字5桁を指定してください</ul></div>|;
+$buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>諸橋轍次『大漢和辞典』番号は <a href="/wiki/dkw-$num0$num1">dkw-$num0$num1</a> のように数字5桁を指定してください</ul></div>|;
+:1108
+$buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>法務省戸籍統一文字番号は <a href="/wiki/koseki-$num0$num1">koseki-$num0$num1</a> のように数字6桁を指定してください</ul></div>|;
+$buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>法務省戸籍統一文字番号は <a href="/wiki/koseki-$num0$num1">koseki-$num0$num1</a> のように数字6桁を指定してください</ul></div>|;
+:1111
+$buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>baseparts- は廃止されました</ul></div>|;
+$buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>baseparts- は廃止されました</ul></div>|;
+:1217
+$buffer .= qq|<h2>ノートの編集</h2>|;
+$buffer .= qq|<h2>ノートの編集</h2>|;
+:1224
+<a name="metaedit"><h2>メタ情報の編集</h2></a>
+<a name="metaedit"><h2>メタ情報の編集</h2></a>
+:1230
+<noscript><ul><li>「:項目名:値」の形式で１行１データで記述してください。<li>JavaScriptを有効にすると表形式での編集が可能です。<li>項目名に「:」を含めることはできません<li>項目名・値を空にしないでください<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul></noscript>
+<noscript><ul><li>「:項目名:値」の形式で１行１データで記述してください。<li>JavaScriptを有効にすると表形式での編集が可能です。<li>項目名に「:」を含めることはできません<li>項目名・値を空にしないでください<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul></noscript>
+:1448
+if($wiki_name !~ m/^$EXPR_DOCUMENT_PREFIX/ && $r_related ne "〓"){
+if($wiki_name !~ m/^$EXPR_DOCUMENT_PREFIX/ && $r_related ne "〓"){
+
+!/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_right_others.pl
+:29
+$buffer .= qq!<div class="texts"><a href="?view=parts">部品名別に表示する</a> | <a href="?view=glyphs">グリフ名順で一覧する</a><br><br>（ランダムに最大500個表示されます）</div>!;
+$buffer .= qq!<div class="texts"><a href="?view=parts">部品名別に表示する</a> | <a href="?view=glyphs">グリフ名順で一覧する</a><br><br>（ランダムに最大500個表示されます）</div>!;
+:207,363
+<div class="notice">部品の配置について</div>
+<div class="notice">部品の配置について</div>
+:208,364
+標準では、古い部品の大きさと位置に合わせて新しい部品を配置しますが、変形させたり、固定させることができます。
+標準では、古い部品の大きさと位置に合わせて新しい部品を配置しますが、変形させたり、固定させることができます。
+:211,367
+<li>部品の大きさを新旧で合わせる
+<li>部品の大きさを新旧で合わせる
+:212
+<br>これが標準です。古い部品の大きさと位置に合わせて新しい部品を配置します。テキストボックスには何も入力しないでください
+<br>これが標準です。古い部品の大きさと位置に合わせて新しい部品を配置します。テキストボックスには何も入力しないでください
+:213,369
+<li>縦横ともに部品の大きさを基準に変形
+<li>縦横ともに部品の大きさを基準に変形
+:214
+<br>標準配置後の部品の領域を調節できます。「type1,左上X座標への増分値,Y座標への増分値,右下X座標への増分値,Y座標への増分値」と入力してください 例: type1,5,-4,10,-20 （配置領域の左上座標について左に5ドット、上に4ドット移動、右下座標について10ドット右に、20ドット上に移動する）
+<br>標準配置後の部品の領域を調節できます。「type1,左上X座標への増分値,Y座標への増分値,右下X座標への増分値,Y座標への増分値」と入力してください 例: type1,5,-4,10,-20 （配置領域の左上座標について左に5ドット、上に4ドット移動、右下座標について10ドット右に、20ドット上に移動する）
+:215,371
+<li>縦横ともに新たな配置領域座標を記述
+<li>縦横ともに新たな配置領域座標を記述
+:216
+<br>部品を指定した領域に配置します。「type2,左上X座標,Y座標,右下X座標,Y座標」と入力してください。
+<br>部品を指定した領域に配置します。「type2,左上X座標,Y座標,右下X座標,Y座標」と入力してください。
+:217,373
+<li>横は部品の大きさを基準に変形、縦は新たな配置領域座標を記述
+<li>横は部品の大きさを基準に変形、縦は新たな配置領域座標を記述
+:218
+<br>「type3,左上X座標への増分値,右下X座標への増分値,左上Y座標,右下Y座標」と入力してください（順番に注意）。
+<br>「type3,左上X座標への増分値,右下X座標への増分値,左上Y座標,右下Y座標」と入力してください（順番に注意）。
+:219,375
+<li>横は新たな配置領域座標を記述、縦は部品の大きさを基準に変形
+<li>横は新たな配置領域座標を記述、縦は部品の大きさを基準に変形
+:220
+<br>「type4,左上X座標,右下X座標,左上Y座標への増分値,右下Y座標への増分値,」と入力してください（順番に注意）。
+<br>「type4,左上X座標,右下X座標,左上Y座標への増分値,右下Y座標への増分値,」と入力してください（順番に注意）。
+:228
+$buffer .= " 配置調整指定：<input type=\"text\" name=\"value\" size=\"60\" value=\"$cgi_value\">";
+$buffer .= " 配置調整指定：<input type=\"text\" name=\"value\" size=\"60\" value=\"$cgi_value\">";
+:229,386
+$buffer .= " <input type=\"submit\" value=\"リストのプレビューを更新する\"></form>";
+$buffer .= " <input type=\"submit\" value=\"リストのプレビューを更新する\"></form>";
+:245
+$buffer .= "<hr><div class=\"texts\">ボタンをクリックすると「最新部品に更新する」にチェックをしたグリフをプレビューせずに一度に更新します。更新グリフの量が多いとブラウザが時間切れでエラーとなる場合がありますが、更新処理は問題なく実行できます。</div>";
+$buffer .= "<hr><div class=\"texts\">ボタンをクリックすると「最新部品に更新する」にチェックをしたグリフをプレビューせずに一度に更新します。更新グリフの量が多いとブラウザが時間切れでエラーとなる場合がありますが、更新処理は問題なく実行できます。</div>";
+:247,413
+$buffer .= "<br><br><input type=\"submit\" value=\"チェックをつけたグリフを一括で新しい部品に更新する\"></form>";
+$buffer .= "<br><br><input type=\"submit\" value=\"チェックをつけたグリフを一括で新しい部品に更新する\"></form>";
+:266
+$title = qq|部品の一括更新|;
+$title = qq|部品の一括更新|;
+:368
+<br>これが標準です。古い部品の大きさと位置に合わせて新しい部品を配置します。テキストボックスには置き換え部品グリフ名を入力してください
+<br>これが標準です。古い部品の大きさと位置に合わせて新しい部品を配置します。テキストボックスには置き換え部品グリフ名を入力してください
+:370
+<br>標準配置後の部品の領域を調節できます。「置き換え部品グリフ名,type1,左上X座標への増分値,Y座標への増分値,右下X座標への増分値,Y座標への増分値」と入力してください 例: u6c38,type1,5,-4,10,-20 （配置領域の左上座標について左に5ドット、上に4ドット移動、右下座標について10ドット右に、20ドット上に移動する）
+<br>標準配置後の部品の領域を調節できます。「置き換え部品グリフ名,type1,左上X座標への増分値,Y座標への増分値,右下X座標への増分値,Y座標への増分値」と入力してください 例: u6c38,type1,5,-4,10,-20 （配置領域の左上座標について左に5ドット、上に4ドット移動、右下座標について10ドット右に、20ドット上に移動する）
+:372
+<br>部品を指定した領域に配置します。「置き換え部品グリフ名,type2,左上X座標,Y座標,右下X座標,Y座標」と入力してください。
+<br>部品を指定した領域に配置します。「置き換え部品グリフ名,type2,左上X座標,Y座標,右下X座標,Y座標」と入力してください。
+:374
+<br>「置き換え部品グリフ名,type3,左上X座標への増分値,右下X座標への増分値,左上Y座標,右下Y座標」と入力してください（順番に注意）。
+<br>「置き換え部品グリフ名,type3,左上X座標への増分値,右下X座標への増分値,左上Y座標,右下Y座標」と入力してください（順番に注意）。
+:376
+<br>「置き換え部品グリフ名,type4,左上X座標,右下X座標,左上Y座標への増分値,右下Y座標への増分値,」と入力してください（順番に注意）。
+<br>「置き換え部品グリフ名,type4,左上X座標,右下X座標,左上Y座標への増分値,右下Y座標への増分値,」と入力してください（順番に注意）。
+:385
+$buffer .= " 置き換え部品グリフ、配置調整指定：<input type=\"text\" name=\"value\" size=\"60\" value=\"$cgi_value\">";
+$buffer .= " 置き換え部品グリフ、配置調整指定：<input type=\"text\" name=\"value\" size=\"60\" value=\"$cgi_value\">";
+:401,405
+$buffer .= qq|<div class="texts"><a href="?view=listup&target=$cgi_target&value=$cgi_value&offset=$prev">これより前の検索結果を見る</a></div>|;
+$buffer .= qq|<div class="texts"><a href="?view=listup&target=$cgi_target&value=$cgi_value&offset=$prev">これより前の検索結果を見る</a></div>|;
+:409
+$buffer .= "<div class=\"texts\">さらに対象グリフが存在する可能性があります。<a href=\"?view=listup&target=$cgi_target&value=$cgi_value&offset=$next\">これ以降の対象グリフを見る</a></div>";
+$buffer .= "<div class=\"texts\">さらに対象グリフが存在する可能性があります。<a href=\"?view=listup&target=$cgi_target&value=$cgi_value&offset=$next\">これ以降の対象グリフを見る</a></div>";
+:411
+$buffer .= "<hr><div class=\"texts\">ボタンをクリックすると「部品を更新する」にチェックをしたグリフをプレビューせずに一度に更新します。更新グリフの量が多いとブラウザが時間切れでエラーとなる場合がありますが、更新処理は問題なく実行できます。</div>";
+$buffer .= "<hr><div class=\"texts\">ボタンをクリックすると「部品を更新する」にチェックをしたグリフをプレビューせずに一度に更新します。更新グリフの量が多いとブラウザが時間切れでエラーとなる場合がありますが、更新処理は問題なく実行できます。</div>";
+:415
+$buffer .= qq|<div class="texts">該当するグリフはありません。<br><br><a href=\"/wiki/$cgi_target\">グリフページに戻る</a></div>|;
+$buffer .= qq|<div class="texts">該当するグリフはありません。<br><br><a href=\"/wiki/$cgi_target\">グリフページに戻る</a></div>|;
+:567
+$title = qq|部品一括更新の完了|;
+$title = qq|部品一括更新の完了|;
+:639
+($new_version, $time) = &put_page($dbh, $name, $loginname, $temp, '部品の一括更新', $env_remoteaddress, $related);
+($new_version, $time) = &put_page($dbh, $name, $loginname, $temp, '部品の一括更新', $env_remoteaddress, $related);
+:651
+$buffer .= "<div class=\"texts\">${done}個のグリフを更新しました。<br><br><a href=\"/wiki/Special:Renewall?view=listup&target=$cgi_target\">部品引用グリフ一覧へ戻る</a></div>";
+$buffer .= "<div class=\"texts\">${done}個のグリフを更新しました。<br><br><a href=\"/wiki/Special:Renewall?view=listup&target=$cgi_target\">部品引用グリフ一覧へ戻る</a></div>";
+:653
+$buffer .= "<div class=\"texts\">${done}個のグリフを更新しました。<br><br><a href=\"/wiki/$cgi_target\">グリフページへ戻る</a></div>";
+$buffer .= "<div class=\"texts\">${done}個のグリフを更新しました。<br><br><a href=\"/wiki/$cgi_target\">グリフページへ戻る</a></div>";
+:657
+$buffer .= "<div class=\"texts\">更新したグリフはありません。<br><br><a href=\"/wiki/Special:Renewall?view=listup&target=$cgi_target\">部品引用グリフ一覧へ戻る</a></div>";
+$buffer .= "<div class=\"texts\">更新したグリフはありません。<br><br><a href=\"/wiki/Special:Renewall?view=listup&target=$cgi_target\">部品引用グリフ一覧へ戻る</a></div>";
+:909
+<description>最近付け加えられた変更はこのフィードで確認できます。</description>
+<description>最近付け加えられた変更はこのフィードで確認できます。</description>
+:1648,1689
+<li>その他、ログインに関する情報は<a href="/wiki/GlyphWiki:$URL_LOGIN">GlyphWiki:$WORD_LOGIN</a>を参照してください。 
+<li>その他、ログインに関する情報は<a href="/wiki/GlyphWiki:$URL_LOGIN">GlyphWiki:$WORD_LOGIN</a>を参照してください。 
+

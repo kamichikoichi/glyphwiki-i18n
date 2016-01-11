@@ -1,0 +1,125 @@
+!/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi
+:895
+$temp = sprintf("<div class=\"texts\"><p>グリフ実装率：%d\% (実装済：%dグリフ、未実装：%dグリフ)</p></div>", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
+$temp = sprintf("<div class=\"texts\"><p>글리프의 실장율：%d\% (실장필：%d글리프、미실장：%d글리프)</p></div>", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
+:896
+$temp2 = sprintf("グリフ実装率：%d\% [済%d、未%d]", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
+$temp2 = sprintf("글리프의 실장율：%d\% [필%d、미%d]", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
+
+!/Users/kamichi/Dropbox/kamichi/home/glyphwiki/en.page_right_others.pl
+:205,361
+<div class="notice">部品の配置について</div>
+<div class="notice">부품의 배치에 대하여</div>
+:206,362
+標準では、古い部品の大きさと位置に合わせて新しい部品を配置しますが、変形させたり、固定させることができます。
+표준으로는, 오래된 부품의 크기와 위치에 맞추어서 새로운 부품을 배치합니다만, 변형시키거나, 고정시키는 것도 가능합니다.
+:209,365
+<li>部品の大きさを新旧で合わせる
+<li>부품의 크기를 새로운 것과 오래된 것으로 맞추기
+:210
+<br>これが標準です。古い部品の大きさと位置に合わせて新しい部品を配置します。テキストボックスには何も入力しないでください
+<br>이것이 표준입니다. 오래된 부품의 크기와 배치에 맞추어서 새로운 부품을 배치합니다. 텍스트북에는 아무것도 입력하지 마십시요
+:211,367
+<li>縦横ともに部品の大きさを基準に変形
+<li>가로와 세로 모두 부품의 크기를 기준으로 변형
+:212
+<br>標準配置後の部品の領域を調節できます。「type1,左上X座標への増分値,Y座標への増分値,右下X座標への増分値,Y座標への増分値」と入力してください 例: type1,5,-4,10,-20 （配置領域の左上座標について左に5ドット、上に4ドット移動、右下座標について10ドット右に、20ドット上に移動する）
+<br>표준배치이후의 부품의 영역을 조절가능합니다. 「type1, 왼쪽위 X좌표의 늘어난 값,Y좌표의 늘어난 값, 오른쪽아래 X좌표의 늘어난 값, Y좌표의 늘어난 값」이라고 입력해 주십시요  예：type1, 5, -4, 10, -20 （배치영역의 왼쪽위의 좌표에 대하여 왼쪽으로 5도트, 위쪽으로 4도트 이동, 오른쪽아래의 좌표에 대하여 10도트 오른쪽으로, 20도트 위쪽으로 이동하기）
+:213,369
+<li>縦横ともに新たな配置領域座標を記述
+<li>가로와 세로 모두 새로운 배치영역좌표을 기술
+:214
+<br>部品を指定した領域に配置します。「type2,左上X座標,Y座標,右下X座標,Y座標」と入力してください。
+<br>부품을 지정한 영역에 배치합니다.「type2, 왼쪽위X좌표,Y좌표,오른쪽아래X,Y좌표」라고 입력해 주십시요.
+:215,371
+<li>横は部品の大きさを基準に変形、縦は新たな配置領域座標を記述
+<li>가로는 부품의 크기를 기준으로 변형, 세로는 새로운 배치영역좌표를 기술
+
+!/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_others.pl
+:48
+$buffer = "最終更新 ".&local_localtime($lastupdate)."。";
+$buffer = "최종갱신".&local_localtime($lastupdate).".";
+:56
+<a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a>
+<a href="/wiki/GlyphWiki:License">데이타・기사의 라이센스</a>
+:57
+<a href="/wiki/GlyphWiki:$URL_PRIVACY">プライバシー・ポリシー</a>
+<a href="/wiki/GlyphWiki:PrivacyPolicy">프라이버시 정책</a>
+:58
+<a href="/wiki/GlyphWiki:$URL_ABOUT">グリフウィキについて</a>
+<a href="/wiki/GlyphWiki:About">글리프위키에 대하여</a>
+:59
+<a href="/wiki/GlyphWiki:$URL_MENSEKI">免責事項</a>
+<a href="/wiki/GlyphWiki:Disclaimers">면책사항</a>
+:75
+$buffer .= qq|<div class="loginned"><div><img src="/images/user.gif"> <a href="/wiki/User:$loginname">$loginname</a></div> <div><a href="/wiki/User-talk:$loginname">マイ・トーク</a></div> <div><a href="/wiki/Special:Confirmemail">メールアドレスの登録・確認</a></div> <div><a href="/wiki/Special:Userlogout?returnto=$url_query">ログアウト</a></div></div>|;
+$buffer .= qq|<div class="loginned"><div><img src="/images/user.gif"> <a href="/wiki/User:$loginname">$loginname</a></div> <div><a href="/wiki/User-talk:$loginname">마이토크</a></div> <div><a href="/wiki/Special:Confirmemail">이메일주소의 등록・확인</a></div> <div><a href="/wiki/Special:Userlogout?returnto=$url_query">로그아웃</a></div></div>|;
+:77
+$buffer .= qq|<div class="login"><img src="/images/user.gif"> <a href="/wiki/Special:Userlogin?returnto=$url_query">ログインまたはアカウント作成</a></div>|;
+$buffer .= qq|<div class="login"><img src="/images/user.gif"> <a href="/wiki/Special:Userlogin?returnto=$url_query">로그인 혹은 아이디작성</a></div>|;
+
+!/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_right_others.pl
+:26
+$title = qq|古い部品を引用しているグリフ|;
+$title = qq|오래된 부품을 인용하고 있는 글리프|;
+:29
+$buffer .= qq!<div class="texts"><a href="?view=parts">部品名別に表示する</a> | <a href="?view=glyphs">グリフ名順で一覧する</a></div>!;
+$buffer .= qq!<div class="texts"><a href="?view=parts">부품명별로 표시하기</a> | <a href="?view=glyphs">글리프 이름순으로 일람하기</a></div>!;
+:64
+$temp_list .= qq|<hr><br>(残りは省略されています)|;
+$temp_list .= qq|<hr><br>(나머지는 생략되어 있습니다)|;
+:81
+$mustrenew_list .= "<br><br><a href=\"/wiki/Special:Mustrenew?view=listup&target=$pname\">この部品について一覧形式で更新する</a>";
+$mustrenew_list .= "<br><br><a href=\"/wiki/Special:Mustrenew?view=listup&target=$pname\">이 부품에 관해서 일람형식으로 갱신하기</a>";
+:89
+$mustrenew_list .= "<br>(残りは省略されています)";
+$mustrenew_list .= "<br>(나머지는 생략되어 있습니다)";
+:100
+$buffer .= qq|<span class="text">該当するグリフはありません。</span>|;
+$buffer .= qq|<span class="text">해당하는 글리프는 없습니다.</span>|;
+:117
+$title = qq|古い部品を引用しているグリフの一括更新|;
+$title = qq|오래된 부품을 인용하고 있는 글리프의 일괄갱신|;
+:121
+$buffer .= qq|<div class="texts">更新対象：<a href="/wiki/$cgi_target"><img class="thumb related" src="/glyph/$cgi_target.50px.png" border="0"></a> <a href="/wiki/$cgi_target">$cgi_target</a></div>|;
+$buffer .= qq|<div class="texts">갱신대상：<a href="/wiki/$cgi_target"><img class="thumb related" src="/glyph/$cgi_target.50px.png" border="0"></a> <a href="/wiki/$cgi_target">$cgi_target</a></div>|;
+:125,270,275
+$cgi_value = "(指定した値が不正です)";
+$cgi_value = "(지정한 값이 맞지 않습니다)";
+:129,277
+if($cgi_value eq "" || $cgi_value eq "(指定した値が不正です)"){
+if($cgi_value eq "" || $cgi_value eq "(지정한 값이 맞지 않습니다)"){
+:191
+$mustrenew_list .= "<li class=\"history\"><a href=\"/wiki/$name\">$name</a> 現在 : <a href=\"/wiki/$name\"><img class=\"thumb100\" src=\"/glyph/$name\@$version.100px.png\" border=\"0\"></a> vs 最新部品 : ";
+$mustrenew_list .= "<li class=\"history\"><a href=\"/wiki/$name\">$name</a> 현재 : <a href=\"/wiki/$name\"><img class=\"thumb100\" src=\"/glyph/$name\@$version.100px.png\" border=\"0\"></a> vs. 최신부품: ";
+:193
+$mustrenew_list .= "<input type=\"checkbox\" name=\"target:$name\@$version\" value=\"update\" id=\"$name\"><label for=\"$name\">最新部品に更新する</label>";
+$mustrenew_list .= "<input type=\"checkbox\" name=\"target:$name\@$version\" value=\"update\" id=\"$name\"><label for=\"$name\">최신부품으로 갱신하기</label>";
+:205,361
+<div class="notice">部品の配置について</div>
+<div class="notice">부품의 배치에 대하여</div>
+:206,362
+標準では、古い部品の大きさと位置に合わせて新しい部品を配置しますが、変形させたり、固定させることができます。
+표준으로는, 오래된 부품의 크기와 위치에 맞추어서 새로운 부품을 배치합니다만, 변형시키거나, 고정시키는 것도 가능합니다.
+:209,365
+<li>部品の大きさを新旧で合わせる
+<li>부품의 크기를 새로운 것과 오래된 것으로 맞추기
+:210
+<br>これが標準です。古い部品の大きさと位置に合わせて新しい部品を配置します。テキストボックスには何も入力しないでください
+<br>이것이 표준입니다. 오래된 부품의 크기와 배치에 맞추어서 새로운 부품을 배치합니다. 텍스트북에는 아무것도 입력하지 마십시요
+:211,367
+<li>縦横ともに部品の大きさを基準に変形
+<li>가로와 세로 모두 부품의 크기를 기준으로 변형
+:212
+<br>標準配置後の部品の領域を調節できます。「type1,左上X座標への増分値,Y座標への増分値,右下X座標への増分値,Y座標への増分値」と入力してください 例: type1,5,-4,10,-20 （配置領域の左上座標について左に5ドット、上に4ドット移動、右下座標について10ドット右に、20ドット上に移動する）
+<br>표준배치이후의 부품의 영역을 조절가능합니다. 「type1, 왼쪽위 X좌표의 늘어난 값,Y좌표의 늘어난 값, 오른쪽아래 X좌표의 늘어난 값, Y좌표의 늘어난 값」이라고 입력해 주십시요  예：type1, 5, -4, 10, -20 （배치영역의 왼쪽위의 좌표에 대하여 왼쪽으로 5도트, 위쪽으로 4도트 이동, 오른쪽아래의 좌표에 대하여 10도트 오른쪽으로, 20도트 위쪽으로 이동하기）
+:213,369
+<li>縦横ともに新たな配置領域座標を記述
+<li>가로와 세로 모두 새로운 배치영역좌표을 기술
+:214
+<br>部品を指定した領域に配置します。「type2,左上X座標,Y座標,右下X座標,Y座標」と入力してください。
+<br>부품을 지정한 영역에 배치합니다.「type2, 왼쪽위X좌표,Y좌표,오른쪽아래X,Y좌표」라고 입력해 주십시요.
+:215,371
+<li>横は部品の大きさを基準に変形、縦は新たな配置領域座標を記述
+<li>가로는 부품의 크기를 기준으로 변형, 세로는 새로운 배치영역좌표를 기술
+

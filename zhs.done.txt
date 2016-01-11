@@ -1,0 +1,92 @@
+!/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi
+:895
+$temp = sprintf("<div class=\"texts\"><p>グリフ実装率：%d\% (実装済：%dグリフ、未実装：%dグリフ)</p></div>", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
+$temp = sprintf("<div class=\"texts\"><p>作字率 ：%d\% (已作：%d字、未作：%d字)</p></div>", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
+:896
+$temp2 = sprintf("グリフ実装率：%d\% [済%d、未%d]", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
+$temp2 = sprintf("作字率：%d\% [已%d、未%d]", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
+
+!/Users/kamichi/Dropbox/kamichi/home/glyphwiki/en.page_right_others.pl
+:205,361
+<div class="notice">部品の配置について</div>
+<div class="notice">关于组装零件</div>
+:206,362
+標準では、古い部品の大きさと位置に合わせて新しい部品を配置しますが、変形させたり、固定させることができます。
+默认状态按旧零件的大小和位置组装零件。也可能变形或固定。
+:209,365
+<li>部品の大きさを新旧で合わせる
+<li>调和新旧零件的大小。
+:210
+<br>これが標準です。古い部品の大きさと位置に合わせて新しい部品を配置します。テキストボックスには何も入力しないでください
+<br>这是默认状态。按旧零件的大小和位置组装新零件。本文框里不要输入。
+:211,367
+<li>縦横ともに部品の大きさを基準に変形
+<li>按零件大小变形
+
+!/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_others.pl
+:48
+$buffer = "最終更新 ".&local_localtime($lastupdate)."。";
+$buffer = "最后修订于".&local_localtime($lastupdate).".";
+:56
+<a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a>
+<a href="/wiki/GlyphWiki:License">著作权</a>
+:57
+<a href="/wiki/GlyphWiki:$URL_PRIVACY">プライバシー・ポリシー</a>
+<a href="/wiki/GlyphWiki:PrivacyPolicy">隐私政策</a>
+:58
+<a href="/wiki/GlyphWiki:$URL_ABOUT">グリフウィキについて</a>
+<a href="/wiki/GlyphWiki:About">关于字维基</a>
+:59
+<a href="/wiki/GlyphWiki:$URL_MENSEKI">免責事項</a>
+<a href="/wiki/GlyphWiki:Disclaimers">免责声明</a>
+:75
+$buffer .= qq|<div class="loginned"><div><img src="/images/user.gif"> <a href="/wiki/User:$loginname">$loginname</a></div> <div><a href="/wiki/User-talk:$loginname">マイ・トーク</a></div> <div><a href="/wiki/Special:Confirmemail">メールアドレスの登録・確認</a></div> <div><a href="/wiki/Special:Userlogout?returnto=$url_query">ログアウト</a></div></div>|;
+$buffer .= qq|<div class="loginned"><div><img src="/images/user.gif"> <a href="/wiki/User:$loginname">$loginname</a></div> <div><a href="/wiki/User-talk:$loginname">讨论页</a></div> <div><a href="/wiki/Special:Confirmemail">电子邮件注册、确认</a></div> <div><a href="/wiki/Special:Userlogout?returnto=$url_query">退出</a></div></div>|;
+:77
+$buffer .= qq|<div class="login"><img src="/images/user.gif"> <a href="/wiki/Special:Userlogin?returnto=$url_query">ログインまたはアカウント作成</a></div>|;
+$buffer .= qq|<div class="login"><img src="/images/user.gif"> <a href="/wiki/Special:Userlogin?returnto=$url_query">登录或注册帐户</a></div>|;
+
+!/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_right_others.pl
+:26
+$title = qq|古い部品を引用しているグリフ|;
+$title = qq|使用旧零件的字|;
+:29
+$buffer .= qq!<div class="texts"><a href="?view=parts">部品名別に表示する</a> | <a href="?view=glyphs">グリフ名順で一覧する</a></div>!;
+$buffer .= qq!<div class="texts"><a href="?view=parts">按零件的名字排列</a> | <a href="?view=glyphs">按字排列</a></div>!;
+:64
+$temp_list .= qq|<hr><br>(残りは省略されています)|;
+$temp_list .= qq|<hr><br>(以下从略)|;
+:81
+$mustrenew_list .= "<br><br><a href=\"/wiki/Special:Mustrenew?view=listup&target=$pname\">この部品について一覧形式で更新する</a>";
+$mustrenew_list .= "<br><br><a href=\"/wiki/Special:Mustrenew?view=listup&target=$pname\">关于该零件更新一览</a>";
+:89
+$mustrenew_list .= "<br>(残りは省略されています)";
+$mustrenew_list .= "<br>(以下从略)";
+:100
+$buffer .= qq|<span class="text">該当するグリフはありません。</span>|;
+$buffer .= qq|<span class="text">找不到</span>|;
+:117
+$title = qq|古い部品を引用しているグリフの一括更新|;
+$title = qq|更新所有使用旧零件的字|;
+:121
+$buffer .= qq|<div class="texts">更新対象：<a href="/wiki/$cgi_target"><img class="thumb related" src="/glyph/$cgi_target.50px.png" border="0"></a> <a href="/wiki/$cgi_target">$cgi_target</a></div>|;
+$buffer .= qq|<div class="texts">更新对象：<a href="/wiki/$cgi_target"><img class="thumb related" src="/glyph/$cgi_target.50px.png" border="0"></a> <a href="/wiki/$cgi_target">$cgi_target</a></div>|;
+:193
+$mustrenew_list .= "<input type=\"checkbox\" name=\"target:$name\@$version\" value=\"update\" id=\"$name\"><label for=\"$name\">最新部品に更新する</label>";
+$mustrenew_list .= "<input type=\"checkbox\" name=\"target:$name\@$version\" value=\"update\" id=\"$name\"><label for=\"$name\">用最新零件更新</label>";
+:205,361
+<div class="notice">部品の配置について</div>
+<div class="notice">关于组装零件</div>
+:206,362
+標準では、古い部品の大きさと位置に合わせて新しい部品を配置しますが、変形させたり、固定させることができます。
+默认状态按旧零件的大小和位置组装零件。也可能变形或固定。
+:209,365
+<li>部品の大きさを新旧で合わせる
+<li>调和新旧零件的大小。
+:210
+<br>これが標準です。古い部品の大きさと位置に合わせて新しい部品を配置します。テキストボックスには何も入力しないでください
+<br>这是默认状态。按旧零件的大小和位置组装新零件。本文框里不要输入。
+:211,367
+<li>縦横ともに部品の大きさを基準に変形
+<li>按零件大小变形
+
