@@ -56,11 +56,11 @@ close $fh;
 %current2 = %current;
 
 @files = ();
-push(@files, "/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi");
-opendir($dh, "/Users/kamichi/Dropbox/kamichi/home/glyphwiki/") or die $!;
+push(@files, "/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi");
+opendir($dh, "/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/") or die $!;
 foreach(grep(/(common|page).+\.pl$/, readdir($dh))){
   if($_ !~ m/^(en|ko|zhs)./){
-    push(@files, "/Users/kamichi/Dropbox/kamichi/home/glyphwiki/$_");
+    push(@files, "/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/$_");
   }
 }
 closedir($dh);
