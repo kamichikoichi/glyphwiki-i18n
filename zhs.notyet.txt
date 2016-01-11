@@ -1,6 +1,9 @@
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_left.pl
+:37
+$buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_JOIN">あなたにできること</a>|;
+$buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_JOIN">あなたにできること</a>|;
 :70
 $buffer .= qq|<li><a href="/idsedit.html">IDSエディタ</a>|;
 $buffer .= qq|<li><a href="/idsedit.html">IDSエディタ</a>|;
@@ -8,6 +11,42 @@ $buffer .= qq|<li><a href="/idsedit.html">IDSエディタ</a>|;
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_others.pl
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_right_general.pl
+:57
+$r_data =~ s/\[\[([^ \]]+ )?Talk:([^\]]+)\]\]/[[$1ノート:$2]]/g;
+$r_data =~ s/\[\[([^ \]]+ )?Talk:([^\]]+)\]\]/[[$1ノート:$2]]/g;
+:58
+$r_data =~ s/\[\[([^ \]]+ )?GlyphWiki-talk:([^\]]+)\]\]/[[$1GlyphWiki-ノート:$2]]/g;
+$r_data =~ s/\[\[([^ \]]+ )?GlyphWiki-talk:([^\]]+)\]\]/[[$1GlyphWiki-ノート:$2]]/g;
+:59
+$r_data =~ s/\[\[([^ \]]+ )?Group:([^\]]+)\]\]/[[$1グループ:$2]]/g;
+$r_data =~ s/\[\[([^ \]]+ )?Group:([^\]]+)\]\]/[[$1グループ:$2]]/g;
+:60
+$r_data =~ s/\[\[([^ \]]+ )?Group-talk:([^\]]+)\]\]/[[$1グループ-ノート:$2]]/g;
+$r_data =~ s/\[\[([^ \]]+ )?Group-talk:([^\]]+)\]\]/[[$1グループ-ノート:$2]]/g;
+:61
+$r_data =~ s/\[\[([^ \]]+ )?User:([^\]]+)\]\]/[[$1利用者:$2]]/g;
+$r_data =~ s/\[\[([^ \]]+ )?User:([^\]]+)\]\]/[[$1利用者:$2]]/g;
+:62
+$r_data =~ s/\[\[([^ \]]+ )?User-talk:([^\]]+)\]\]/[[$1利用者-会話:$2]]/g;
+$r_data =~ s/\[\[([^ \]]+ )?User-talk:([^\]]+)\]\]/[[$1利用者-会話:$2]]/g;
+:65
+$cgi_textbox =~ s/\[\[([^ \]]+ )?Talk:([^\]]+)\]\]/[[$1ノート:$2]]/g;
+$cgi_textbox =~ s/\[\[([^ \]]+ )?Talk:([^\]]+)\]\]/[[$1ノート:$2]]/g;
+:66
+$cgi_textbox =~ s/\[\[([^ \]]+ )?GlyphWiki-talk:([^\]]+)\]\]/[[$1GlyphWiki-ノート:$2]]/g;
+$cgi_textbox =~ s/\[\[([^ \]]+ )?GlyphWiki-talk:([^\]]+)\]\]/[[$1GlyphWiki-ノート:$2]]/g;
+:67
+$cgi_textbox =~ s/\[\[([^ \]]+ )?Group:([^\]]+)\]\]/[[$1グループ:$2]]/g;
+$cgi_textbox =~ s/\[\[([^ \]]+ )?Group:([^\]]+)\]\]/[[$1グループ:$2]]/g;
+:68
+$cgi_textbox =~ s/\[\[([^ \]]+ )?Group-talk:([^\]]+)\]\]/[[$1グループ-ノート:$2]]/g;
+$cgi_textbox =~ s/\[\[([^ \]]+ )?Group-talk:([^\]]+)\]\]/[[$1グループ-ノート:$2]]/g;
+:69
+$cgi_textbox =~ s/\[\[([^ \]]+ )?User:([^\]]+)\]\]/[[$1利用者:$2]]/g;
+$cgi_textbox =~ s/\[\[([^ \]]+ )?User:([^\]]+)\]\]/[[$1利用者:$2]]/g;
+:70
+$cgi_textbox =~ s/\[\[([^ \]]+ )?User-talk:([^\]]+)\]\]/[[$1利用者-会話:$2]]/g;
+$cgi_textbox =~ s/\[\[([^ \]]+ )?User-talk:([^\]]+)\]\]/[[$1利用者-会話:$2]]/g;
 :148
 $sqlh = &sql_prepare($dbh, "SELECT data FROM wiki WHERE name = 'GlyphWiki:グリフの説明' AND username = 'kamichi' ORDER BY timestamp DESC LIMIT 1");
 $sqlh = &sql_prepare($dbh, "SELECT data FROM wiki WHERE name = 'GlyphWiki:グリフの説明' AND username = 'kamichi' ORDER BY timestamp DESC LIMIT 1");
@@ -23,9 +62,24 @@ if($action eq "page" && $wiki_name eq "GlyphWiki:メインページ"){
 :592
 $buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:ロゴについて\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
 $buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:ロゴについて\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
-:988,996
-$buffer_related .= qq|<tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_VARIANT">異体字</a>:</nobr><td valign="top" style="width: 16em; background-color: 
-$buffer_related .= qq|<tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_VARIANT">異体字</a>:</nobr><td valign="top" style="width: 16em; background-color: 
+:1122
+$local_using =~ s/^Talk:/ノート:/;
+$local_using =~ s/^Talk:/ノート:/;
+:1123
+$local_using =~ s/^Glyphwiki-talk:/GlyphWiki-ノート:/;
+$local_using =~ s/^Glyphwiki-talk:/GlyphWiki-ノート:/;
+:1124
+$local_using =~ s/^User:/利用者:/;
+$local_using =~ s/^User:/利用者:/;
+:1125
+$local_using =~ s/^User-talk:/利用者-会話:/;
+$local_using =~ s/^User-talk:/利用者-会話:/;
+:1126
+$local_using =~ s/^Group:/グループ:/;
+$local_using =~ s/^Group:/グループ:/;
+:1127
+$local_using =~ s/^Group-talk:/グループ-ノート:/;
+$local_using =~ s/^Group-talk:/グループ-ノート:/;
 :1133
 $buffer .= qq|<h2>このグリフを収録するグループおよび引用するドキュメント一覧</h2>|;
 $buffer .= qq|<h2>このグリフを収録するグループおよび引用するドキュメント一覧</h2>|;

@@ -34,9 +34,6 @@ $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_HOWTO">教程</a>|;
 :36
 $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_FAQ">よくある質問</a>|;
 $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_FAQ">常见问题</a>|;
-:37
-$buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_JOIN">あなたにできること</a>|;
-$buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_JOIN">Join us</a>|;
 :38
 $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_BUG">バグ報告</a>|;
 $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_BUG">报告漏洞</a>|;
@@ -89,42 +86,6 @@ $buffer .= qq|<div class="login"><img src="/images/user.gif"> <a href="/wiki/Spe
 $buffer .= qq|<div class="login"><img src="/images/user.gif"> <a href="/wiki/Special:Userlogin?returnto=$url_query">登录或注册帐户</a></div>|;
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_right_general.pl
-:57
-$r_data =~ s/\[\[([^ \]]+ )?Talk:([^\]]+)\]\]/[[$1ノート:$2]]/g;
-# no operation
-:58
-$r_data =~ s/\[\[([^ \]]+ )?GlyphWiki-talk:([^\]]+)\]\]/[[$1GlyphWiki-ノート:$2]]/g;
-# no operation
-:59
-$r_data =~ s/\[\[([^ \]]+ )?Group:([^\]]+)\]\]/[[$1グループ:$2]]/g;
-# no operation
-:60
-$r_data =~ s/\[\[([^ \]]+ )?Group-talk:([^\]]+)\]\]/[[$1グループ-ノート:$2]]/g;
-# no operation
-:61
-$r_data =~ s/\[\[([^ \]]+ )?User:([^\]]+)\]\]/[[$1利用者:$2]]/g;
-# no operation
-:62
-$r_data =~ s/\[\[([^ \]]+ )?User-talk:([^\]]+)\]\]/[[$1利用者-会話:$2]]/g;
-# no operation
-:65
-$cgi_textbox =~ s/\[\[([^ \]]+ )?Talk:([^\]]+)\]\]/[[$1ノート:$2]]/g;
-# no operation
-:66
-$cgi_textbox =~ s/\[\[([^ \]]+ )?GlyphWiki-talk:([^\]]+)\]\]/[[$1GlyphWiki-ノート:$2]]/g;
-# no operation
-:67
-$cgi_textbox =~ s/\[\[([^ \]]+ )?Group:([^\]]+)\]\]/[[$1グループ:$2]]/g;
-# no operation
-:68
-$cgi_textbox =~ s/\[\[([^ \]]+ )?Group-talk:([^\]]+)\]\]/[[$1グループ-ノート:$2]]/g;
-# no operation
-:69
-$cgi_textbox =~ s/\[\[([^ \]]+ )?User:([^\]]+)\]\]/[[$1利用者:$2]]/g;
-# no operation
-:70
-$cgi_textbox =~ s/\[\[([^ \]]+ )?User-talk:([^\]]+)\]\]/[[$1利用者-会話:$2]]/g;
-# no operation
 :107
 $title = qq|$db_wiki_name を編集中|;
 $title = qq|正在编辑 $db_wiki_name|;
@@ -347,6 +308,9 @@ $buffer .= qq|<h2><a href="/wiki/GlyphWiki:$URL_METADATA">基本信息</a></h2>|
 :952
 $buffer_related .= qq|<table border="0"><tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_RELATED">関連字</a>:</nobr>|;
 $buffer_related .= qq|<table border="0"><tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_RELATED">关联字</a>:</nobr>|;
+:988,996
+$buffer_related .= qq|<tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_VARIANT">異体字</a>:</nobr><td valign="top" style="width: 16em; background-color: 
+$buffer_related .= qq|<tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_VARIANT">异体字</a>:</nobr><td valign="top" style="width: 16em; background-color: 
 :1015
 $buffer_related .= "<p><a href=\"/springGraph.swf?code=$related_code_springgraph\">ばねグラフで異体字を表示する</a> | <span class=\"disable\">異体字の異体字をすべてたどって表示する</span></p>"
 $buffer_related .= "<p><a href=\"/springGraph.swf?code=$related_code_springgraph\">用 Spring Graph 显示异体字</a> | <span class=\"disable\">异体字的异体字也会全部显示</span></p>"
@@ -371,24 +335,6 @@ $buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&tar
 :1103
 $buffer .= qq|<h2>このグリフで引用している他のグリフ一覧</h2>|;
 $buffer .= qq|<h2>引用了本字形的其他字形</h2>|;
-:1122
-$local_using =~ s/^Talk:/ノート:/;
-# no operation
-:1123
-$local_using =~ s/^Glyphwiki-talk:/GlyphWiki-ノート:/;
-# no operation
-:1124
-$local_using =~ s/^User:/利用者:/;
-# no operation
-:1125
-$local_using =~ s/^User-talk:/利用者-会話:/;
-# no operation
-:1126
-$local_using =~ s/^Group:/グループ:/;
-# no operation
-:1127
-$local_using =~ s/^Group-talk:/グループ-ノート:/;
-# no operation
 :1167
 my $temp2 = &url_encode("旧部品の更新");
 my $temp2 = &url_encode("更新旧的部件");
