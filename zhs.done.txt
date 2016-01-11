@@ -108,7 +108,7 @@ $WORD_LOGIN = "ログイン";
 $WORD_LOGIN = "登录";
 :839
 $WORD_FROM = "出典: フリーグリフデータベース『グリフウィキ(GlyphWiki)』";
-$WORD_FROM = "来自字形百科：自由的字形数据库『グリフウィキ(GlyphWiki)』";
+$WORD_FROM = "来自字形维基：自由的字形数据库『グリフウィキ(GlyphWiki)』";
 :841
 $TAB_KAISETSU = "解説";
 $TAB_KAISETSU = "文章";
@@ -283,7 +283,7 @@ $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_BUG">バグ報告</a>|;
 $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_BUG">报告漏洞</a>|;
 :39
 $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_NEWS">お知らせ</a>|;
-$buffer .= qq|<li><a href="/wiki/GlyphWiki:News">通知</a>|;
+$buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_NEWS">通知</a>|;
 :40
 $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_IDOBATA">井戸端</a>|;
 $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_IDOBATA">讨论区</a>|;
@@ -312,16 +312,16 @@ $buffer = "最終更新 ".&local_localtime($lastupdate)."。";
 $buffer = "最后修订于".&local_localtime($lastupdate).".";
 :56
 <a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a>
-<a href="/wiki/GlyphWiki:License">著作权</a>
+<a href="/wiki/GlyphWiki:$URL_LICENSE">著作权</a>
 :57
 <a href="/wiki/GlyphWiki:$URL_PRIVACY">プライバシー・ポリシー</a>
-<a href="/wiki/GlyphWiki:PrivacyPolicy">隐私政策</a>
+<a href="/wiki/GlyphWiki:$URL_PRIVACY">隐私政策</a>
 :58
 <a href="/wiki/GlyphWiki:$URL_ABOUT">グリフウィキについて</a>
-<a href="/wiki/GlyphWiki:About">关于字维基</a>
+<a href="/wiki/GlyphWiki:$URL_ABOUT">关于字维基</a>
 :59
 <a href="/wiki/GlyphWiki:$URL_MENSEKI">免責事項</a>
-<a href="/wiki/GlyphWiki:Disclaimers">免责声明</a>
+<a href="/wiki/GlyphWiki:$URL_MENSEKI">免责声明</a>
 :75
 $buffer .= qq|<div class="loginned"><div><img src="/images/user.gif"> <a href="/wiki/User:$loginname">$loginname</a></div> <div><a href="/wiki/User-talk:$loginname">マイ・トーク</a></div> <div><a href="/wiki/Special:Confirmemail">メールアドレスの登録・確認</a></div> <div><a href="/wiki/Special:Userlogout?returnto=$url_query">ログアウト</a></div></div>|;
 $buffer .= qq|<div class="loginned"><div><img src="/images/user.gif"> <a href="/wiki/User:$loginname">$loginname</a></div> <div><a href="/wiki/User-talk:$loginname">讨论页</a></div> <div><a href="/wiki/Special:Confirmemail">电子邮件注册、确认</a></div> <div><a href="/wiki/Special:Userlogout?returnto=$url_query">退出</a></div></div>|;
@@ -871,10 +871,10 @@ $temp = "メインページ";
 $temp = "主页";
 :1048
 $buffer .= qq|<h1>$temp の変更履歴</h1>|;
-$buffer .= qq|<h1>$temp的变更历史</h1>|;
+$buffer .= qq|<h1>$temp 的变更历史</h1>|;
 :1049
 $title = qq|$temp の変更履歴|;
-$title = qq|$temp的变更历史|;
+$title = qq|$temp 的变更历史|;
 :1052
 $buffer .= "<div class=\"texts\">凡例:日時はJST</div>";
 $buffer .= "<div class=\"texts\">凡例：日本标准时间</div>";
