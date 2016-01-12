@@ -1,8 +1,8 @@
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi
-:895
+:898
 $temp = sprintf("<div class=\"texts\"><p>グリフ実装率：%d\% (実装済：%dグリフ、未実装：%dグリフ)</p></div>", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
 $temp = sprintf("<div class=\"texts\"><p>implimented ratio of glyphs ：%d\% (implimented : %d glyphs, not yet : %d glyphs)</p></div>", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
-:896
+:899
 $temp2 = sprintf("グリフ実装率：%d\% [済%d、未%d]", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
 $temp2 = sprintf("Implimented rate of glyphs : %d\% [done %d glyphs, notyet %d glyphs]", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
 
@@ -209,6 +209,8 @@ will expire at $expire.
 unshift(@tocresult, qq(<div class="toc"><h1>目次</h1>));
 unshift(@tocresult, qq(<div class="toc"><h1>Contents</h1>));
 
+!/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/config.pl
+
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_left.pl
 :21
 $buffer .= qq|ナビゲーション|;
@@ -244,18 +246,15 @@ $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_IDOBATA">Village pump</a>|;
 $buffer .= qq|検索|;
 $buffer .= qq|search|;
 :54
-$buffer .= qq|<ul><li><a href="/search/kensaku.cgi">筆画検索（試行）</a></ul>|;
-$buffer .= qq|<ul><li><a href="/search/kensaku.cgi">glyph search by strokes</a></ul>|;
-:55
 $buffer .= qq|<ul><li><a href="/search/hwr.html">手書き検索</a></ul>|;
 $buffer .= qq|<ul><li><a href="/search/hwr.html">glyph search by hand writing</a></ul>|;
-:60
+:59
 $buffer .= qq|ツールボックス|;
 $buffer .= qq|toolbox|;
-:65
+:64
 $buffer .= qq|<li><a href="/wiki/Special:Mustrenew">旧部品引用グリフ</a>|;
 $buffer .= qq|<li><a href="/wiki/Special:Mustrenew">Glyphs which using old components</a>|;
-:69
+:68
 $buffer .= qq|<li><a href="/wiki/$fullwikiname">この版への固定リンク</a>|;
 $buffer .= qq|<li><a href="/wiki/$fullwikiname">Permanent link</a>|;
 :78
@@ -418,190 +417,187 @@ $buffer .= "Anonymous users can't contribute the page which includes external li
 :362
 $buffer .= qq|<br><h2>プレビュー</h2><div class="warning2 notice">これはプレビューです。まだ保存されていません！</div><hr>|;
 $buffer .= qq|<br><h2>Preview</h2><div class="warning2 notice">Remember that this is only a preview; any changes have not yet been saved!</div><hr>|;
-:367
+:405
 $buffer .= qq|<div class="message">このページは編集できないように保護されているか、編集が禁止されています。これにはいくつか理由があります。詳しくは<a href="/wiki/$URL_HOGO">$PAGE_HOGO</a>または<a href="/wiki/$URL_HOGOKIROKU">$PAGE_HOGOKIROKU</a>をご覧ください。</div><hr>|;
 $buffer .= qq|<div class="message">This page is currently protected from editing. これにはいくつか理由があります。詳しくは<a href="/wiki/$URL_HOGO">$PAGE_HOGO</a>または<a href="/wiki/$URL_HOGOKIROKU">$PAGE_HOGOKIROKU</a>をご覧ください。</div><hr>|;
-:421
+:459
 $buffer .= "<div class=\"warning2\">存在しないグリフをエイリアスとして参照しています。実際には登録できません！</div><hr>";
 $buffer .= "<div class=\"warning2\">It refers unexisting glyph as alias. Actually it can't register!</div><hr>";
-:432
+:470
 $buffer .= qq|<h2>フォント</h2>|;
 $buffer .= qq|<h2>Font file</h2>|;
-:434
+:472
 $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_FONT">フォント生成のヘルプ</a>|;
 $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_FONT">help document for generating font file</a>|;
-:447
+:485
 $buffer .= qq|<li>TrueTypeフォント <a href="/font/$fontname.ttf">ダウンロード</a> (内部バージョン $fontname、$fontsize バイト)|;
 $buffer .= qq|<li>TrueType font file <a href="/font/$fontname.ttf">download</a> (inner version: $fontname、$fontsize bytes)|;
-:448,460,464
+:486,498,502
 $buffer .= qq|<ul><li>フォント生成ログ <a href="/font/$fontname.log">閲覧</a></ul>|;
 $buffer .= qq|<ul><li>log for font generation <a href="/font/$fontname.log">view</a></ul>|;
-:449
+:487
 $buffer .= qq|<li>フォント生成ソース<ul>|;
 $buffer .= qq|<li>sources to generate the font<ul>|;
-:450
+:488
 $buffer .= qq|<li><a href="/font/$fontname.source">ソースファイル</a>|;
 $buffer .= qq|<li><a href="/font/$fontname.source">source file</a>|;
-:451
+:489
 $buffer .= qq|<li><a href="/font/$fontname.meta">フォント定義ファイル</a>|;
 $buffer .= qq|<li><a href="/font/$fontname.meta">font definition file</a>|;
-:453
+:491
 $buffer .= qq|<li><a href="/font/$fontname.ivs">IVS定義ファイル</a>|;
 $buffer .= qq|<li><a href="/font/$fontname.ivs">IVS definition file</a>|;
-:459
+:497
 $buffer .= qq|<li>現在フォント生成中です。|;
 $buffer .= qq|<li>It is in generating process of font file now.|;
-:461
+:499
 $buffer .= qq|<ul><li><a href="/wiki/$wiki_name">最新の状況に更新</a></ul>|;
 $buffer .= qq|<ul><li><a href="/wiki/$wiki_name">Update latest status</a></ul>|;
-:463
+:501
 $buffer .= qq|<li>フォント生成に失敗しました（念のためページを再読み込みしてください）。|;
 $buffer .= qq|<li>Failed in generating font file. (You can try to reload this page.)|;
-:467
+:505
 $buffer .= qq|<li><a href="/wiki/$wiki_name?action=makettf">フォント生成の実行</a>|;
 $buffer .= qq|<li><a href="/wiki/$wiki_name?action=makettf">Execute to generate font</a>|;
-:468
+:506
 $buffer .= qq|<ul><li>クリックするとフォント生成が始まります。生成に必要な時間は、概ね1,000グリフで4分程度です。</ul>|;
 $buffer .= qq|<ul><li>When you click this link, font generation begins. It costs about 4 minutes per 1,000 glyphs.</ul>|;
-:471
+:509
 $buffer .= qq|<h2>グリフ集合</h2>|;
 $buffer .= qq|<h2>Set of glyphs</h2>|;
-:513
+:551
 $buffer .= qq|<div class="texts" style="margin: 1em 0 0 1em;"><a class="wiki" href=\"/wiki/$alias_to\">$alias_to</a> の<a href="/wiki/GlyphWiki:$URL_ALIAS">エイリアス</a>（別名）</div>|;
 $buffer .= qq|<div class="texts" style="margin: 1em 0 0 1em;"><a class="wiki" href=\"/wiki/$alias_to\">$alias_to</a> の<a href="/wiki/GlyphWiki:$URL_ALIAS">Aliase(s)</a></div>|;
-:522
+:560
 $buffer .= qq|<span class="text glyph_link"><a href="/glyph/$db_wiki_name.svg">(SVG画像)</a></span>|;
 $buffer .= qq|<span class="text glyph_link"><a href="/glyph/$db_wiki_name.svg">(SVG image)</a></span>|;
-:524
+:562
 $buffer .= qq| <span class="text glyph_link"><a href="/glyph/$db_wiki_name.ttf">(1字フォント)</a></span><br>|;
 $buffer .= qq| <span class="text glyph_link"><a href="/glyph/$db_wiki_name.ttf">(single glyph font)</a></span><br>|;
-:529
+:567
 $buffer .= qq|<span class="text glyph_link"><a href="/glyph/$db_wiki_name\@$query_version.svg">（SVG画像）</a></span>|;
 $buffer .= qq|<span class="text glyph_link"><a href="/glyph/$db_wiki_name\@$query_version.svg">(SVG image)</a></span>|;
-:535
+:573
 $buffer .= qq|<div class="message">このページ（この版）は<span class="notice">管理者によって削除されました</span>。詳細は<a href="/wiki/$URL_DELETE_LOG">$WORD_DELETE_LOG</a>を参照してください。</div>|;
 $buffer .= qq|<div class="message">This page (this revision) was <span class="notice">deleted by administrator</span>. Please see <a href="/wiki/$URL_DELETE_LOG">$WORD_DELETE_LOG</a> for details.</div>|;
-:597,662
+:635,763
 $parent_info .= "<li>あなたのブラウザでの表示：<span class=\"related\">$parent_char</span>";
 $parent_info .= "<li>browser view: <span class=\"related\">$parent_char</span>";
-:621,672
+:683,773
 $parent_info .= "前の符号位置：<a href=\"/wiki/u$code\"><span class=\"related\">$char</span> (u$code)</a> ";
 $parent_info .= "previous code point: <a href=\"/wiki/u$code\"><span class=\"related\">$char</span> (u$code)</a> ";
-:646,681
+:726,783
 $parent_info .= "次の符号位置：<a href=\"/wiki/u$code\"><span class=\"related\">$char</span> (u$code)</a> ";
 $parent_info .= "next code point: <a href=\"/wiki/u$code\"><span class=\"related\">$char</span> (u$code)</a> ";
-:651,685,708,717,737,760,787,814
+:752,787,810,819,839,862,889,916
 $buffer .= qq|<h2>文字コード関連情報</h2>|;
 $buffer .= qq|<h2>Information about CCS</h2>|;
-:697,776,803
+:799,878,905
 $parent_info .= "前の番号：<a href=\"/wiki/$codechar\"><img class=\"thumb related\" src=\"/glyph/$codechar.50px.png\"> ($codechar)</a><br>";
 $parent_info .= "Prev. number : <a href=\"/wiki/$codechar\"><img class=\"thumb related\" src=\"/glyph/$codechar.50px.png\"> ($codechar)</a><br>";
-:703,782,809
+:805,884,911
 $parent_info .= "次の番号：<a href=\"/wiki/$codechar\"><img class=\"thumb related\" src=\"/glyph/$codechar.50px.png\"> ($codechar)</a><br>";
 $parent_info .= "Next number : <a href=\"/wiki/$codechar\"><img class=\"thumb related\" src=\"/glyph/$codechar.50px.png\"> ($codechar)</a><br>";
-:789,816
+:891,918
 $buffer .= qq|諸橋轍次『大漢和辞典』<br>|;
 $buffer .= qq|<i>Daikanwa-Jiten</i> by Tetsuji Morohashi<br>|;
-:827
+:929
 $buffer .= qq|<h2><a href="/wiki/GlyphWiki:$URL_METADATA">メタ情報</a></h2>|;
 $buffer .= qq|<h2><a href="/wiki/GlyphWiki:$URL_METADATA">Metadata</a></h2>|;
-:850
+:952
 $buffer_related .= qq|<table border="0"><tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_RELATED">関連字</a>:</nobr>|;
 $buffer_related .= qq|<table border="0"><tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_RELATED">Related character(s)</a>:</nobr>|;
-:886,894
+:988,996
 $buffer_related .= qq|<tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_VARIANT">異体字</a>:</nobr><td valign="top" style="width: 16em; background-color: 
 $buffer_related .= qq|<tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_VARIANT">Variant(s)</a>:</nobr><td valign="top" style="width: 16em; background-color: 
-:917
+:1019
 $buffer_related .= "<p>(未設定)</p>";
 $buffer_related .= "<p>(undefined)</p>";
-:921
+:1023
 $buffer .= qq|<h2>関連グリフ</h2>|;
 $buffer .= qq|<h2>Related glyphs</h2>|;
-:960
+:1062
 $buffer_quoting .= "<br><p>（残りは省略されています ... <a href=\"?view=all\">すべて表示する</a>）</p>";
 $buffer_quoting .= "<br><p>（snipped ... <a href=\"?view=all\">view all</a>）</p>";
-:977
+:1079
 $buffer .= qq|<h2>このグリフの<a href="/wiki/GlyphWiki:$URL_ALIAS">エイリアス</a>（別名）一覧</h2>|;
 $buffer .= qq|<h2>List of <a href="/wiki/GlyphWiki:Aliases">aliases</a> for this glyph</h2>|;
-:981
+:1083
 $buffer .= qq|<h2>このグリフを内部で引用している他のグリフ一覧</h2>|;
 $buffer .= qq|<h2>This glyph is quoted by:</h2>|;
-:1001
+:1103
 $buffer .= qq|<h2>このグリフで引用している他のグリフ一覧</h2>|;
 $buffer .= qq|<h2>This glyph consists of:</h2>|;
-:1020
+:1122
 $local_using =~ s/^Talk:/ノート:/;
 # no operation
-:1021
+:1123
 $local_using =~ s/^Glyphwiki-talk:/GlyphWiki-ノート:/;
 # no operation
-:1022
+:1124
 $local_using =~ s/^User:/利用者:/;
 # no operation
-:1023
+:1125
 $local_using =~ s/^User-talk:/利用者-会話:/;
 # no operation
-:1024
+:1126
 $local_using =~ s/^Group:/グループ:/;
 # no operation
-:1025
+:1127
 $local_using =~ s/^Group-talk:/グループ-ノート:/;
 # no operation
-:1031
-$buffer .= qq|<h2>このグリフを収録するグループ一覧</h2>|;
-$buffer .= qq|<h2>This glyph is a member of the below group(s):</h2>|;
-:1065
+:1167
 my $temp2 = &url_encode("旧部品の更新");
 my $temp2 = &url_encode("update quoted old part(s)");
-:1066
+:1168
 $buffer .= qq|<h2>引用する旧部品の更新</h2>|;
 $buffer .= qq|<h2>update quoted old part(s)</h2>|;
-:1067
+:1169
 $buffer .= qq|<div class="texts">現在：<img class="glyph compare" src="/glyph/$db_wiki_name\@$newest_version.png" border="0"> |;
 $buffer .= qq|<div class="texts">current design：<img class="glyph compare" src="/glyph/$db_wiki_name\@$newest_version.png" border="0"> |;
-:1068
+:1170
 $buffer .= qq|最新部品を利用：<img class="glyph compare" src="/get_preview_glyph.cgi?data=$temp" border="0"> |;
 $buffer .= qq|use the newest part(s):<img class="glyph compare" src="/get_preview_glyph.cgi?data=$temp" border="0"> |;
-:1069
+:1171
 $buffer .= qq|<a href="?action=edit&buttons=$URL_PREVIEW&textbox=$temp&related=$url_related&summary=$temp2">更新する</a></div>|;
 $buffer .= qq|<a href="?action=edit&buttons=$URL_PREVIEW&textbox=$temp&related=$url_related&summary=$temp2">Update</a></div>|;
-:1094
+:1196
 $buffer .= qq|<h2>このグループを引用するグループ一覧</h2>|;
 $buffer .= qq|<h2>List of groups which quotes this group</h2>|;
-:1113
+:1215
 $buffer .= qq|<div class="panel"><span class="warning">グリフウィキには現在この名前の項目はありません。</span><ul><li><a href="/wiki/$url_db_wiki_name?action=edit" class="recommend">&quot;$db_wiki_name&quot;という項目を新規作成する</a>。または<a href="/wiki/GlyphWiki:$URL_SEISAKUIRAI">制作依頼</a>する。<li>既存の項目から<a href="/wiki/Special:Search?action=fulltext&search=$url_db_wiki_name">&quot;$db_wiki_name&quot;を検索する</a>。</ul><hr><ul><li>もしこの項目を作成したことがあるのにこのメッセージがでる場合、データベースの更新が遅れているために表示できないか、既に削除されています（<a href="/wiki/$URL_SAKUJO">$WORD_SAKUJO</a>に削除された理由が記載されているかもしれません）。<a href="/wiki/$URL_DELETE_LOG">$WORD_DELETE_LOG</a>も確認してください。</ul></div>|;
 $buffer .= qq|<div class="panel"><span class="warning">GlyphWiki does not have an article with this exact name.</span><ul><li><a href="/wiki/$url_db_wiki_name?action=edit" class="recommend">&quot;$db_wiki_name&quot;という項目を新規作成する</a>。または<a href="/wiki/GlyphWiki:$URL_SEISAKUIRAI">制作依頼</a>する。<li>既存の項目から<a href="/wiki/Special:Search?action=fulltext&search=$url_db_wiki_name">&quot;$db_wiki_name&quot;を検索する</a>。</ul><hr><ul><li>もしこの項目を作成したことがあるのにこのメッセージがでる場合、データベースの更新が遅れているために表示できないか、既に削除されています（<a href="/wiki/$URL_SAKUJO">$WORD_SAKUJO</a>に削除された理由が記載されているかもしれません）。<a href="/wiki/$URL_DELETE_LOG">$WORD_DELETE_LOG</a>も確認してください。</ul></div>|;
-:1146
+:1248
 $buffer .= qq|<h2>あなたのグリフ</h2>|;
 $buffer .= qq|<h2>Your desgined glyph</h2>|;
-:1159
+:1261
 $buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">関連字</a> (入力必須): <input type="text" name="related" value="$temp2" size="6"><br>|; 
 $buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">related character</a> (must input): <input type="text" name="related" value="$temp2" size="6"><br>|; 
-:1167
+:1269
 $buffer .= qq|<div class="message"><div class="title">■投稿する前に以下の事柄を確認してください■</div><ol><li>GlyphWikiに投稿したデータは著作権の譲渡を行ったことになり、その<span class="notice">データがいかなる形態で改変・使用されることもあなたは許諾し、以後著作者人格権を主張・使用しないことを了承するものとみなします</span>。<li><span class="notice">他のフォントや印刷物などからグリフを無断で転載・コピー・トレースしないでください</span>。それ以外にも投稿内容に問題がある場合、<a href="/wiki/$URL_SAKUJO">削除の方針</a>に基づき削除されます。また、グリフウィキの運営方針についてはこれから決定していきますが、<span class="notice">最終的な決定権は管理者にあるものとします</span>。これらのことにあなたはあらかじめ同意したものとみなします。 <li>GlyphWikiのデータ・記事のライセンスはWikipediaの記事のライセンス(GFDL)とは異なります。詳しくは <a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a> を参照してください。</ol></div>|;
 $buffer .= qq|<div class="message"><div class="title">*** please confirm the following matters before contributing it ***</div><ol><li>GlyphWikiに投稿したデータは著作権の譲渡を行ったことになり、その<span class="notice">データがいかなる形態で改変・使用されることもあなたは許諾し、以後著作者人格権を主張・使用しないことを了承するものとみなします</span>。<li><span class="notice">他のフォントや印刷物などからグリフを無断で転載・コピー・トレースしないでください</span>。それ以外にも投稿内容に問題がある場合、<a href="/wiki/$URL_SAKUJO">削除の方針</a>に基づき削除されます。また、グリフウィキの運営方針についてはこれから決定していきますが、<span class="notice">最終的な決定権は管理者にあるものとします</span>。これらのことにあなたはあらかじめ同意したものとみなします。 <li>GlyphWikiのデータ・記事のライセンスはWikipediaの記事のライセンス(GFDL)とは異なります。詳しくは <a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a> を参照してください。</ol></div>|;
-:1169,1241
+:1271,1343
 $buffer .= qq|<div class="toolbox"><a href="/wiki/GlyphWiki:$URL_YOUYAKU">編集内容の要約</a>: <input type="text" name="summary" value="$html_summary" size="100"><br>|;
 $buffer .= qq|<div class="toolbox"><a href="/wiki/GlyphWiki:$URL_YOUYAKU">Edit summary</a>: <input type="text" name="summary" value="$html_summary" size="100"><br>|;
-:1171,1243
+:1273,1345
 $buffer .= "要約のプレビュー: <span class=\"summary\">($html_summary)</span><br>";
 $buffer .= "Summary preview: <span class=\"summary\">($html_summary)</span><br>";
-:1180,1252
+:1282,1354
 $buffer .= qq*<a href="/wiki/$url_wiki_name">中止</a> | <a href="/wiki/GlyphWiki:$URL_HENSHU" target="_blank">編集の仕方</a> （新しいウィンドウが開きます）</div>*;
 $buffer .= qq*<a href="/wiki/$url_wiki_name">Cancel</a> | <a href="/wiki/GlyphWiki:$URL_HENSHU" target="_blank">Editing help</a> (opens in new window)</div>*;
-:1185
+:1287
 $buffer .= qq|<div class="message2">以下にソースを表示しています:</div>|;
 $buffer .= qq|<div class="message2">Showing source in the following:</div>|;
-:1189
+:1291
 $buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">関連字</a>: <input type="text" name="related" value="$temp2" size="6"><br>|; 
 $buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">related character</a>: <input type="text" name="related" value="$temp2" size="6"><br>|; 
-:1196
+:1298
 $buffer .= qq|<div class="message"><a href="/wiki/$url_db_wiki_name">$db_wiki_name</a> に戻る。</div>|;
 $buffer .= qq|<div class="message">Return tp <a href="/wiki/$url_db_wiki_name">$db_wiki_name</a>.</div>|;
-:1239
+:1341
 $buffer .= qq|<div class="message"><div class="title">■投稿する前に以下の事柄を確認してください■</div><ol><li>GlyphWikiに投稿した記事は著作権の譲渡を行ったことになり、その<span class="notice">記事がいかなる形態で改変・使用されることもあなたは許諾し、以後著作者人格権を主張・使用しないことを了承するものとみなします</span>。<li><span class="notice">他のWebページや出版物などから文章を無断で転載・コピー・トレースしないでください</span>。それ以外にも投稿内容に問題がある場合、<a href="/wiki/$URL_SAKUJO">削除の方針</a>に基づき削除されます。また、グリフウィキの運営方針についてはこれから決定していきますが、<span class="notice">最終的な決定権は管理者にあるものとします</span>。これらのことにあなたはあらかじめ同意したものとみなします。 <li>GlyphWikiのデータ・記事のライセンスはWikipediaの記事のライセンス(GFDL)とは異なります。詳しくは<a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a>を参照してください。</ol></div>|;
 $buffer .= qq|<div class="message"><div class="title">*** please confirm the following matters before contributing it ***</div><ol><li>GlyphWikiに投稿した記事は著作権の譲渡を行ったことになり、その<span class="notice">記事がいかなる形態で改変・使用されることもあなたは許諾し、以後著作者人格権を主張・使用しないことを了承するものとみなします</span>。<li><span class="notice">他のWebページや出版物などから文章を無断で転載・コピー・トレースしないでください</span>。それ以外にも投稿内容に問題がある場合、<a href="/wiki/$URL_SAKUJO">削除の方針</a>に基づき削除されます。また、グリフウィキの運営方針についてはこれから決定していきますが、<span class="notice">最終的な決定権は管理者にあるものとします</span>。これらのことにあなたはあらかじめ同意したものとみなします。 <li>GlyphWikiのデータ・記事のライセンスはWikipediaの記事のライセンス(GFDL)とは異なります。詳しくは<a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a>を参照してください。</ol></div>|;
-:1255
+:1357
 $buffer .= qq|<h2>あなたの更新内容</h2>|;
 $buffer .= qq|<h2>your changes</h2>|;
 

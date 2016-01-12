@@ -1,11 +1,11 @@
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi
-:737
+:740
 ($new_version, $registered_time) = &put_page($DBH, $db_wiki_name, $user, $nadata, "エイリアス入れ替え", $env_remoteaddress, $narelated, -1, 0);
 ($new_version, $registered_time) = &put_page($DBH, $db_wiki_name, $user, $nadata, "エイリアス入れ替え", $env_remoteaddress, $narelated, -1, 0);
-:744
+:747
 ($new_version, $registered_time) = &put_page($DBH, $oname, $user, $ntdata, "エイリアス入れ替え（自動更新）", $env_remoteaddress, $orelated, -1, 0);
 ($new_version, $registered_time) = &put_page($DBH, $oname, $user, $ntdata, "エイリアス入れ替え（自動更新）", $env_remoteaddress, $orelated, -1, 0);
-:749
+:752
 ($new_version, $registered_time) = &put_page($DBH, $target, $user, $ntdata, "エイリアス入れ替え（自動更新）", $env_remoteaddress, $ntrelated, -1, 0);
 ($new_version, $registered_time) = &put_page($DBH, $target, $user, $ntdata, "エイリアス入れ替え（自動更新）", $env_remoteaddress, $ntrelated, -1, 0);
 
@@ -55,13 +55,13 @@ $WORD_REGISTER_EMAIL = "メールアドレスを登録する";
 :855
 $WORD_MUSTRELATE = "関連付けるべきグリフ";
 $WORD_MUSTRELATE = "関連付けるべきグリフ";
-:1701
-my $interwiki_definition = '\[\[([\S  ]+?)\ (\S+?)\]\]';
-my $interwiki_definition = '\[\[([\S  ]+?)\ (\S+?)\]\]';
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/config.pl
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_left.pl
+:70
+$buffer .= qq|<li><a href="/idsedit.html">IDSエディタ</a>|;
+$buffer .= qq|<li><a href="/idsedit.html">IDSエディタ</a>|;
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_others.pl
 
@@ -69,78 +69,78 @@ my $interwiki_definition = '\[\[([\S  ]+?)\ (\S+?)\]\]';
 :145
 $post_temp = " 別字形";
 $post_temp = " 別字形";
-:148
-$sqlh = &sql_prepare($dbh, "SELECT data FROM wiki WHERE name = 'GlyphWiki:グリフの説明' AND username = 'kamichi' ORDER BY timestamp DESC LIMIT 1");
-$sqlh = &sql_prepare($dbh, "SELECT data FROM wiki WHERE name = 'GlyphWiki:グリフの説明' AND username = 'kamichi' ORDER BY timestamp DESC LIMIT 1");
 :304
 $buffer .= qq|<div class="warning">存在しない版が指定されました。代替として最新版が表示されています。</div>|;
 $buffer .= qq|<div class="warning">存在しない版が指定されました。代替として最新版が表示されています。</div>|;
 :306
 $buffer .= qq|<div class="warning">存在しない版が指定されました。最新版に対する編集となります。</div>|;
 $buffer .= qq|<div class="warning">存在しない版が指定されました。最新版に対する編集となります。</div>|;
-:395
+:399
+$buffer .= qq|<div class="warning2 notice">このグリフ名は命名ルールに沿っていません。将来的に編集ができなくなります。別の名前を検討してください。</div><span style="font-size: 80%;">（このメッセージ↑↑↑はテスト中です。命名ルールに沿っていても表示される可能性があります。ご協力をよろしくお願いします）</span><hr>|;
+$buffer .= qq|<div class="warning2 notice">このグリフ名は命名ルールに沿っていません。将来的に編集ができなくなります。別の名前を検討してください。</div><span style="font-size: 80%;">（このメッセージ↑↑↑はテスト中です。命名ルールに沿っていても表示される可能性があります。ご協力をよろしくお願いします）</span><hr>|;
+:433
 $buffer .= qq|<div class=\"warning2\">UCS関連グリフの関連字に別の文字の割り当てや未定義（〓）とすることはできません。別の文字を関連付けたい場合は<a class=\"notice\" href=\"/wiki/GlyphWiki:$URL_MUSTRELATE\">$WORD_MUSTRELATE</a>に記述して異体字としての関連付けを申請してください。</div><hr>|;
 $buffer .= qq|<div class=\"warning2\">UCS関連グリフの関連字に別の文字の割り当てや未定義（〓）とすることはできません。別の文字を関連付けたい場合は<a class=\"notice\" href=\"/wiki/GlyphWiki:$URL_MUSTRELATE\">$WORD_MUSTRELATE</a>に記述して異体字としての関連付けを申請してください。</div><hr>|;
-:407
+:445
 $buffer .= qq|<div class=\"warning2\">他のグリフがこのグリフ（あるいはこのグリフの古い版）を引用しているので実際には削除できません。</div><hr>|;
 $buffer .= qq|<div class=\"warning2\">他のグリフがこのグリフ（あるいはこのグリフの古い版）を引用しているので実際には削除できません。</div><hr>|;
-:414
+:452
 $buffer .= qq|<div class=\"warning2\">エイリアスの対象グリフはバージョンを指定できません。このままでは登録はできません。バージョン指定を外すか、エイリアスではなく実体化する必要があります（専用エディタで部品を分解してください）。</div><hr>|;
 $buffer .= qq|<div class=\"warning2\">エイリアスの対象グリフはバージョンを指定できません。このままでは登録はできません。バージョン指定を外すか、エイリアスではなく実体化する必要があります（専用エディタで部品を分解してください）。</div><hr>|;
-:482
+:520
 $buffer .= qq|<div class="message">このグリフは<a href="/wiki/GlyphWiki:$URL_ALIAS">エイリアス</a>（他のグリフの別名）に指定されています。このまま編集を行うと独立したグリフ（あるいは別のグリフに対するエイリアス）となり、<span class="notice">現在指しているグリフとの関係は解消されます</span>。現在指しているグリフとの関係を継続する場合は、<a class="notice" href="$alias_to?action=edit">実体となるグリフを編集</a>してください。</div>|;
 $buffer .= qq|<div class="message">このグリフは<a href="/wiki/GlyphWiki:$URL_ALIAS">エイリアス</a>（他のグリフの別名）に指定されています。このまま編集を行うと独立したグリフ（あるいは別のグリフに対するエイリアス）となり、<span class="notice">現在指しているグリフとの関係は解消されます</span>。現在指しているグリフとの関係を継続する場合は、<a class="notice" href="$alias_to?action=edit">実体となるグリフを編集</a>してください。</div>|;
-:500
+:538
 $buffer .= qq|<div class="compare"><table><tr><td>保存された版<td>あなたのグリフ<tr><td><img src="/glyph/$temp_name.png"><td><img src="/get_preview_glyph.cgi?data=$cgi_textbox"></table></div>|;
 $buffer .= qq|<div class="compare"><table><tr><td>保存された版<td>あなたのグリフ<tr><td><img src="/glyph/$temp_name.png"><td><img src="/get_preview_glyph.cgi?data=$cgi_textbox"></table></div>|;
-:510
+:548
 $buffer .= qq|<div class="texts" style="margin: 1em 0 0 1em;"><a class="wiki" href=\"/wiki/$alias_to\">$alias_to</a> の<a href="/wiki/GlyphWiki:$URL_ALIAS">エイリアス</a>（別名）|;
 $buffer .= qq|<div class="texts" style="margin: 1em 0 0 1em;"><a class="wiki" href=\"/wiki/$alias_to\">$alias_to</a> の<a href="/wiki/GlyphWiki:$URL_ALIAS">エイリアス</a>（別名）|;
-:511
-$buffer .= qq| <a href="?action=swap">（このグリフが実体となるようにエイリアスを入れ替え）</a></div>|;
-$buffer .= qq| <a href="?action=swap">（このグリフが実体となるようにエイリアスを入れ替え）</a></div>|;
 :549
+$buffer .= qq| <a href="?action=swap">（このグリフが実体となるようにエイリアスを入れ替え）</a></div>|;
+$buffer .= qq| <a href="?action=swap">（このグリフが実体となるようにエイリアスを入れ替え）</a></div>|;
+:587
 $temp =~ s/----\r\nMETADATA\r\n----\r\n/* メタ情報\r\n/;
 $temp =~ s/----\r\nMETADATA\r\n----\r\n/* メタ情報\r\n/;
-:553
+:591
 if($action eq "page" && $wiki_name eq "GlyphWiki:メインページ"){
 if($action eq "page" && $wiki_name eq "GlyphWiki:メインページ"){
-:554
+:592
 $buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:ロゴについて\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
 $buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:ロゴについて\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
-:710
+:812
 $buffer .= qq|法務省 戸籍統一文字情報 <a href="http://kosekimoji.moj.go.jp/kosekimojidb/mjko/PeopleList/EXECUTE?ihid_clickedButtonName=iimag_Moji\&ihid_SelectedKskMjBng=$parent_code\&ihid_SearchCount=0">文字情報</a><br>|;
 $buffer .= qq|法務省 戸籍統一文字情報 <a href="http://kosekimoji.moj.go.jp/kosekimojidb/mjko/PeopleList/EXECUTE?ihid_clickedButtonName=iimag_Moji\&ihid_SelectedKskMjBng=$parent_code\&ihid_SearchCount=0">文字情報</a><br>|;
-:719
+:821
 $buffer .= qq|<ul><li><a href="http://www.cns11643.gov.tw/AIDB/query_general_view.do?page=$1\&code=$2">台湾国家発展委員会 全字庫</a> <img src=\"/images/external.png\"> (<a href="http://www.cns11643.gov.tw/MAIDB/welcome.do">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
 $buffer .= qq|<ul><li><a href="http://www.cns11643.gov.tw/AIDB/query_general_view.do?page=$1\&code=$2">台湾国家発展委員会 全字庫</a> <img src=\"/images/external.png\"> (<a href="http://www.cns11643.gov.tw/MAIDB/welcome.do">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
-:913
+:1015
 $buffer_related .= "<p><a href=\"/springGraph.swf?code=$related_code_springgraph\">ばねグラフで異体字を表示する</a> | <span class=\"disable\">異体字の異体字をすべてたどって表示する</span></p>"
 $buffer_related .= "<p><a href=\"/springGraph.swf?code=$related_code_springgraph\">ばねグラフで異体字を表示する</a> | <span class=\"disable\">異体字の異体字をすべてたどって表示する</span></p>"
-:984
+:1086
 $buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&target=$wiki_name">部品グリフを別のグリフに置き換える</a></div>|;
 $buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&target=$wiki_name">部品グリフを別のグリフに置き換える</a></div>|;
-:1103
+:1133
+$buffer .= qq|<h2>このグリフを収録するグループおよび引用するドキュメント一覧</h2>|;
+$buffer .= qq|<h2>このグリフを収録するグループおよび引用するドキュメント一覧</h2>|;
+:1205
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>諸橋轍次『大漢和辞典』番号は <a href="/wiki/dkw-$num0$num1">dkw-$num0$num1</a> のように数字5桁を指定してください</ul></div>|;
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>諸橋轍次『大漢和辞典』番号は <a href="/wiki/dkw-$num0$num1">dkw-$num0$num1</a> のように数字5桁を指定してください</ul></div>|;
-:1108
+:1210
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>法務省戸籍統一文字番号は <a href="/wiki/koseki-$num0$num1">koseki-$num0$num1</a> のように数字6桁を指定してください</ul></div>|;
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>法務省戸籍統一文字番号は <a href="/wiki/koseki-$num0$num1">koseki-$num0$num1</a> のように数字6桁を指定してください</ul></div>|;
-:1111
+:1213
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>baseparts- は廃止されました</ul></div>|;
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>baseparts- は廃止されました</ul></div>|;
-:1217
+:1319
 $buffer .= qq|<h2>ノートの編集</h2>|;
 $buffer .= qq|<h2>ノートの編集</h2>|;
-:1224
+:1326
 <a name="metaedit"><h2>メタ情報の編集</h2></a>
 <a name="metaedit"><h2>メタ情報の編集</h2></a>
-:1230
+:1332
 <noscript><ul><li>「:項目名:値」の形式で１行１データで記述してください。<li>JavaScriptを有効にすると表形式での編集が可能です。<li>項目名に「:」を含めることはできません<li>項目名・値を空にしないでください<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul></noscript>
 <noscript><ul><li>「:項目名:値」の形式で１行１データで記述してください。<li>JavaScriptを有効にすると表形式での編集が可能です。<li>項目名に「:」を含めることはできません<li>項目名・値を空にしないでください<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul></noscript>
-:1448
-if($wiki_name !~ m/^$EXPR_DOCUMENT_PREFIX/ && $r_related ne "〓"){
-if($wiki_name !~ m/^$EXPR_DOCUMENT_PREFIX/ && $r_related ne "〓"){
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_right_others.pl
 :29
