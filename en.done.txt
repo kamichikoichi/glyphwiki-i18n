@@ -1,10 +1,10 @@
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi
 :898
 $temp = sprintf("<div class=\"texts\"><p>グリフ実装率：%d\% (実装済：%dグリフ、未実装：%dグリフ)</p></div>", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
-$temp = sprintf("<div class=\"texts\"><p>implimented ratio of glyphs ：%d\% (implimented : %d glyphs, not yet : %d glyphs)</p></div>", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
+$temp = sprintf("<div class=\"texts\"><p>Ratio of Glyphs Implemented: %d\% (%d glyphs implemented, %d pending)</p></div>", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
 :899
 $temp2 = sprintf("グリフ実装率：%d\% [済%d、未%d]", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
-$temp2 = sprintf("Implimented rate of glyphs : %d\% [done %d glyphs, notyet %d glyphs]", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
+$temp2 = sprintf("Rate of Implemented Glyphs : %d\% [%d glyphs done, %d glyphs pending]", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/common.pl
 :753
@@ -422,7 +422,7 @@ $buffer .= qq|<div class="message">このページは編集できないように
 $buffer .= qq|<div class="message">This page is currently protected from editing. これにはいくつか理由があります。詳しくは<a href="/wiki/$URL_HOGO">$PAGE_HOGO</a>または<a href="/wiki/$URL_HOGOKIROKU">$PAGE_HOGOKIROKU</a>をご覧ください。</div><hr>|;
 :459
 $buffer .= "<div class=\"warning2\">存在しないグリフをエイリアスとして参照しています。実際には登録できません！</div><hr>";
-$buffer .= "<div class=\"warning2\">It refers unexisting glyph as alias. Actually it can't register!</div><hr>";
+$buffer .= "<div class=\"warning2\">Error: glyph source data contains an alias referring to a non-existent glyph. The glyph cannot be rendered.</div><hr>";
 :470
 $buffer .= qq|<h2>フォント</h2>|;
 $buffer .= qq|<h2>Font file</h2>|;
@@ -449,7 +449,7 @@ $buffer .= qq|<li><a href="/font/$fontname.ivs">IVS定義ファイル</a>|;
 $buffer .= qq|<li><a href="/font/$fontname.ivs">IVS definition file</a>|;
 :497
 $buffer .= qq|<li>現在フォント生成中です。|;
-$buffer .= qq|<li>It is in generating process of font file now.|;
+$buffer .= qq|<li>Font file is generating now.|;
 :499
 $buffer .= qq|<ul><li><a href="/wiki/$wiki_name">最新の状況に更新</a></ul>|;
 $buffer .= qq|<ul><li><a href="/wiki/$wiki_name">Update latest status</a></ul>|;
@@ -491,7 +491,7 @@ $parent_info .= "次の符号位置：<a href=\"/wiki/u$code\"><span class=\"rel
 $parent_info .= "next code point: <a href=\"/wiki/u$code\"><span class=\"related\">$char</span> (u$code)</a> ";
 :752,787,810,819,839,862,889,916
 $buffer .= qq|<h2>文字コード関連情報</h2>|;
-$buffer .= qq|<h2>Information about CCS</h2>|;
+$buffer .= qq|<h2>Character Code-point Information</h2>|;
 :799,878,905
 $parent_info .= "前の番号：<a href=\"/wiki/$codechar\"><img class=\"thumb related\" src=\"/glyph/$codechar.50px.png\"> ($codechar)</a><br>";
 $parent_info .= "Prev. number : <a href=\"/wiki/$codechar\"><img class=\"thumb related\" src=\"/glyph/$codechar.50px.png\"> ($codechar)</a><br>";

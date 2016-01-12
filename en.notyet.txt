@@ -92,7 +92,7 @@ $buffer .= qq|<div class="message">このグリフは<a href="/wiki/GlyphWiki:$U
 $buffer .= qq|<div class="message">このグリフは<a href="/wiki/GlyphWiki:$URL_ALIAS">エイリアス</a>（他のグリフの別名）に指定されています。このまま編集を行うと独立したグリフ（あるいは別のグリフに対するエイリアス）となり、<span class="notice">現在指しているグリフとの関係は解消されます</span>。現在指しているグリフとの関係を継続する場合は、<a class="notice" href="$alias_to?action=edit">実体となるグリフを編集</a>してください。</div>|;
 :538
 $buffer .= qq|<div class="compare"><table><tr><td>保存された版<td>あなたのグリフ<tr><td><img src="/glyph/$temp_name.png"><td><img src="/get_preview_glyph.cgi?data=$cgi_textbox"></table></div>|;
-$buffer .= qq|<div class="compare"><table><tr><td>保存された版<td>あなたのグリフ<tr><td><img src="/glyph/$temp_name.png"><td><img src="/get_preview_glyph.cgi?data=$cgi_textbox"></table></div>|;
+$buffer .= qq|<div class="compare"><table><tr><td>Existing Version<td>Your Edits (unsaved)<tr><td><img src="/glyph/$temp_name.png"><td><img src="/get_preview_glyph.cgi?data=$cgi_textbox"></table></div>|;
 :548
 $buffer .= qq|<div class="texts" style="margin: 1em 0 0 1em;"><a class="wiki" href=\"/wiki/$alias_to\">$alias_to</a> の<a href="/wiki/GlyphWiki:$URL_ALIAS">エイリアス</a>（別名）|;
 $buffer .= qq|<div class="texts" style="margin: 1em 0 0 1em;"><a class="wiki" href=\"/wiki/$alias_to\">$alias_to</a> の<a href="/wiki/GlyphWiki:$URL_ALIAS">エイリアス</a>（別名）|;
@@ -116,13 +116,13 @@ $buffer .= qq|<ul><li><a href="http://www.cns11643.gov.tw/AIDB/query_general_vie
 $buffer .= qq|<ul><li><a href="http://www.cns11643.gov.tw/AIDB/query_general_view.do?page=$1\&code=$2">台湾国家発展委員会 全字庫</a> <img src=\"/images/external.png\"> (<a href="http://www.cns11643.gov.tw/MAIDB/welcome.do">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
 :1015
 $buffer_related .= "<p><a href=\"/springGraph.swf?code=$related_code_springgraph\">ばねグラフで異体字を表示する</a> | <span class=\"disable\">異体字の異体字をすべてたどって表示する</span></p>"
-$buffer_related .= "<p><a href=\"/springGraph.swf?code=$related_code_springgraph\">ばねグラフで異体字を表示する</a> | <span class=\"disable\">異体字の異体字をすべてたどって表示する</span></p>"
+$buffer_related .= "<p><a href=\"/springGraph.swf?code=$related_code_springgraph\">View Spring Graph of Variant Characters</a> | <span class=\"disable\">Variant characters of variant characters will also be shown.</span></p>"
 :1086
 $buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&target=$wiki_name">部品グリフを別のグリフに置き換える</a></div>|;
-$buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&target=$wiki_name">部品グリフを別のグリフに置き換える</a></div>|;
+$buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&target=$wiki_name">Batch Replace Components of Existing Glyphs</a></div>|;
 :1133
 $buffer .= qq|<h2>このグリフを収録するグループおよび引用するドキュメント一覧</h2>|;
-$buffer .= qq|<h2>このグリフを収録するグループおよび引用するドキュメント一覧</h2>|;
+$buffer .= qq|<h2>Pages that Cite this Glyph</h2>|;
 :1205
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>諸橋轍次『大漢和辞典』番号は <a href="/wiki/dkw-$num0$num1">dkw-$num0$num1</a> のように数字5桁を指定してください</ul></div>|;
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>諸橋轍次『大漢和辞典』番号は <a href="/wiki/dkw-$num0$num1">dkw-$num0$num1</a> のように数字5桁を指定してください</ul></div>|;
@@ -134,10 +134,10 @@ $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>baseparts- は廃止されました</ul></div>|;
 :1319
 $buffer .= qq|<h2>ノートの編集</h2>|;
-$buffer .= qq|<h2>ノートの編集</h2>|;
+$buffer .= qq|<h2>Edit Talk Page</h2>|;
 :1326
 <a name="metaedit"><h2>メタ情報の編集</h2></a>
-<a name="metaedit"><h2>メタ情報の編集</h2></a>
+<a name="metaedit"><h2>Edit Metadata</h2></a>
 :1332
 <noscript><ul><li>「:項目名:値」の形式で１行１データで記述してください。<li>JavaScriptを有効にすると表形式での編集が可能です。<li>項目名に「:」を含めることはできません<li>項目名・値を空にしないでください<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul></noscript>
 <noscript><ul><li>「:項目名:値」の形式で１行１データで記述してください。<li>JavaScriptを有効にすると表形式での編集が可能です。<li>項目名に「:」を含めることはできません<li>項目名・値を空にしないでください<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul></noscript>
