@@ -283,7 +283,7 @@ $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_NEWS">お知らせ</a>|;
 $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_NEWS">공지</a>|;
 :40
 $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_IDOBATA">井戸端</a>|;
-$buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_IDOBATA">공지</a>|;
+$buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_IDOBATA">잡담</a>|;
 :46
 $buffer .= qq|検索|;
 $buffer .= qq|검색|;
