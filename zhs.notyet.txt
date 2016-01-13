@@ -1,116 +1,14 @@
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/common.pl
-:753
-$dbh->do("INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'エイリアス実体変更による自動更新', 0, '$old_buffer', '$ip', $current_related, 1)"); 
-$dbh->do("INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', '别名实体变更引起的自动更新', 0, '$old_buffer', '$ip', $current_related, 1)"); 
-:754
-$DEBUG .= "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'エイリアス実体変更による自動更新', 0, '$old_buffer', '$ip', $current_related, 1)\n";
-$DEBUG .= "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', '别名实体变更引起的自动更新', 0, '$old_buffer', '$ip', $current_related, 1)\n";
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/config.pl
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_left.pl
-:70
-$buffer .= qq|<li><a href="/idsedit.html">IDSエディタ</a>|;
-$buffer .= qq|<li><a href="/idsedit.html">IDS编辑器</a>|;
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_others.pl
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_right_general.pl
-:399
-$buffer .= qq|<div class="warning2 notice">このグリフ名は命名ルールに沿っていません。将来的に編集ができなくなります。別の名前を検討してください。</div><span style="font-size: 80%;">（このメッセージ↑↑↑はテスト中です。命名ルールに沿っていても表示される可能性があります。ご協力をよろしくお願いします）</span><hr>|;
-$buffer .= qq|<div class="warning2 notice">这个字形没有按照规范命名，不能进行编辑。请考虑将其规范命名。</div><span style="font-size: 80%;">（本消息尚在测试中，按照规范命名的页面也可能出现本消息。请帮助我们改进。）</span><hr>|;
-:591
-if($action eq "page" && $wiki_name eq "GlyphWiki:メインページ"){
-if($action eq "page" && $wiki_name eq "GlyphWiki:首页"){
-:592
-$buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:ロゴについて\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
-$buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:关于Logo\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
-:1133
-$buffer .= qq|<h2>このグリフを収録するグループおよび引用するドキュメント一覧</h2>|;
-$buffer .= qq|<h2>收录本字形的字表与文档一览</h2>|;
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_right_others.pl
-:29
-$buffer .= qq!<div class="texts"><a href="?view=parts">部品名別に表示する</a> | <a href="?view=glyphs">グリフ名順で一覧する</a><br><br>（ランダムに最大500個表示されます）</div>!;
-$buffer .= qq!<div class="texts"><a href="?view=parts">单独显示部件名</a> | <a href="?view=glyphs">按字形名排序一览</a><br><br>（随机显示最多500个）</div>!;
-:217,373
-<li>横は部品の大きさを基準に変形、縦は新たな配置領域座標を記述
-<li>横向按部件大小基准变形，纵向按新的坐标放置
-:218
-<br>「type3,左上X座標への増分値,右下X座標への増分値,左上Y座標,右下Y座標」と入力してください（順番に注意）。
-<br>按照“type3,左上X坐标变化量,右下X坐标变化量,左上Y坐标,右下Y坐标”形式输入（请注意顺序）。
-:219,375
-<li>横は新たな配置領域座標を記述、縦は部品の大きさを基準に変形
-<li>横向按新的坐标放置，纵向按部件大小基准变形
-:220
-<br>「type4,左上X座標,右下X座標,左上Y座標への増分値,右下Y座標への増分値,」と入力してください（順番に注意）。
-<br>按照“type4,左上X坐标,右下X坐标,左上Y坐标变化量,右下Y坐标变化量”形式输入（请注意顺序）。
-:228
-$buffer .= " 配置調整指定：<input type=\"text\" name=\"value\" size=\"60\" value=\"$cgi_value\">";
-$buffer .= " 放置位置调整：<input type=\"text\" name=\"value\" size=\"60\" value=\"$cgi_value\">";
-:229,386
-$buffer .= " <input type=\"submit\" value=\"リストのプレビューを更新する\"></form>";
-$buffer .= " <input type=\"submit\" value=\"更新预览列表\"></form>";
-:245
-$buffer .= "<hr><div class=\"texts\">ボタンをクリックすると「最新部品に更新する」にチェックをしたグリフをプレビューせずに一度に更新します。更新グリフの量が多いとブラウザが時間切れでエラーとなる場合がありますが、更新処理は問題なく実行できます。</div>";
-$buffer .= "<hr><div class=\"texts\">“用最新部件更新”被勾选的情况下，点击按钮之后，字形的预览会全部更新一次。要更新的字形量很大的时候，浏览器可能会等待超时，显示错误。但是实际上更新处理仍在进行，不会有问题。</div>";
-:247,413
-$buffer .= "<br><br><input type=\"submit\" value=\"チェックをつけたグリフを一括で新しい部品に更新する\"></form>";
-$buffer .= "<br><br><input type=\"submit\" value=\"勾选的字形批量更新为新的部件\"></form>";
-:266
-$title = qq|部品の一括更新|;
-$title = qq|部件批量更新|;
-:368
-<br>これが標準です。古い部品の大きさと位置に合わせて新しい部品を配置します。テキストボックスには置き換え部品グリフ名を入力してください
-<br>这是默认状态，按旧部件的大小和位置组装新部件。文本框里输入要替换成的部件的名字。
-:370
-<br>標準配置後の部品の領域を調節できます。「置き換え部品グリフ名,type1,左上X座標への増分値,Y座標への増分値,右下X座標への増分値,Y座標への増分値」と入力してください 例: u6c38,type1,5,-4,10,-20 （配置領域の左上座標について左に5ドット、上に4ドット移動、右下座標について10ドット右に、20ドット上に移動する）
-<br>自动放置后部件的位置可以调整。请按照“要替换成的部件名,type1,左上X坐标变化量,Y坐标变化量,右下X坐标变化量,Y坐标变化量”形式输入。例如：type1,5,-4,10,-20 （放置位置左上坐标向左5点、向上4点、右下坐标向右10、向上20点）
-:372
-<br>部品を指定した領域に配置します。「置き換え部品グリフ名,type2,左上X座標,Y座標,右下X座標,Y座標」と入力してください。
-<br>直接指定新部件的绝对位置。请按照“要替换成的部件名,type2,左上X坐标,Y坐标,右下X坐标,Y坐标”形式输入。
-:374
-<br>「置き換え部品グリフ名,type3,左上X座標への増分値,右下X座標への増分値,左上Y座標,右下Y座標」と入力してください（順番に注意）。
-<br>请按照“要替换成的部件名,type3,左上X坐标变化量,右下X坐标变化量,左上Y坐标,右下Y坐标”形式输入（请注意顺序）。
-:376
-<br>「置き換え部品グリフ名,type4,左上X座標,右下X座標,左上Y座標への増分値,右下Y座標への増分値,」と入力してください（順番に注意）。
-<br>请按照“要替换成的部件名,type4,左上X坐标,右下X坐标,左上Y坐标变化量,右下Y坐标变化量”形式输入（请注意顺序）。
-:385
-$buffer .= " 置き換え部品グリフ、配置調整指定：<input type=\"text\" name=\"value\" size=\"60\" value=\"$cgi_value\">";
-$buffer .= " 替换的部件名、位置调整参数：<input type=\"text\" name=\"value\" size=\"60\" value=\"$cgi_value\">";
-:401,405
-$buffer .= qq|<div class="texts"><a href="?view=listup&target=$cgi_target&value=$cgi_value&offset=$prev">これより前の検索結果を見る</a></div>|;
-$buffer .= qq|<div class="texts"><a href="?view=listup&target=$cgi_target&value=$cgi_value&offset=$prev">查看之前的搜索结果</a></div>|;
-:409
-$buffer .= "<div class=\"texts\">さらに対象グリフが存在する可能性があります。<a href=\"?view=listup&target=$cgi_target&value=$cgi_value&offset=$next\">これ以降の対象グリフを見る</a></div>";
-$buffer .= "<div class=\"texts\">可能还有更多字形。<a href=\"?view=listup&target=$cgi_target&value=$cgi_value&offset=$next\">查看更多搜索结果</a></div>";
-:411
-$buffer .= "<hr><div class=\"texts\">ボタンをクリックすると「部品を更新する」にチェックをしたグリフをプレビューせずに一度に更新します。更新グリフの量が多いとブラウザが時間切れでエラーとなる場合がありますが、更新処理は問題なく実行できます。</div>";
-$buffer .= "<hr><div class=\"texts\">“用最新部件更新”被勾选的情况下，点击按钮之后，字形的预览会全部更新一次。要更新的字形量很大的时候，浏览器可能会等待超时，显示错误。但是实际上更新处理仍在进行，不会有问题</div>";
-:415
-$buffer .= qq|<div class="texts">該当するグリフはありません。<br><br><a href=\"/wiki/$cgi_target\">グリフページに戻る</a></div>|;
-$buffer .= qq|<div class="texts">没有找到对应的字形。<br><br><a href=\"/wiki/$cgi_target\">返回字形页面</a></div>|;
-:567
-$title = qq|部品一括更新の完了|;
-$title = qq|部件批量更新完毕|;
-:639
-($new_version, $time) = &put_page($dbh, $name, $loginname, $temp, '部品の一括更新', $env_remoteaddress, $related);
-($new_version, $time) = &put_page($dbh, $name, $loginname, $temp, '部件批量更新', $env_remoteaddress, $related);
-:651
-$buffer .= "<div class=\"texts\">${done}個のグリフを更新しました。<br><br><a href=\"/wiki/Special:Renewall?view=listup&target=$cgi_target\">部品引用グリフ一覧へ戻る</a></div>";
-$buffer .= "<div class=\"texts\">成功更新了${done}个字形。<br><br><a href=\"/wiki/Special:Renewall?view=listup&target=$cgi_target\">返回引用本部件的字形一览</a></div>";
-:653
-$buffer .= "<div class=\"texts\">${done}個のグリフを更新しました。<br><br><a href=\"/wiki/$cgi_target\">グリフページへ戻る</a></div>";
-$buffer .= "<div class=\"texts\">成功更新了${done}个字形。<br><br><a href=\"/wiki/$cgi_target\">返回本字形页面</a></div>";
-:657
-$buffer .= "<div class=\"texts\">更新したグリフはありません。<br><br><a href=\"/wiki/Special:Renewall?view=listup&target=$cgi_target\">部品引用グリフ一覧へ戻る</a></div>";
-$buffer .= "<div class=\"texts\">没有要更新的字形。<br><br><a href=\"/wiki/Special:Renewall?view=listup&target=$cgi_target\">返回引用本部件的字形一览</a></div>";
-:909
-<description>最近付け加えられた変更はこのフィードで確認できます。</description>
-<description>此Feed可以收到最近添加的改动。</description>
-:1648,1689
-<li>その他、ログインに関する情報は<a href="/wiki/GlyphWiki:$URL_LOGIN">GlyphWiki:$WORD_LOGIN</a>を参照してください。 
-<li>其他的、登录相关的信息请参考<a href="/wiki/GlyphWiki:$URL_LOGIN">GlyphWiki:$WORD_LOGIN</a>处。 
 
