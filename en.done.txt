@@ -22,6 +22,21 @@ $dbh->do("INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(ve
 :754
 $DEBUG .= "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'エイリアス実体変更による自動更新', 0, '$old_buffer', '$ip', $current_related, 1)\n";
 $DEBUG .= "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'Automatic update due to change in the alias's original glyph', 0, '$old_buffer', '$ip', $current_related, 1)\n";
+:794
+$URL_USERNAME = &url_encode("ユーザー名");
+$URL_USERNAME = "Username";
+:795
+$URL_SANDBOX = &url_encode("サンドボックス");
+$URL_SANDBOX = "Sandbox";
+:796
+$URL_SEISAKUIRAI = &url_encode("制作依頼");
+$URL_SEISAKUIRAI = "ProductionRequest";
+:797
+$URL_HENSHU = &url_encode("編集の仕方");
+$URL_HENSHU = "EditingHelp";
+:798
+$URL_YOUYAKU = &url_encode("常に要約欄に記入する");
+$URL_YOUYAKU = "AlwaysFillInTheSummaryColumn";
 :799
 $URL_LICENSE = &url_encode("データ・記事のライセンス");
 $URL_LICENSE = "License";
@@ -34,6 +49,15 @@ $URL_PRIVACY = "PrivacyPolicy";
 :802
 $URL_MENSEKI = &url_encode("免責事項");
 $URL_MENSEKI = "Disclaimers";
+:803
+$URL_RELATED = &url_encode("関連字");
+$URL_RELATED = "RelatedCharacter";
+:804
+$URL_VARIANT = &url_encode("異体字");
+$URL_VARIANT = "Variants";
+:805
+$URL_BUG = &url_encode("バグ報告");
+$URL_BUG = "BugReport";
 :806
 $URL_JOIN = &url_encode("あなたにできること");
 $URL_JOIN = "JoinUs";
@@ -43,12 +67,27 @@ $URL_FAQ = "FAQ";
 :808
 $URL_HOWTO = &url_encode("どうやって使うのか");
 $URL_HOWTO = "Tutorial";
+:809
+$URL_FONT = &url_encode("フォント生成");
+$URL_FONT = "FontGeneration";
+:810
+$URL_ALIAS = &url_encode("エイリアス");
+$URL_ALIAS = "Aliases";
+:811
+$URL_CAPTCHA = &url_encode("キャプチャ");
+$URL_CAPTCHA = "Capture";
 :812
 $URL_NEWS = &url_encode("お知らせ");
 $URL_NEWS = "News";
 :813
 $URL_IDOBATA = &url_encode("井戸端");
 $URL_IDOBATA = &url_encode("VillagePump");
+:814
+$URL_GUIDE = &url_encode("命名ガイドライン");
+$URL_GUIDE = "NamingGuidelines";
+:815
+$URL_METADATA = &url_encode("メタ情報");
+$URL_METADATA = "MetaInformation";
 :817
 $WORD_QUERY = "問い合わせ";
 $WORD_QUERY = "You searched for";
@@ -64,6 +103,9 @@ $WORD_DEFAULT = "MainPage";
 :826
 $WORD_CONFIRM_EMAIL = "確認用コードを送信する";
 $WORD_CONFIRM_EMAIL = "Send confirmation code by email.";
+:829
+$WORD_REGISTER_EMAIL = "メールアドレスを登録する";
+$WORD_REGISTER_EMAIL = "Register your E-mail address";
 :832
 $WORD_NEW_PASSWORD = "新しいパスワードをメールで送る";
 $WORD_NEW_PASSWORD = "E-mail new password";
@@ -112,6 +154,9 @@ $LABEL_USER = "User";
 :853
 $LABEL_ANONYMOUS = "匿名利用者";
 $LABEL_ANONYMOUS = "anonymous user";
+:855
+$WORD_MUSTRELATE = "関連付けるべきグリフ";
+$WORD_MUSTRELATE = "Glyph to be put relationship";
 :859
 $WORD_HOGOKIROKU = "保護記録";
 $WORD_HOGOKIROKU = "Protection log";
@@ -351,6 +396,9 @@ $title = qq|View source|;
 :142
 $post_temp = " 異体字";
 $post_temp = " variants";
+:145
+$post_temp = " 別字形";
+$post_temp = " Another shape";
 :179
 $buffer .= "<div class=\"query\"><span class=\"normal\">$db_wiki_name</span> のソース</div>";
 $buffer .= "<div class=\"query\">Source of <span class=\"normal\">$db_wiki_name</span></div>";
@@ -522,9 +570,15 @@ $buffer .= qq|<span class="text glyph_link"><a href="/glyph/$db_wiki_name\@$quer
 :573
 $buffer .= qq|<div class="message">このページ（この版）は<span class="notice">管理者によって削除されました</span>。詳細は<a href="/wiki/$URL_DELETE_LOG">$WORD_DELETE_LOG</a>を参照してください。</div>|;
 $buffer .= qq|<div class="message">This page (this revision) was <span class="notice">deleted by the administrator</span>. Please see <a href="/wiki/$URL_DELETE_LOG">$WORD_DELETE_LOG</a> for details.</div>|;
+:587
+$temp =~ s/----\r\nMETADATA\r\n----\r\n/* メタ情報\r\n/;
+$temp =~ s/----\r\nMETADATA\r\n----\r\n/* Metadata\r\n/;
 :591
 if($action eq "page" && $wiki_name eq "GlyphWiki:メインページ"){
 if($action eq "page" && $wiki_name eq "GlyphWiki:MainPage"){
+:592
+$buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:ロゴについて\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
+$buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:AboutLogo\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
 :635,763
 $parent_info .= "<li>あなたのブラウザでの表示：<span class=\"related\">$parent_char</span>";
 $parent_info .= "<li>Your browser: <span class=\"related\">$parent_char</span>";
