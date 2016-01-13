@@ -801,7 +801,7 @@ $mustrenew_list .= "<input type=\"checkbox\" name=\"target:$name\@$version\" val
 <li>横は新たな配置領域座標を記述、縦は部品の大きさを基準に変形
 <li>横向按新的坐标放置，纵向按部件大小基准变形
 :220
-<br>「type4,左上X座標,右下X座標,左上Y座標への増分値,右下Y座標への増分値,」と入力してください（順番に注意）。
+<br>「type4,左上X座標,右下X座標,左上Y座標への増分値,右下Y座標への増分値」と入力してください（順番に注意）。
 <br>按照“type4,左上X坐标,右下X坐标,左上Y坐标变化量,右下Y坐标变化量”形式输入（请注意顺序）。
 :228
 $buffer .= " 配置調整指定：<input type=\"text\" name=\"value\" size=\"60\" value=\"$cgi_value\">";

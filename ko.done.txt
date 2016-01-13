@@ -753,8 +753,8 @@ $mustrenew_list .= "<input type=\"checkbox\" name=\"target:$name\@$version\" val
 <li>横は新たな配置領域座標を記述、縦は部品の大きさを基準に変形
 <li>가로는 새로운 배치영역좌표를 기술, 세로는 부품의 크기를 기준으로 변:218
 :220
-<br>「type4,左上X座標,右下X座標,左上Y座標への増分値,右下Y座標への増分値,」と入力してください（順番に注意）。
-<br>「type4, 왼쪽위X좌표, 오른쪽아래X좌표, 왼쪽위Y좌표의 늘어난 값, 오른쪽아래Y좌표의 늘어난 값,」이라고 입력해 주십시요.（순서에 주의）
+<br>「type4,左上X座標,右下X座標,左上Y座標への増分値,右下Y座標への増分値」と入力してください（順番に注意）。
+<br>「type4, 왼쪽위X좌표, 오른쪽아래X좌표, 왼쪽위Y좌표의 늘어난 값, 오른쪽아래Y좌표의 늘어난 값」이라고 입력해 주십시요.（순서에 주의）
 :228
 $buffer .= " 配置調整指定：<input type=\"text\" name=\"value\" size=\"60\" value=\"$cgi_value\">";
 $buffer .= "배치조정지정：<input type=\"text\" name=\"value\" size=\"60\" value=\"$cgi_value\">";
