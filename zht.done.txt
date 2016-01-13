@@ -396,6 +396,9 @@ $title = qq|顯示源碼|;
 :142
 $post_temp = " 異体字";
 $post_temp = " 異體字";
+:145
+$post_temp = " 別字形";
+$post_temp = " 別字形"; # zht
 :179
 $buffer .= "<div class=\"query\"><span class=\"normal\">$db_wiki_name</span> のソース</div>";
 $buffer .= "<div class=\"query\"><span class=\"normal\">$db_wiki_name</span> 的源碼</div>";
@@ -1010,6 +1013,9 @@ $buffer .= "<div class=\"texts\">凡例：日本標準時間</div>";
 :1054
 $buffer .= "<div class=\"texts\">凡例:(最新版) = 最新版との比較、(前の版) = 直前の版との比較、日時はJST</div>";
 $buffer .= "<div class=\"texts\">(最新版) = 與最新版比較, (前一版) = 與前一版比較，日本標準時間</div>";
+:1093
+$history_list .= "(最新版) ";
+$history_list .= "(最新版) "; # zht
 :1096
 $history_list .= "(<a href=\"/wiki/$db_wiki_name?diff=$data[1]\">最新版</a>) ";
 $history_list .= "(<a href=\"/wiki/$db_wiki_name?diff=$data[1]\">最新版</a>) "; # zht

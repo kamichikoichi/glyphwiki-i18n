@@ -9,12 +9,6 @@
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_others.pl
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_right_general.pl
-:145
-$post_temp = " 別字形";
-$post_temp = " 別字形"; # zht
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_right_others.pl
-:1093
-$history_list .= "(最新版) ";
-$history_list .= "(最新版) "; # zht
 
