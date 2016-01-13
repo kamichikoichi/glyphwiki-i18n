@@ -145,18 +145,33 @@ $LABEL_ANONYMOUS = "익명이용자";
 :855
 $WORD_MUSTRELATE = "関連付けるべきグリフ";
 $WORD_MUSTRELATE = "관련시켜야 할 글리프";
+:856
+$PAGE_MUSTRELATE = "GlyphWiki:関連付けるべきグリフ";
+$PAGE_MUSTRELATE = "GlyphWiki:관련시켜야할글리프";
 :859
 $WORD_HOGOKIROKU = "保護記録";
 $WORD_HOGOKIROKU = "보호기록";
+:860
+$PAGE_HOGOKIROKU = "GlyphWiki:保護記録";
+$PAGE_HOGOKIROKU = "GlyphWiki:보호기록";
 :863
 $WORD_HOGO = "保護されたページ";
 $WORD_HOGO = "보호된 페이지";
+:864
+$PAGE_HOGO = "GlyphWiki:保護されたページ";
+$PAGE_HOGO = "GlyphWiki:보호된페이지";
 :867
 $WORD_SAKUJO = "削除の方針";
 $WORD_SAKUJO = "삭제방침";
+:868
+$PAGE_SAKUJO = "GlyphWiki:削除の方針";
+$PAGE_SAKUJO = "GlyphWiki:삭제방침";
 :871
 $WORD_DELETE_LOG = "削除記録";
 $WORD_DELETE_LOG = "삭제기록";
+:872
+$PAGE_DELETE_LOG = "GlyphWiki:削除記録";
+$PAGE_DELETE_LOG = "GlyphWiki:삭제기록";
 :875
 $WORD_ACCEPT_AND_SUBMIT = "以上の記述を完全に理解し同意したうえで投稿する";
 $WORD_ACCEPT_AND_SUBMIT = "위의 내용을 완전히 이해하고 동의한 뒤에 투고하기";

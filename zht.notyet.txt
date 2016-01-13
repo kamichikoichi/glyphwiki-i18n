@@ -1,21 +1,6 @@
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/common.pl
-:856
-$PAGE_MUSTRELATE = "GlyphWiki:関連付けるべきグリフ";
-$PAGE_MUSTRELATE = "GlyphWiki:必須有關聯字的字形";
-:860
-$PAGE_HOGOKIROKU = "GlyphWiki:保護記録";
-$PAGE_HOGOKIROKU = "GlyphWiki:保護記錄";
-:864
-$PAGE_HOGO = "GlyphWiki:保護されたページ";
-$PAGE_HOGO = "GlyphWiki:保護頁面";
-:868
-$PAGE_SAKUJO = "GlyphWiki:削除の方針";
-$PAGE_SAKUJO = "GlyphWiki:刪除規則";
-:872
-$PAGE_DELETE_LOG = "GlyphWiki:削除記録";
-$PAGE_DELETE_LOG = "GlyphWiki:刪除的記錄";
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/config.pl
 
