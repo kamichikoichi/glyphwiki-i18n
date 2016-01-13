@@ -1,7 +1,7 @@
 use utf8;
 binmode STDOUT, ":utf8";
 
-$target_lang = "ko";
+$target_lang = "zht";
 $target_cur = "$target_lang.txt";
 $target_unused = "$target_lang.unused.txt";
 $target_done = "$target_lang.done.txt";

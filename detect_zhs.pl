@@ -59,7 +59,7 @@ close $fh;
 push(@files, "/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi");
 opendir($dh, "/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/") or die $!;
 foreach(grep(/(common|config|page.+)\.pl$/, readdir($dh))){
-  if($_ !~ m/^(en|ko|zhs)./){
+  if($_ !~ m/^(en|ko|zhs|zht)./){
     push(@files, "/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/$_");
   }
 }
