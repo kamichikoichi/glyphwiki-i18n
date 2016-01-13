@@ -27,13 +27,13 @@ $URL_HENSHU = &url_encode("編集の仕方");
 $URL_HENSHU = &url_encode("편집방법");
 :798
 $URL_YOUYAKU = &url_encode("常に要約欄に記入する");
-$URL_YOUYAKU = &url_encode("항상 요약란에 기입하기");
+$URL_YOUYAKU = &url_encode("항상요약란에기입하기");
 :799
 $URL_LICENSE = &url_encode("データ・記事のライセンス");
-$URL_LICENSE = &url_encode("데이터 및 기사의 라이센스");
+$URL_LICENSE = &url_encode("데이터・및기사의라이센스");
 :800
 $URL_ABOUT = &url_encode("グリフウィキについて");
-$URL_ABOUT = &url_encode("글리프위키에 관해서");
+$URL_ABOUT = &url_encode("글리프위키에대해");
 :801
 $URL_PRIVACY = &url_encode("プライバシー・ポリシー");
 $URL_PRIVACY = &url_encode("개인정보정책");
@@ -310,7 +310,7 @@ $buffer .= qq|ツールボックス|;
 $buffer .= qq|도구모음|;
 :64
 $buffer .= qq|<li><a href="/wiki/Special:Mustrenew">旧部品引用グリフ</a>|;
-$buffer .= qq|<li><a href="/wiki/Special:Mustrenew">헌　부품 인용글리프</a>|;
+$buffer .= qq|<li><a href="/wiki/Special:Mustrenew">헌 부품 인용글리프</a>|;
 :68
 $buffer .= qq|<li><a href="/wiki/$fullwikiname">この版への固定リンク</a>|;
 $buffer .= qq|<li><a href="/wiki/$fullwikiname">이 버전에 고정링크</a>|;
@@ -321,19 +321,19 @@ $buffer .= qq|그외의 언어|;
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_others.pl
 :48
 $buffer = "最終更新 ".&local_localtime($lastupdate)."。";
-$buffer = "최종갱신".&local_localtime($lastupdate).".";
+$buffer = "최종갱신 ".&local_localtime($lastupdate).".";
 :56
 <a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a>
-<a href="/wiki/GlyphWiki:License">데이타・기사의 라이센스</a>
+<a href="/wiki/GlyphWiki:$URL_LICENSE">데이타・기사의 라이센스</a>
 :57
 <a href="/wiki/GlyphWiki:$URL_PRIVACY">プライバシー・ポリシー</a>
-<a href="/wiki/GlyphWiki:PrivacyPolicy">프라이버시 정책</a>
+<a href="/wiki/GlyphWiki:$URL_PRIVACY">프라이버시 정책</a>
 :58
 <a href="/wiki/GlyphWiki:$URL_ABOUT">グリフウィキについて</a>
-<a href="/wiki/GlyphWiki:About">글리프위키에 대하여</a>
+<a href="/wiki/GlyphWiki:$URL_ABOUT">글리프위키에 대하여</a>
 :59
 <a href="/wiki/GlyphWiki:$URL_MENSEKI">免責事項</a>
-<a href="/wiki/GlyphWiki:Disclaimers">면책사항</a>
+<a href="/wiki/GlyphWiki:$URL_MENSEKI">면책사항</a>
 :75
 $buffer .= qq|<div class="loginned"><div><img src="/images/user.gif"> <a href="/wiki/User:$loginname">$loginname</a></div> <div><a href="/wiki/User-talk:$loginname">マイ・トーク</a></div> <div><a href="/wiki/Special:Confirmemail">メールアドレスの登録・確認</a></div> <div><a href="/wiki/Special:Userlogout?returnto=$url_query">ログアウト</a></div></div>|;
 $buffer .= qq|<div class="loginned"><div><img src="/images/user.gif"> <a href="/wiki/User:$loginname">$loginname</a></div> <div><a href="/wiki/User-talk:$loginname">마이토크</a></div> <div><a href="/wiki/Special:Confirmemail">이메일주소의 등록・확인</a></div> <div><a href="/wiki/Special:Userlogout?returnto=$url_query">로그아웃</a></div></div>|;
