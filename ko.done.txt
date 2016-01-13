@@ -545,7 +545,7 @@ $buffer .= qq|<div class="message">このページ（この版）は<span class=
 $buffer .= qq|<div class="message">이 페이지(이 버전)는<span class="notice">관리자에 의해 삭제되었습니</span>. 자세한 사항은<a href="/wiki/$URL_DELETE_LOG">$WORD_DELETE_LOG</a>를 참조 하십시오.</div>|;
 :591
 if($action eq "page" && $wiki_name eq "GlyphWiki:メインページ"){
-if($action eq "page" && $wiki_name eq "GlyphWiki:메인페이지"){
+if($action eq "page" && $wiki_name eq "GlyphWiki:대문"){
 :592
 $buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:ロゴについて\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
 $buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:로고에대해\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
