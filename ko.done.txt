@@ -27,10 +27,10 @@ $URL_HENSHU = &url_encode("編集の仕方");
 $URL_HENSHU = &url_encode("편집방법");
 :798
 $URL_YOUYAKU = &url_encode("常に要約欄に記入する");
-$URL_YOUYAKU = &url_encode("항상요약란에기입하기");
+$URL_YOUYAKU = &url_encode("항상요약란에입력하기");
 :799
 $URL_LICENSE = &url_encode("データ・記事のライセンス");
-$URL_LICENSE = &url_encode("데이터・및기사의라이센스");
+$URL_LICENSE = &url_encode("데이터·문서의라이선스");
 :800
 $URL_ABOUT = &url_encode("グリフウィキについて");
 $URL_ABOUT = &url_encode("글리프위키에대해");
