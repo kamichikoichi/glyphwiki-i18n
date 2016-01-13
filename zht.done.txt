@@ -396,9 +396,6 @@ $title = qq|顯示源碼|;
 :142
 $post_temp = " 異体字";
 $post_temp = " 異體字";
-:145
-$post_temp = " 別字形";
-$post_temp = " 別字形";
 :179
 $buffer .= "<div class=\"query\"><span class=\"normal\">$db_wiki_name</span> のソース</div>";
 $buffer .= "<div class=\"query\"><span class=\"normal\">$db_wiki_name</span> 的源碼</div>";
@@ -407,7 +404,7 @@ $buffer .= "<div class=\"version\">版間での差分(日時はJST)</div>";
 $buffer .= "<div class=\"version\">版本之間的區別（日本標準時間）</div>";
 :218
 $newversion = "最新";
-$newversion = "最新"; # zhs
+$newversion = "最新"; # zht
 :220
 $history_list .= "<li class=\"history\"><a class=\"notice\" href=\"/wiki/$url_db_wiki_name\@$data[1]\">".&local_localtime($data[3])."時点における${newversion}版</a> $temp $summary";
 $history_list .= "<li class=\"history\"><a class=\"notice\" href=\"/wiki/$url_db_wiki_name\@$data[1]\">".&local_localtime($data[3])."的版本(version ${newversion})</a> $temp $summary";
@@ -958,10 +955,10 @@ $buffer2 .= "<div class=\"texts\">（";
 $buffer2 .= "<div class=\"texts\">查看（";
 :862
 $buffer2 .= "最新";
-$buffer2 .= "最新"; # zhs
+$buffer2 .= "最新"; # zht
 :864
 $buffer2 .= "<a href=\"/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hidemyself$hideauto$listtype$setuser\">最新</a>";
-$buffer2 .= "<a href=\"/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hidemyself$hideauto$listtype$setuser\">最新</a>"; #zhs
+$buffer2 .= "<a href=\"/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hidemyself$hideauto$listtype$setuser\">最新</a>"; # zht
 :868
 $buffer2 .= "最古";
 $buffer2 .= "最早";
@@ -970,7 +967,7 @@ $buffer2 .= "<a href=\"/wiki/Special:Recentchanges?view=$limit$hidebots$hideanon
 $buffer2 .= "<a href=\"/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hidemyself$hideauto$listtype&dir=prev$setuser\">最早</a>";
 :872,878,884
 $buffer2 .= "）（";
-$buffer2 .= "）（"; # zhs
+$buffer2 .= "）（"; # zht
 :874
 $buffer2 .= "新しい${limit}件";
 $buffer2 .= "新的${limit}個";
@@ -1013,12 +1010,9 @@ $buffer .= "<div class=\"texts\">凡例：日本標準時間</div>";
 :1054
 $buffer .= "<div class=\"texts\">凡例:(最新版) = 最新版との比較、(前の版) = 直前の版との比較、日時はJST</div>";
 $buffer .= "<div class=\"texts\">(最新版) = 與最新版比較, (前一版) = 與前一版比較，日本標準時間</div>";
-:1093
-$history_list .= "(最新版) ";
-$history_list .= "(最新版) ";
 :1096
 $history_list .= "(<a href=\"/wiki/$db_wiki_name?diff=$data[1]\">最新版</a>) ";
-$history_list .= "(<a href=\"/wiki/$db_wiki_name?diff=$data[1]\">最新版</a>) "; # zhs
+$history_list .= "(<a href=\"/wiki/$db_wiki_name?diff=$data[1]\">最新版</a>) "; # zht
 :1099
 $history_list .= "(<a href=\"/wiki/$db_wiki_name\@$data[1]?diff=".($data[1] - 1)."\">前の版</a>) ";
 $history_list .= "(<a href=\"/wiki/$db_wiki_name\@$data[1]?diff=".($data[1] - 1)."\">前一版</a>) ";
