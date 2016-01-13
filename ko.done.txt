@@ -87,7 +87,7 @@ $WORD_DESCRIPTION = "説明";
 $WORD_DESCRIPTION = "설명";
 :823
 $WORD_DEFAULT = "メインページ";
-$WORD_DEFAULT = "메인페이지";
+$WORD_DEFAULT = "대문";
 :826
 $WORD_CONFIRM_EMAIL = "確認用コードを送信する";
 $WORD_CONFIRM_EMAIL = "확인용코드를 송신하기";
