@@ -3,49 +3,49 @@
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/common.pl
 :794
 $URL_USERNAME = &url_encode("ユーザー名");
-$URL_USERNAME = &url_encode("ユーザー名");
+$URL_USERNAME = "Username";
 :795
 $URL_SANDBOX = &url_encode("サンドボックス");
-$URL_SANDBOX = &url_encode("サンドボックス");
+$URL_SANDBOX = "Sandbox";
 :796
 $URL_SEISAKUIRAI = &url_encode("制作依頼");
-$URL_SEISAKUIRAI = &url_encode("制作依頼");
+$URL_SEISAKUIRAI = "ProductionRequest";
 :797
 $URL_HENSHU = &url_encode("編集の仕方");
-$URL_HENSHU = &url_encode("編集の仕方");
+$URL_HENSHU = "EditingHelp";
 :798
 $URL_YOUYAKU = &url_encode("常に要約欄に記入する");
-$URL_YOUYAKU = &url_encode("常に要約欄に記入する");
+$URL_YOUYAKU = "AlwaysFillInTheSummaryColumn";
 :803
 $URL_RELATED = &url_encode("関連字");
-$URL_RELATED = &url_encode("関連字");
+$URL_RELATED = "RelatedCharacter";
 :804
 $URL_VARIANT = &url_encode("異体字");
-$URL_VARIANT = &url_encode("異体字");
+$URL_VARIANT = "Variants";
 :805
 $URL_BUG = &url_encode("バグ報告");
-$URL_BUG = &url_encode("バグ報告");
+$URL_BUG = "BugReport";
 :809
 $URL_FONT = &url_encode("フォント生成");
-$URL_FONT = &url_encode("フォント生成");
+$URL_FONT = "FontGeneration";
 :810
 $URL_ALIAS = &url_encode("エイリアス");
-$URL_ALIAS = &url_encode("エイリアス");
+$URL_ALIAS = "Aliases";
 :811
 $URL_CAPTCHA = &url_encode("キャプチャ");
-$URL_CAPTCHA = &url_encode("キャプチャ");
+$URL_CAPTCHA = "Capture";
 :814
 $URL_GUIDE = &url_encode("命名ガイドライン");
-$URL_GUIDE = &url_encode("命名ガイドライン");
+$URL_GUIDE = "NamingGuidelines";
 :815
 $URL_METADATA = &url_encode("メタ情報");
-$URL_METADATA = &url_encode("メタ情報");
+$URL_METADATA = "MetaInformation";
 :829
 $WORD_REGISTER_EMAIL = "メールアドレスを登録する";
-$WORD_REGISTER_EMAIL = "メールアドレスを登録する";
+$WORD_REGISTER_EMAIL = "Register your E-mail address";
 :855
 $WORD_MUSTRELATE = "関連付けるべきグリフ";
-$WORD_MUSTRELATE = "関連付けるべきグリフ";
+$WORD_MUSTRELATE = "Glyph to be put relationship";
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/config.pl
 
@@ -56,13 +56,13 @@ $WORD_MUSTRELATE = "関連付けるべきグリフ";
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_right_general.pl
 :145
 $post_temp = " 別字形";
-$post_temp = " 別字形";
+$post_temp = " Another shape";
 :587
 $temp =~ s/----\r\nMETADATA\r\n----\r\n/* メタ情報\r\n/;
-$temp =~ s/----\r\nMETADATA\r\n----\r\n/* メタ情報\r\n/;
+$temp =~ s/----\r\nMETADATA\r\n----\r\n/* Metadata\r\n/;
 :592
 $buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:ロゴについて\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
-$buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:ロゴについて\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
+$buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:AboutLogo\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_right_others.pl
 
