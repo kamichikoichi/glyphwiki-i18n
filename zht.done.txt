@@ -138,7 +138,7 @@ $TAB_GROUP = "グループ";
 $TAB_GROUP = "字表";
 :848
 $TAB_NOTE = "ノート";
-$TAB_NOTE = "備註";
+$TAB_NOTE = "討論";
 :849
 $TAB_USER = "利用者ページ";
 $TAB_USER = "用戶頁面";
@@ -413,7 +413,7 @@ $post_temp = " 異体字";
 $post_temp = " 異體字";
 :145
 $post_temp = " 別字形";
-$post_temp = " 別字形"; # zht
+$post_temp = " 別字形"; # zhs
 :179
 $buffer .= "<div class=\"query\"><span class=\"normal\">$db_wiki_name</span> のソース</div>";
 $buffer .= "<div class=\"query\"><span class=\"normal\">$db_wiki_name</span> 的源碼</div>";
@@ -422,7 +422,7 @@ $buffer .= "<div class=\"version\">版間での差分(日時はJST)</div>";
 $buffer .= "<div class=\"version\">版本之間的區別（日本標準時間）</div>";
 :218
 $newversion = "最新";
-$newversion = "最新"; # zht
+$newversion = "最新"; # zhs
 :220
 $history_list .= "<li class=\"history\"><a class=\"notice\" href=\"/wiki/$url_db_wiki_name\@$data[1]\">".&local_localtime($data[3])."時点における${newversion}版</a> $temp $summary";
 $history_list .= "<li class=\"history\"><a class=\"notice\" href=\"/wiki/$url_db_wiki_name\@$data[1]\">".&local_localtime($data[3])."的版本(version ${newversion})</a> $temp $summary";
@@ -434,7 +434,7 @@ $subtitle = "<h2>".&local_localtime($data[3])."時点における${newversion}�
 $subtitle = "<h2>".&local_localtime($data[3])."的版本 (version ${newversion})</h2>\n";
 :248
 $history_list .= "<li class=\"history\"><a class=\"notice\" href=\"/wiki/$url_db_wiki_name\@$data[1]\">".&local_localtime($data[3])."時点における\@$data[1]版</a> $temp $summary";
-$history_list .= "<li class=\"history\"><a class=\"notice\" href=\"/wiki/$url_db_wiki_name\@$data[1]\">".&local_localtime($data[ 3])."的版本(version \@$data[1])</a> $temp $summary";
+$history_list .= "<li class=\"history\"><a class=\"notice\" href=\"/wiki/$url_db_wiki_name\@$data[1]\">".&local_localtime($data[3])."的版本(version \@$data[1])</a> $temp $summary";
 :249
 $history_list .= "<ul><li>削除された行を<span class=\"olddata\">このように</span>表示します。</ul>";
 $history_list .= "<ul><li><span class=\"olddata\">這樣</span>表示刪除的行</ul>";
@@ -524,7 +524,7 @@ $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_FONT">フォント生成のヘ�
 $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_FONT">字體文件生成幫助</a>|;
 :485
 $buffer .= qq|<li>TrueTypeフォント <a href="/font/$fontname.ttf">ダウンロード</a> (内部バージョン $fontname、$fontsize バイト)|;
-$buffer .= qq|<li>TrueType字體文件<a href="/font/$fontname.ttf">下載</a>（內部版本：$fontname，$fontsize字節）|;
+$buffer .= qq|<li>TrueType字體文件<a href="/font/$fontname.ttf">下載</a>（內部版本：$fontname，${fontsize}字節）|;
 :486,498,502
 $buffer .= qq|<ul><li>フォント生成ログ <a href="/font/$fontname.log">閲覧</a></ul>|;
 $buffer .= qq|<ul><li>查看<a href="/font/$fontname.log">字體文件生成日誌</a></ul>|;
@@ -614,10 +614,10 @@ $parent_info .= "次の番号：<a href=\"/wiki/$codechar\"><img class=\"thumb r
 $parent_info .= "後一編號：<a href=\"/wiki/$codechar\"><img class=\"thumb related\" src=\"/glyph/$codechar.50px.png\"> ($codechar)</a><br>";
 :812
 $buffer .= qq|法務省 戸籍統一文字情報 <a href="http://kosekimoji.moj.go.jp/kosekimojidb/mjko/PeopleList/EXECUTE?ihid_clickedButtonName=iimag_Moji\&ihid_SelectedKskMjBng=$parent_code\&ihid_SearchCount=0">文字情報</a><br>|;
-$buffer .= qq|法務省 戶籍統一文字情報<a href="http://kosekimoji.moj.go.jp/kosekimojidb/mjko/PeopleList/EXECUTE?ihid_clickedButtonName=iimag_Moji\&ihid_SelectedKskMjBng=$parent_code\&ihid_SearchCount=0" >文字情報</a><br>|;
+$buffer .= qq|法務省 戶籍統一文字情報 <a href="http://kosekimoji.moj.go.jp/kosekimojidb/mjko/PeopleList/EXECUTE?ihid_clickedButtonName=iimag_Moji\&ihid_SelectedKskMjBng=$parent_code\&ihid_SearchCount=0">文字情報</a><br>|;
 :821
 $buffer .= qq|<ul><li><a href="http://www.cns11643.gov.tw/AIDB/query_general_view.do?page=$1\&code=$2">台湾国家発展委員会 全字庫</a> <img src=\"/images/external.png\"> (<a href="http://www.cns11643.gov.tw/MAIDB/welcome.do">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
-$buffer .= qq|<ul><li><a href="http://www.cns11643.gov.tw/AIDB/query_general_view.do?page=$1\&code=$2">台灣國家發展委員會全字庫</a> <img src=\"/images/external.png\"> (<a href="http://www.cns11643.gov.tw/MAIDB/welcome.do">首頁</a> < img src=\"/images/external.png\">)</ul>|;
+$buffer .= qq|<ul><li><a href="http://www.cns11643.gov.tw/AIDB/query_general_view.do?page=$1\&code=$2">台灣國家發展委員會 全字庫</a> <img src=\"/images/external.png\"> (<a href="http://www.cns11643.gov.tw/MAIDB/welcome.do">首頁</a> <img src=\"/images/external.png\">)</ul>|;
 :891,918
 $buffer .= qq|諸橋轍次『大漢和辞典』<br>|;
 $buffer .= qq|諸橋轍次《大漢和辭典》<br>|;
@@ -629,7 +629,7 @@ $buffer_related .= qq|<table border="0"><tr><td align="right" valign="top"><nobr
 $buffer_related .= qq|<table border="0"><tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_RELATED">關聯字</a>:</nobr>|;
 :988,996
 $buffer_related .= qq|<tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_VARIANT">異体字</a>:</nobr><td valign="top" style="width: 16em; background-color: 
-$buffer_related .= qq|<tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_VARIANT">異體字</a>:</nobr><td valign="top" style="width: 16em; background-color:
+$buffer_related .= qq|<tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_VARIANT">異體字</a>:</nobr><td valign="top" style="width: 16em; background-color: 
 :1015
 $buffer_related .= "<p><a href=\"/springGraph.swf?code=$related_code_springgraph\">ばねグラフで異体字を表示する</a> | <span class=\"disable\">異体字の異体字をすべてたどって表示する</span></p>"
 $buffer_related .= "<p><a href=\"/springGraph.swf?code=$related_code_springgraph\">用 Spring Graph 顯示異體字</a> | <span class=\"disable\">異體字的異體字也會全部顯示</span></p>"
@@ -647,13 +647,13 @@ $buffer .= qq|<h2>このグリフの<a href="/wiki/GlyphWiki:$URL_ALIAS">エイ�
 $buffer .= qq|<h2>本字形的<a href="/wiki/GlyphWiki:Aliases">別名</a>一覽</h2>|;
 :1083
 $buffer .= qq|<h2>このグリフを内部で引用している他のグリフ一覧</h2>|;
-$buffer .= qq|<h2>本字形內引用的其他字形</h2>|;
+$buffer .= qq|<h2>引用了本字形的其他字形</h2>|;
 :1086
 $buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&target=$wiki_name">部品グリフを別のグリフに置き換える</a></div>|;
 $buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&target=$wiki_name">用其他字形替換部件字形</a></div>|;
 :1103
 $buffer .= qq|<h2>このグリフで引用している他のグリフ一覧</h2>|;
-$buffer .= qq|<h2>引用了本字形的其他字形</h2>|;
+$buffer .= qq|<h2>本字形內引用的其他字形</h2>|;
 :1122
 $local_using =~ s/^Talk:/ノート:/;
 # no operation
@@ -695,10 +695,10 @@ $buffer .= qq|<h2>このグループを引用するグループ一覧</h2>|;
 $buffer .= qq|<h2>引用了本字表的其他字表</h2>|;
 :1205
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>諸橋轍次『大漢和辞典』番号は <a href="/wiki/dkw-$num0$num1">dkw-$num0$num1</a> のように数字5桁を指定してください</ul></div>|;
-$buffer .= qq|<div class="panel"><span class="warning">這個名字可能沒有遵循<a href="/wiki/GlyphWiki:$URL_GUIDE">命名規範</a>。請確認或者修正。 </span><ul><li>諸橋轍次『大漢和辭典』號碼應該用形如<a href="/wiki/dkw-$num0$num1">dkw-$num0$num1</a> 的5位數字指定</ul></div>|;
+$buffer .= qq|<div class="panel"><span class="warning">這個名字可能沒有遵循<a href="/wiki/GlyphWiki:$URL_GUIDE">命名規範</a>。請確認或者修正。</span><ul><li>諸橋轍次『大漢和辭典』號碼應該用形如 <a href="/wiki/dkw-$num0$num1">dkw-$num0$num1</a> 的5位數字指定</ul></div>|;
 :1210
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>法務省戸籍統一文字番号は <a href="/wiki/koseki-$num0$num1">koseki-$num0$num1</a> のように数字6桁を指定してください</ul></div>|;
-$buffer .= qq|<div class="panel"><span class="warning">這個名字可能沒有遵循<a href="/wiki/GlyphWiki:$URL_GUIDE">命名規範</a>。請確認或者修正。 </span><ul><li>法務省統一文字番號應該用形如<a href="/wiki/koseki-$num0$num1">koseki-$num0$num1</a> 的6位數字指定</ul></div>|;
+$buffer .= qq|<div class="panel"><span class="warning">這個名字可能沒有遵循<a href="/wiki/GlyphWiki:$URL_GUIDE">命名規範</a>。請確認或者修正。</span><ul><li>法務省統一文字番號應該用形如 <a href="/wiki/koseki-$num0$num1">koseki-$num0$num1</a> 的6位數字指定</ul></div>|;
 :1213
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>baseparts- は廃止されました</ul></div>|;
 $buffer .= qq|<div class="panel"><span class="warning">這個名字可能沒有遵循<a href="/wiki/GlyphWiki:$URL_GUIDE">命名規範</a>。請確認或者修正。</span><ul><li>baseparts- 前綴已經停用</ul></div>|;
@@ -734,7 +734,7 @@ $buffer .= qq|<div class="message"><a href="/wiki/$url_db_wiki_name">$db_wiki_na
 $buffer .= qq|<div class="message">回到<a href="/wiki/$url_db_wiki_name">$db_wiki_name</a>。</div>|;
 :1319
 $buffer .= qq|<h2>ノートの編集</h2>|;
-$buffer .= qq|<h2>編輯備註</h2>|;
+$buffer .= qq|<h2>編輯討論</h2>|;
 :1326
 <a name="metaedit"><h2>メタ情報の編集</h2></a>
 <a name="metaedit"><h2>編輯基本信息</h2></a>
@@ -743,7 +743,7 @@ $buffer .= qq|<h2>編輯備註</h2>|;
 <noscript><ul><li>請用“:項目名:值”的形式每行記錄一項數據。<li>啟用JavaScript可以用表格形式編輯。<li>項目名不能含有“:”<li>項目名或者值不能為空<li>最終登記入數據庫需要“提交”</ul></noscript>
 :1341
 $buffer .= qq|<div class="message"><div class="title">■投稿する前に以下の事柄を確認してください■</div><ol><li>GlyphWikiに投稿した記事は著作権の譲渡を行ったことになり、その<span class="notice">記事がいかなる形態で改変・使用されることもあなたは許諾し、以後著作者人格権を主張・使用しないことを了承するものとみなします</span>。<li><span class="notice">他のWebページや出版物などから文章を無断で転載・コピー・トレースしないでください</span>。それ以外にも投稿内容に問題がある場合、<a href="/wiki/$URL_SAKUJO">削除の方針</a>に基づき削除されます。また、グリフウィキの運営方針についてはこれから決定していきますが、<span class="notice">最終的な決定権は管理者にあるものとします</span>。これらのことにあなたはあらかじめ同意したものとみなします。 <li>GlyphWikiのデータ・記事のライセンスはWikipediaの記事のライセンス(GFDL)とは異なります。詳しくは<a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a>を参照してください。</ol></div>|;
-$buffer .= qq|<div class="message"><div class="title">■提交前請確認以下事項■</div><ol><li>在字形維基發布的文檔，意味著將著作權轉讓給字形百科，您同意<span class="notice">這些文檔可被修改、以任何形式使用，並承認對後續的使用不持有著作權</span>。<li><span class="notice">請不要擅自從其他網頁或出版物轉載或複制內容</span>。如果內容有問題，管理員會根據<a href="/wiki/$URL_SAKUJO">刪除規則</a>予以刪除。此外，字形維基的管理政策可能改變，<span class="notice">最終決定權屬於管理員</span>。提交視為您同意服從管理。 <li>字形維基的數據、文檔的使用許可與Wikipedia的文章使用許可（GFDL）不同，詳情請參考<a href="/wiki/GlyphWiki:$URL_LICENSE">著作權與許可協議</a>。</ol></div>|;
+$buffer .= qq|<div class="message"><div class="title">■提交前請確認以下事項■</div><ol><li>在字形維基發布的文檔，意味著將著作權轉讓給字形維基，您同意<span class="notice">這些文檔可被修改、以任何形式使用，並承認對後續的使用不持有著作權</span>。<li><span class="notice">請不要擅自從其他網頁或出版物轉載或複制內容</span>。如果內容有問題，管理員會根據<a href="/wiki/$URL_SAKUJO">刪除規則</a>予以刪除。此外，字形維基的管理政策可能改變，<span class="notice">最終決定權屬於管理員</span>。提交視為您同意服從管理。 <li>字形維基的數據、文檔的使用許可與Wikipedia的文章使用許可（GFDL）不同，詳情請參考<a href="/wiki/GlyphWiki:$URL_LICENSE">著作權與許可協議</a>。</ol></div>|;
 :1357
 $buffer .= qq|<h2>あなたの更新内容</h2>|;
 $buffer .= qq|<h2>您的更新內容</h2>|;
@@ -973,10 +973,10 @@ $buffer2 .= "<div class=\"texts\">（";
 $buffer2 .= "<div class=\"texts\">查看（";
 :862
 $buffer2 .= "最新";
-$buffer2 .= "最新"; # zht
+$buffer2 .= "最新"; # zhs
 :864
 $buffer2 .= "<a href=\"/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hidemyself$hideauto$listtype$setuser\">最新</a>";
-$buffer2 .= "<a href=\"/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hidemyself$hideauto$listtype$setuser\">最新</a>"; # zht
+$buffer2 .= "<a href=\"/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hidemyself$hideauto$listtype$setuser\">最新</a>"; # zhs
 :868
 $buffer2 .= "最古";
 $buffer2 .= "最早";
@@ -985,7 +985,7 @@ $buffer2 .= "<a href=\"/wiki/Special:Recentchanges?view=$limit$hidebots$hideanon
 $buffer2 .= "<a href=\"/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hidemyself$hideauto$listtype&dir=prev$setuser\">最早</a>";
 :872,878,884
 $buffer2 .= "）（";
-$buffer2 .= "）（"; # zht
+$buffer2 .= "）（"; # zhs
 :874
 $buffer2 .= "新しい${limit}件";
 $buffer2 .= "新的${limit}個";
@@ -1030,10 +1030,10 @@ $buffer .= "<div class=\"texts\">凡例:(最新版) = 最新版との比較、(�
 $buffer .= "<div class=\"texts\">(最新版) = 與最新版比較, (前一版) = 與前一版比較，日本標準時間</div>";
 :1093
 $history_list .= "(最新版) ";
-$history_list .= "(最新版) "; # zht
+$history_list .= "(最新版) "; # zhs
 :1096
 $history_list .= "(<a href=\"/wiki/$db_wiki_name?diff=$data[1]\">最新版</a>) ";
-$history_list .= "(<a href=\"/wiki/$db_wiki_name?diff=$data[1]\">最新版</a>) "; # zht
+$history_list .= "(<a href=\"/wiki/$db_wiki_name?diff=$data[1]\">最新版</a>) "; # zhs
 :1099
 $history_list .= "(<a href=\"/wiki/$db_wiki_name\@$data[1]?diff=".($data[1] - 1)."\">前の版</a>) ";
 $history_list .= "(<a href=\"/wiki/$db_wiki_name\@$data[1]?diff=".($data[1] - 1)."\">前一版</a>) ";

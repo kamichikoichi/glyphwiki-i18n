@@ -18,7 +18,7 @@ $temp2 = sprintf("作字率：%d\% [已%d、未%d]", int($implemented / ($unimpl
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/common.pl
 :753
 $dbh->do("INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'エイリアス実体変更による自動更新', 0, '$old_buffer', '$ip', $current_related, 1)"); 
-$dbh->do("INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', '别名实体变更引起的自动更新', 0, '$old_buffer', '$ip', $current_related, 1)"); 
+$dbh->do("INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', '别名实体变更引起的自动更新', 0, '$old_buffer', '$ip', $current_related, 1)");
 :754
 $DEBUG .= "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'エイリアス実体変更による自動更新', 0, '$old_buffer', '$ip', $current_related, 1)\n";
 $DEBUG .= "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', '别名实体变更引起的自动更新', 0, '$old_buffer', '$ip', $current_related, 1)\n";
@@ -138,7 +138,7 @@ $TAB_GROUP = "グループ";
 $TAB_GROUP = "字表";
 :848
 $TAB_NOTE = "ノート";
-$TAB_NOTE = "备注";
+$TAB_NOTE = "讨论";
 :849
 $TAB_USER = "利用者ページ";
 $TAB_USER = "用户页面";
@@ -183,7 +183,7 @@ $WORD_DELETE_LOG = "削除記録";
 $WORD_DELETE_LOG = "删除的记录";
 :872
 $PAGE_DELETE_LOG = "GlyphWiki:削除記録";
-$PAGE_DELETE_LOG = "GlyphWiki:删除的记";
+$PAGE_DELETE_LOG = "GlyphWiki:删除的记录";
 :875
 $WORD_ACCEPT_AND_SUBMIT = "以上の記述を完全に理解し同意したうえで投稿する";
 $WORD_ACCEPT_AND_SUBMIT = "我理解并完全同意上述事项，提交";
@@ -413,7 +413,7 @@ $post_temp = " 異体字";
 $post_temp = " 异体字";
 :145
 $post_temp = " 別字形";
-$post_temp = " 别字形";
+$post_temp = " 别字形"; # zhs
 :179
 $buffer .= "<div class=\"query\"><span class=\"normal\">$db_wiki_name</span> のソース</div>";
 $buffer .= "<div class=\"query\"><span class=\"normal\">$db_wiki_name</span> 的源码</div>";
@@ -434,7 +434,7 @@ $subtitle = "<h2>".&local_localtime($data[3])."時点における${newversion}�
 $subtitle = "<h2>".&local_localtime($data[3])."的版本 (version ${newversion})</h2>\n";
 :248
 $history_list .= "<li class=\"history\"><a class=\"notice\" href=\"/wiki/$url_db_wiki_name\@$data[1]\">".&local_localtime($data[3])."時点における\@$data[1]版</a> $temp $summary";
-$history_list .= "<li class=\"history\"><a class=\"notice\" href=\"/wiki/$url_db_wiki_name\@$data[1]\">".&local_localtime($data[3])."的版本 (version \@$data[1])</a> $temp $summary";
+$history_list .= "<li class=\"history\"><a class=\"notice\" href=\"/wiki/$url_db_wiki_name\@$data[1]\">".&local_localtime($data[3])."的版本(version \@$data[1])</a> $temp $summary";
 :249
 $history_list .= "<ul><li>削除された行を<span class=\"olddata\">このように</span>表示します。</ul>";
 $history_list .= "<ul><li><span class=\"olddata\">这样</span>表示删除的行</ul>";
@@ -524,7 +524,7 @@ $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_FONT">フォント生成のヘ�
 $buffer .= qq|<li><a href="/wiki/GlyphWiki:$URL_FONT">字体文件生成帮助</a>|;
 :485
 $buffer .= qq|<li>TrueTypeフォント <a href="/font/$fontname.ttf">ダウンロード</a> (内部バージョン $fontname、$fontsize バイト)|;
-$buffer .= qq|<li>TrueType字体文件<a href="/font/$fontname.ttf">下载</a>（内部版本：$fontname，$fontsize字节）|;
+$buffer .= qq|<li>TrueType字体文件<a href="/font/$fontname.ttf">下载</a>（内部版本：$fontname，${fontsize}字节）|;
 :486,498,502
 $buffer .= qq|<ul><li>フォント生成ログ <a href="/font/$fontname.log">閲覧</a></ul>|;
 $buffer .= qq|<ul><li>查看<a href="/font/$fontname.log">字体文件生成日志</a></ul>|;
@@ -647,13 +647,13 @@ $buffer .= qq|<h2>このグリフの<a href="/wiki/GlyphWiki:$URL_ALIAS">エイ�
 $buffer .= qq|<h2>本字形的<a href="/wiki/GlyphWiki:Aliases">别名</a>一览</h2>|;
 :1083
 $buffer .= qq|<h2>このグリフを内部で引用している他のグリフ一覧</h2>|;
-$buffer .= qq|<h2>本字形内引用的其他字形</h2>|;
+$buffer .= qq|<h2>引用了本字形的其他字形</h2>|;
 :1086
 $buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&target=$wiki_name">部品グリフを別のグリフに置き換える</a></div>|;
 $buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&target=$wiki_name">用其他字形替换部件字形</a></div>|;
 :1103
 $buffer .= qq|<h2>このグリフで引用している他のグリフ一覧</h2>|;
-$buffer .= qq|<h2>引用了本字形的其他字形</h2>|;
+$buffer .= qq|<h2>本字形内引用的其他字形</h2>|;
 :1122
 $local_using =~ s/^Talk:/ノート:/;
 # no operation
@@ -710,7 +710,7 @@ $buffer .= qq|<h2>あなたのグリフ</h2>|;
 $buffer .= qq|<h2>您的字形</h2>|;
 :1261
 $buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">関連字</a> (入力必須): <input type="text" name="related" value="$temp2" size="6"><br>|; 
-$buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">关联字</a>（必需）：<input type="text" name="related" value="$temp2" size="6"><br>|; 
+$buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">关联字</a>（必需）：<input type="text" name="related" value="$temp2" size="6"><br>|;
 :1269
 $buffer .= qq|<div class="message"><div class="title">■投稿する前に以下の事柄を確認してください■</div><ol><li>GlyphWikiに投稿したデータは著作権の譲渡を行ったことになり、その<span class="notice">データがいかなる形態で改変・使用されることもあなたは許諾し、以後著作者人格権を主張・使用しないことを了承するものとみなします</span>。<li><span class="notice">他のフォントや印刷物などからグリフを無断で転載・コピー・トレースしないでください</span>。それ以外にも投稿内容に問題がある場合、<a href="/wiki/$URL_SAKUJO">削除の方針</a>に基づき削除されます。また、グリフウィキの運営方針についてはこれから決定していきますが、<span class="notice">最終的な決定権は管理者にあるものとします</span>。これらのことにあなたはあらかじめ同意したものとみなします。 <li>GlyphWikiのデータ・記事のライセンスはWikipediaの記事のライセンス(GFDL)とは異なります。詳しくは <a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a> を参照してください。</ol></div>|;
 $buffer .= qq|<div class="message"><div class="title">■提交前请确认以下事项■</div><ol><li>在字形维基发布的数据，意味着将著作权转让给字形维基，您同意<span class="notice">这些数据可被修改、以任何形式使用，并承认对后续的使用不持有著作权</span>。<li><span class="notice">请不要擅自从其他字体或出版物转载或复制内容</span>。如果内容有问题，管理员会根据<a href="/wiki/$URL_SAKUJO">删除规则</a>予以删除。此外，字形维基的管理政策可能改变，<span class="notice">最终决定权属于管理员</span>。提交视为您同意服从管理。 <li>字形维基的数据、文档的使用许可与Wikipedia的文章使用许可（GFDL）不同，详情请参考 <a href="/wiki/GlyphWiki:$URL_LICENSE">著作权与许可协议</a> 。</ol></div>|;
@@ -728,13 +728,13 @@ $buffer .= qq|<div class="message2">以下にソースを表示しています:<
 $buffer .= qq|<div class="message2">以下是源码：</div>|;
 :1291
 $buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">関連字</a>: <input type="text" name="related" value="$temp2" size="6"><br>|; 
-$buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">关联字</a>: <input type="text" name="related" value="$temp2" size="6"><br>|; 
+$buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">关联字</a>: <input type="text" name="related" value="$temp2" size="6"><br>|;
 :1298
 $buffer .= qq|<div class="message"><a href="/wiki/$url_db_wiki_name">$db_wiki_name</a> に戻る。</div>|;
 $buffer .= qq|<div class="message">回到<a href="/wiki/$url_db_wiki_name">$db_wiki_name</a>。</div>|;
 :1319
 $buffer .= qq|<h2>ノートの編集</h2>|;
-$buffer .= qq|<h2>编辑备注</h2>|;
+$buffer .= qq|<h2>编辑讨论</h2>|;
 :1326
 <a name="metaedit"><h2>メタ情報の編集</h2></a>
 <a name="metaedit"><h2>编辑基本信息</h2></a>
@@ -743,7 +743,7 @@ $buffer .= qq|<h2>编辑备注</h2>|;
 <noscript><ul><li>请用“:项目名:值”的形式每行记录一项数据。<li>启用JavaScript可以用表格形式编辑。<li>项目名不能含有“:”<li>项目名或者值不能为空<li>最终登记入数据库需要“提交”</ul></noscript>
 :1341
 $buffer .= qq|<div class="message"><div class="title">■投稿する前に以下の事柄を確認してください■</div><ol><li>GlyphWikiに投稿した記事は著作権の譲渡を行ったことになり、その<span class="notice">記事がいかなる形態で改変・使用されることもあなたは許諾し、以後著作者人格権を主張・使用しないことを了承するものとみなします</span>。<li><span class="notice">他のWebページや出版物などから文章を無断で転載・コピー・トレースしないでください</span>。それ以外にも投稿内容に問題がある場合、<a href="/wiki/$URL_SAKUJO">削除の方針</a>に基づき削除されます。また、グリフウィキの運営方針についてはこれから決定していきますが、<span class="notice">最終的な決定権は管理者にあるものとします</span>。これらのことにあなたはあらかじめ同意したものとみなします。 <li>GlyphWikiのデータ・記事のライセンスはWikipediaの記事のライセンス(GFDL)とは異なります。詳しくは<a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a>を参照してください。</ol></div>|;
-$buffer .= qq|<div class="message"><div class="title">■提交前请确认以下事项■</div><ol><li>在字形维基发布的文档，意味着将著作权转让给字形百科，您同意<span class="notice">这些文档可被修改、以任何形式使用，并承认对后续的使用不持有著作权</span>。<li><span class="notice">请不要擅自从其他网页或出版物转载或复制内容</span>。如果内容有问题，管理员会根据<a href="/wiki/$URL_SAKUJO">删除规则</a>予以删除。此外，字形维基的管理政策可能改变，<span class="notice">最终决定权属于管理员</span>。提交视为您同意服从管理。 <li>字形维基的数据、文档的使用许可与Wikipedia的文章使用许可（GFDL）不同，详情请参考<a href="/wiki/GlyphWiki:$URL_LICENSE">著作权与许可协议</a>。</ol></div>|;
+$buffer .= qq|<div class="message"><div class="title">■提交前请确认以下事项■</div><ol><li>在字形维基发布的文档，意味着将著作权转让给字形维基，您同意<span class="notice">这些文档可被修改、以任何形式使用，并承认对后续的使用不持有著作权</span>。<li><span class="notice">请不要擅自从其他网页或出版物转载或复制内容</span>。如果内容有问题，管理员会根据<a href="/wiki/$URL_SAKUJO">删除规则</a>予以删除。此外，字形维基的管理政策可能改变，<span class="notice">最终决定权属于管理员</span>。提交视为您同意服从管理。 <li>字形维基的数据、文档的使用许可与Wikipedia的文章使用许可（GFDL）不同，详情请参考<a href="/wiki/GlyphWiki:$URL_LICENSE">著作权与许可协议</a>。</ol></div>|;
 :1357
 $buffer .= qq|<h2>あなたの更新内容</h2>|;
 $buffer .= qq|<h2>您的更新内容</h2>|;
@@ -976,7 +976,7 @@ $buffer2 .= "最新";
 $buffer2 .= "最新"; # zhs
 :864
 $buffer2 .= "<a href=\"/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hidemyself$hideauto$listtype$setuser\">最新</a>";
-$buffer2 .= "<a href=\"/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hidemyself$hideauto$listtype$setuser\">最新</a>"; #zhs
+$buffer2 .= "<a href=\"/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hidemyself$hideauto$listtype$setuser\">最新</a>"; # zhs
 :868
 $buffer2 .= "最古";
 $buffer2 .= "最早";
@@ -1030,7 +1030,7 @@ $buffer .= "<div class=\"texts\">凡例:(最新版) = 最新版との比較、(�
 $buffer .= "<div class=\"texts\">(最新版) = 与最新版比较, (前一版) = 与前一版比较，日本标准时间</div>";
 :1093
 $history_list .= "(最新版) ";
-$history_list .= "(最新版) "; 
+$history_list .= "(最新版) "; # zhs
 :1096
 $history_list .= "(<a href=\"/wiki/$db_wiki_name?diff=$data[1]\">最新版</a>) ";
 $history_list .= "(<a href=\"/wiki/$db_wiki_name?diff=$data[1]\">最新版</a>) "; # zhs
