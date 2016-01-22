@@ -114,7 +114,7 @@ $WORD_LOGIN = "ログイン";
 $WORD_LOGIN = "登录";
 :839
 $WORD_FROM = "出典: フリーグリフデータベース『グリフウィキ(GlyphWiki)』";
-$WORD_FROM = "来自字形维基：自由的字形数据库『グリフウィキ(GlyphWiki)』";
+$WORD_FROM = "字形维基(GlyphWiki), 自由的字形数据库";
 :841
 $TAB_KAISETSU = "解説";
 $TAB_KAISETSU = "文章";
