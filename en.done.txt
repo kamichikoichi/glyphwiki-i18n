@@ -18,10 +18,10 @@ $temp2 = sprintf("Ratio of glyphs implemented: %d\% [%d glyphs implemented, %d g
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/common.pl
 :753
 $dbh->do("INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'エイリアス実体変更による自動更新', 0, '$old_buffer', '$ip', $current_related, 1)"); 
-$dbh->do("INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'Automatic update due to changes in the alias's base glyph', 0, '$old_buffer', '$ip', $current_related, 1)"); 
+$dbh->do("INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'Automatic update due to changes in the alias''s base glyph', 0, '$old_buffer', '$ip', $current_related, 1)"); # double 'single-quote' for SQL string
 :754
 $DEBUG .= "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'エイリアス実体変更による自動更新', 0, '$old_buffer', '$ip', $current_related, 1)\n";
-$DEBUG .= "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'Automatic update due to changes in the alias's base glyph', 0, '$old_buffer', '$ip', $current_related, 1)\n";
+$DEBUG .= "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'Automatic update due to changes in the alias''s base glyph', 0, '$old_buffer', '$ip', $current_related, 1)\n"; # double 'single-quote' for SQL string
 :794
 $URL_USERNAME = &url_encode("ユーザー名");
 $URL_USERNAME = "Username";
