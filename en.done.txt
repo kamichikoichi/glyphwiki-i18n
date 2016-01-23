@@ -613,8 +613,8 @@ $parent_info .= "Previous: <a href=\"/wiki/$codechar\"><img class=\"thumb relate
 $parent_info .= "次の番号：<a href=\"/wiki/$codechar\"><img class=\"thumb related\" src=\"/glyph/$codechar.50px.png\"> ($codechar)</a><br>";
 $parent_info .= "Next: <a href=\"/wiki/$codechar\"><img class=\"thumb related\" src=\"/glyph/$codechar.50px.png\"> ($codechar)</a><br>";
 :812
-$buffer .= qq|法務省 戸籍統一文字情報 <a href="http://kosekimoji.moj.go.jp/kosekimojidb/mjko/PeopleList/EXECUTE?ihid_clickedButtonName=iimag_Moji\&ihid_SelectedKskMjBng=$parent_code\&ihid_SearchCount=0">文字情報</a><br>|;
-$buffer .= qq|Ministry of Justice Family Register Unified Characters information <a href="http://kosekimoji.moj.go.jp/kosekimojidb/mjko/PeopleList/EXECUTE?ihid_clickedButtonName=iimag_Moji\&ihid_SelectedKskMjBng=$parent_code\&ihid_SearchCount=0">character information</a><br>|;
+$buffer .= qq|法務省 戸籍統一文字情報 <a href="http://kosekimoji.moj.go.jp/kosekimojidb/mjko/PeopleList/EXECUTE?ihid_clickedButtonName=iimag_Moji\&ihid_SelectedKskMjBng=$parent_code\&ihid_SearchCount=0&itxt_Yomi1=&itxt_Yomi2=&itxt_Yomi3=&islc_Jis=0&islc_Kakusu1=0&irdo_Code=1&itxt_Code=$parent_code&ihid_SearchCount=1">文字情報</a><br>|;
+$buffer .= qq|Ministry of Justice Family Register Unified Characters information <a href="http://kosekimoji.moj.go.jp/kosekimojidb/mjko/PeopleList/EXECUTE?ihid_clickedButtonName=iimag_Moji\&ihid_SelectedKskMjBng=$parent_code\&ihid_SearchCount=0&itxt_Yomi1=&itxt_Yomi2=&itxt_Yomi3=&islc_Jis=0&islc_Kakusu1=0&irdo_Code=1&itxt_Code=$parent_code&ihid_SearchCount=1">character information</a><br>|;
 :821
 $buffer .= qq|<ul><li><a href="http://www.cns11643.gov.tw/AIDB/query_general_view.do?page=$1\&code=$2">台湾国家発展委員会 全字庫</a> <img src=\"/images/external.png\"> (<a href="http://www.cns11643.gov.tw/MAIDB/welcome.do">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
 $buffer .= qq|<ul><li><a href="http://www.cns11643.gov.tw/AIDB/query_general_view.do?page=$1\&code=$2">National Development Council of Taiwan Master Ideographs Seeker</a> <img src=\"/images/external.png\"> (<a href="http://www.cns11643.gov.tw/MAIDB/welcome.do">home page</a> <img src=\"/images/external.png\">)</ul>|;
