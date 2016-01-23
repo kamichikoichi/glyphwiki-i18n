@@ -99,7 +99,7 @@ $WORD_DESCRIPTION = "説明";
 $WORD_DESCRIPTION = "Description";
 :823
 $WORD_DEFAULT = "メインページ";
-$WORD_DEFAULT = "Main page";
+$WORD_DEFAULT = "MainPage"; # must be equal to toppage's name
 :826
 $WORD_CONFIRM_EMAIL = "確認用コードを送信する";
 $WORD_CONFIRM_EMAIL = "Send confirmation code by email.";
