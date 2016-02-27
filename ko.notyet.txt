@@ -1,18 +1,27 @@
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi
-:740
+:742
 ($new_version, $registered_time) = &put_page($DBH, $db_wiki_name, $user, $nadata, "エイリアス入れ替え", $env_remoteaddress, $narelated, -1, 0);
 ($new_version, $registered_time) = &put_page($DBH, $db_wiki_name, $user, $nadata, "エイリアス入れ替え", $env_remoteaddress, $narelated, -1, 0);
-:747
+:749
 ($new_version, $registered_time) = &put_page($DBH, $oname, $user, $ntdata, "エイリアス入れ替え（自動更新）", $env_remoteaddress, $orelated, -1, 0);
 ($new_version, $registered_time) = &put_page($DBH, $oname, $user, $ntdata, "エイリアス入れ替え（自動更新）", $env_remoteaddress, $orelated, -1, 0);
-:752
+:754
 ($new_version, $registered_time) = &put_page($DBH, $target, $user, $ntdata, "エイリアス入れ替え（自動更新）", $env_remoteaddress, $ntrelated, -1, 0);
 ($new_version, $registered_time) = &put_page($DBH, $target, $user, $ntdata, "エイリアス入れ替え（自動更新）", $env_remoteaddress, $ntrelated, -1, 0);
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/common.pl
-:815
+:845
 $URL_METADATA = &url_encode("メタ情報");
 $URL_METADATA = &url_encode("メタ情報");
+:884
+$PREFIX_KAIWA = "会話";
+$PREFIX_KAIWA = "会話";
+:885
+$PREFIX_GROUP = "グループ";
+$PREFIX_GROUP = "グループ";
+:886
+$PREFIX_NOTE = "ノート";
+$PREFIX_NOTE = "ノート";
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/config.pl
 

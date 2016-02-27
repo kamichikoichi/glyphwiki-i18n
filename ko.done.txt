@@ -1,268 +1,232 @@
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi
-:898
+:901
 $temp = sprintf("<div class=\"texts\"><p>グリフ実装率：%d\% (実装済：%dグリフ、未実装：%dグリフ)</p></div>", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
 $temp = sprintf("<div class=\"texts\"><p>글리프의 실장율：%d\% (실장필：%d글리프、미실장：%d글리프)</p></div>", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
-:899
+:902
 $temp2 = sprintf("グリフ実装率：%d\% [済%d、未%d]", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
 $temp2 = sprintf("글리프의 실장율：%d\% [필%d、미%d]", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/common.pl
-:753
+:783
 $dbh->do("INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'エイリアス実体変更による自動更新', 0, '$old_buffer', '$ip', $current_related, 1)"); 
 $dbh->do("INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', '에일리어스의 본체변경에 의한 자동갱신', 0, '$old_buffer', '$ip', $current_related, 1)"); 
-:754
+:784
 $DEBUG .= "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'エイリアス実体変更による自動更新', 0, '$old_buffer', '$ip', $current_related, 1)\n";
 $DEBUG .= "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', '에일리어스의 본체변경에 의한 자동갱신', 0, '$old_buffer', '$ip', $current_related, 1)\n";
-:794
+:824
 $URL_USERNAME = &url_encode("ユーザー名");
 $URL_USERNAME = &url_encode("사용자명");
-:795
+:825
 $URL_SANDBOX = &url_encode("サンドボックス");
 $URL_SANDBOX = &url_encode("샌드박스");
-:796
+:826
 $URL_SEISAKUIRAI = &url_encode("制作依頼");
 $URL_SEISAKUIRAI = &url_encode("제작의뢰");
-:797
+:827
 $URL_HENSHU = &url_encode("編集の仕方");
 $URL_HENSHU = &url_encode("편집방법");
-:798
+:828
 $URL_YOUYAKU = &url_encode("常に要約欄に記入する");
 $URL_YOUYAKU = &url_encode("항상요약란에입력하기");
-:799
+:829
 $URL_LICENSE = &url_encode("データ・記事のライセンス");
 $URL_LICENSE = &url_encode("데이터·문서의라이선스");
-:800
+:830
 $URL_ABOUT = &url_encode("グリフウィキについて");
 $URL_ABOUT = &url_encode("글리프위키에대해");
-:801
+:831
 $URL_PRIVACY = &url_encode("プライバシー・ポリシー");
 $URL_PRIVACY = &url_encode("개인정보정책");
-:802
+:832
 $URL_MENSEKI = &url_encode("免責事項");
 $URL_MENSEKI = &url_encode("면책조항");
-:803
+:833
 $URL_RELATED = &url_encode("関連字");
 $URL_RELATED = &url_encode("관련글자");
-:804
+:834
 $URL_VARIANT = &url_encode("異体字");
 $URL_VARIANT = &url_encode("이체글자");
-:805
+:835
 $URL_BUG = &url_encode("バグ報告");
 $URL_BUG = &url_encode("버그신고");
-:806
+:836
 $URL_JOIN = &url_encode("あなたにできること");
 $URL_JOIN = &url_encode("당신이할수있는것");
-:807
+:837
 $URL_FAQ = &url_encode("よくある質問");
 $URL_FAQ = &url_encode("자주있는질문");
-:808
+:838
 $URL_HOWTO = &url_encode("どうやって使うのか");
 $URL_HOWTO = &url_encode("사용방법");
-:809
+:839
 $URL_FONT = &url_encode("フォント生成");
 $URL_FONT = &url_encode("폰트생성");
-:810
+:840
 $URL_ALIAS = &url_encode("エイリアス");
 $URL_ALIAS = &url_encode("에일리어스");
-:811
+:841
 $URL_CAPTCHA = &url_encode("キャプチャ");
 $URL_CAPTCHA = &url_encode("캡쳐");
-:812
+:842
 $URL_NEWS = &url_encode("お知らせ");
 $URL_NEWS = &url_encode("공지");
-:813
+:843
 $URL_IDOBATA = &url_encode("井戸端");
 $URL_IDOBATA = &url_encode("잡담");
-:814
+:844
 $URL_GUIDE = &url_encode("命名ガイドライン");
 $URL_GUIDE = &url_encode("명명가이드라인");
-:817
+:847
 $WORD_QUERY = "問い合わせ";
 $WORD_QUERY = "문의하기";
-:819
+:849
 $WORD_EDITOR = "専用エディタで編集する";
 $WORD_EDITOR = "전용에디터로 편집하기";
-:821
+:851
 $WORD_DESCRIPTION = "説明";
 $WORD_DESCRIPTION = "설명";
-:823
+:853
 $WORD_DEFAULT = "メインページ";
 $WORD_DEFAULT = "대문";
-:826
+:856
 $WORD_CONFIRM_EMAIL = "確認用コードを送信する";
 $WORD_CONFIRM_EMAIL = "확인용코드를 송신하기";
-:829
+:859
 $WORD_REGISTER_EMAIL = "メールアドレスを登録する";
 $WORD_REGISTER_EMAIL = "메일주소를 등록하기";
-:832
+:862
 $WORD_NEW_PASSWORD = "新しいパスワードをメールで送る";
 $WORD_NEW_PASSWORD = "새로운 비밀번호를 메일로 보내기";
-:835
+:865
 $WORD_LOGIN = "ログイン";
 $WORD_LOGIN = "로그인";
-:839
+:869
 $WORD_FROM = "出典: フリーグリフデータベース『グリフウィキ(GlyphWiki)』";
 $WORD_FROM = "출전 : 프리 글리프 데이터베이스[글리프위키(GlyphWiki)]";
-:841
+:871
 $TAB_KAISETSU = "解説";
 $TAB_KAISETSU = "해설";
-:842
+:872
 $TAB_SPECIAL = "特別ページ";
 $TAB_SPECIAL = "스페셜 페이지";
-:843
+:873
 $TAB_EDIT = "編集";
 $TAB_EDIT = "편집";
-:844
+:874
 $TAB_VIEW_SOURCE = "ソースを表示";
 $TAB_VIEW_SOURCE = "소스를 표시";
-:845
+:875
 $TAB_GLYPH = "グリフ";
 $TAB_GLYPH = "글리프";
-:846
+:876
 $TAB_RECENT = "履歴";
 $TAB_RECENT = "이력";
-:847
+:877
 $TAB_GROUP = "グループ";
 $TAB_GROUP = "그룹";
-:848
+:878
 $TAB_NOTE = "ノート";
 $TAB_NOTE = "토론";
-:849
+:879
 $TAB_USER = "利用者ページ";
 $TAB_USER = "이용자 페이지";
-:850
+:880
 $LABEL_RECENT = "履歴";
 $LABEL_RECENT = "이력";
-:851
+:881
 $LABEL_KAIWA = "会話";
 $LABEL_KAIWA = "토크";
-:852
-$LABEL_USER = "利用者";
-$LABEL_USER = "이용자";
-:853
+:882
 $LABEL_ANONYMOUS = "匿名利用者";
 $LABEL_ANONYMOUS = "익명이용자";
-:855
+:883
+$PREFIX_USER = "利用者";
+$PREFIX_USER = "이용자";
+:889
 $WORD_MUSTRELATE = "関連付けるべきグリフ";
 $WORD_MUSTRELATE = "관련시켜야 할 글리프";
-:856
+:890
 $PAGE_MUSTRELATE = "GlyphWiki:関連付けるべきグリフ";
 $PAGE_MUSTRELATE = "GlyphWiki:관련시켜야할글리프";
-:859
+:893
 $WORD_HOGOKIROKU = "保護記録";
 $WORD_HOGOKIROKU = "보호기록";
-:860
+:894
 $PAGE_HOGOKIROKU = "GlyphWiki:保護記録";
 $PAGE_HOGOKIROKU = "GlyphWiki:보호기록";
-:863
+:897
 $WORD_HOGO = "保護されたページ";
 $WORD_HOGO = "보호된 페이지";
-:864
+:898
 $PAGE_HOGO = "GlyphWiki:保護されたページ";
 $PAGE_HOGO = "GlyphWiki:보호된페이지";
-:867
+:901
 $WORD_SAKUJO = "削除の方針";
 $WORD_SAKUJO = "삭제방침";
-:868
+:902
 $PAGE_SAKUJO = "GlyphWiki:削除の方針";
 $PAGE_SAKUJO = "GlyphWiki:삭제방침";
-:871
+:905
 $WORD_DELETE_LOG = "削除記録";
 $WORD_DELETE_LOG = "삭제기록";
-:872
+:906
 $PAGE_DELETE_LOG = "GlyphWiki:削除記録";
 $PAGE_DELETE_LOG = "GlyphWiki:삭제기록";
-:875
+:909
 $WORD_ACCEPT_AND_SUBMIT = "以上の記述を完全に理解し同意したうえで投稿する";
 $WORD_ACCEPT_AND_SUBMIT = "위의 내용을 완전히 이해하고 동의한 뒤에 투고하기";
-:878
+:912
 $WORD_PREVIEW = "プレビューを実行";
 $WORD_PREVIEW = "미리보기를 실행";
-:882
+:916
 $WORD_KENSAKU = "検索";
 $WORD_KENSAKU = "검색";
-:886
+:920
 $WORD_HYOUJI = "表示";
 $WORD_HYOUJI = "표시";
-:898
-$label =~ s/Talk:/ノート:/;
-# no operation
-:899
-$label =~ s/GlyphWiki-talk:/GlyphWiki-ノート:/;
-# no operation
-:900
-$label =~ s/User:/利用者:/;
-# no operation
-:901
-$label =~ s/User-talk:/利用者-会話:/;
-# no operation
-:902
-$label =~ s/Group:/グループ:/;
-# no operation
-:903
-$label =~ s/Group-talk:/グループ-ノート:/;
-# no operation
-:910
-$label =~ s/利用者:/User:/;
-# no operation
-:911
-$label =~ s/利用者-会話:/User-talk:/;
-# no operation
-:912
-$label =~ s/グループ:/Group:/;
-# no operation
-:913
-$label =~ s/グループ-ノート:/Group-talk:/; 
-# no operation
-:914
-$label =~ s/GlyphWiki-ノート:/GlyphWiki-talk:/; 
-# no operation
-:915
-$label =~ s/ノート:/Talk:/;
-# no operation
-:1012
+:1046
 return sprintf("%04d年%d月%d日(%s) %02d:%02d", $year + 1900, $mon + 1, $mday, qw(日 月 火 水 木 金 土)[$wday], $hour, $min);
 return sprintf("%04d年%d月%d日(%s) %02d:%02d", $year + 1900, $mon + 1, $mday, qw(일 월 화 수 목 금 토)[$wday], $hour, $min);
-:1110
+:1144
 my $subject = 'Password reminder from GlyphWiki (グリフウィキからのパスワードのお知らせ)';
 my $subject = 'Password reminder from GlyphWiki (글리프위키로부터 비밀번호의 공지)';
-:1112
+:1146
 どなたか（$ip のIPアドレスの使用者）がグリフウィキ（http://glyphwiki.org/）
 누군가（$ip 의 IP주소의 사용자) 가 글리프위키（http://glyphwiki.org/）
-:1113
+:1147
 のログイン用パスワードの再発行を依頼しました。
 의 로그인용 비밀번호의 재발행을 의뢰했습니다.
-:1115
+:1149
 利用者 "$name" のパスワードを "$temp_password" に変更しました。
 이용자 "$name" 의 비밀번호를 "$temp_password" 로 변경했습니다.
-:1116
+:1150
 ログインして別のパスワードに変更してください。
 로그인해서 다른 비밀번호로 변경해 주십시요.
-:1484
+:1518
 my $subject = 'GlyphWiki メールアドレスの確認';
 my $subject = 'GlyphWiki 메일주소의 확인';
-:1492
+:1526
 どなたか（IPアドレス $ip の使用者）がこのメールアドレスを
 누군가 (IP주소 $ip 의 사용자)가 이 메일주소를
-:1493
+:1527
 GlyphWiki のアカウント "$name" に登録しました。
 GlyphWiki 의 계정 "$name" 에 등록했습니다.
-:1495
+:1529
 このアカウントがあなたのものであるか確認してください。
 이 계정이 당신의 것인지 확인해 주십시요.
-:1496
+:1530
 あなたの登録したアカウントであるならば、GlyphWiki
 당신이 등록한 계정이라면, GlyphWiki
-:1497
+:1531
 のメール通知機能を有効にするために、以下のURLにアクセスしてください:
 의 메일통지기능을 유효화하기 위해, 아래의 URL에 액서스해 주십시요
-:1501
+:1535
 もし GlyphWiki について身に覚えがない場合は、リンクを開かないでください。
 만약 GlyphWiki에 관해서 기억이 없는 경우는, 링크를 열지 마십시요.
-:1502
+:1536
 確認用コードは $expire に期限切れになります。
 확인용 코드는 $expire 에 기한을 초과하게 됩니다.
-:1805
+:1839
 unshift(@tocresult, qq(<div class="toc"><h1>目次</h1>));
 unshift(@tocresult, qq(<div class="toc"><h1>목차</h1>));
 
@@ -342,42 +306,6 @@ $buffer .= qq|<div class="login"><img src="/images/user.gif"> <a href="/wiki/Spe
 $buffer .= qq|<div class="login"><img src="/images/user.gif"> <a href="/wiki/Special:Userlogin?returnto=$url_query">로그인 혹은 아이디작성</a></div>|;
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_right_general.pl
-:57
-$r_data =~ s/\[\[([^ \]]+ )?Talk:([^\]]+)\]\]/[[$1ノート:$2]]/g;
-# no operation
-:58
-$r_data =~ s/\[\[([^ \]]+ )?GlyphWiki-talk:([^\]]+)\]\]/[[$1GlyphWiki-ノート:$2]]/g;
-# no operation
-:59
-$r_data =~ s/\[\[([^ \]]+ )?Group:([^\]]+)\]\]/[[$1グループ:$2]]/g;
-# no operation
-:60
-$r_data =~ s/\[\[([^ \]]+ )?Group-talk:([^\]]+)\]\]/[[$1グループ-ノート:$2]]/g;
-# no operation
-:61
-$r_data =~ s/\[\[([^ \]]+ )?User:([^\]]+)\]\]/[[$1利用者:$2]]/g;
-# no operation
-:62
-$r_data =~ s/\[\[([^ \]]+ )?User-talk:([^\]]+)\]\]/[[$1利用者-会話:$2]]/g;
-# no operation
-:65
-$cgi_textbox =~ s/\[\[([^ \]]+ )?Talk:([^\]]+)\]\]/[[$1ノート:$2]]/g;
-# no operation
-:66
-$cgi_textbox =~ s/\[\[([^ \]]+ )?GlyphWiki-talk:([^\]]+)\]\]/[[$1GlyphWiki-ノート:$2]]/g;
-# no operation
-:67
-$cgi_textbox =~ s/\[\[([^ \]]+ )?Group:([^\]]+)\]\]/[[$1グループ:$2]]/g;
-# no operation
-:68
-$cgi_textbox =~ s/\[\[([^ \]]+ )?Group-talk:([^\]]+)\]\]/[[$1グループ-ノート:$2]]/g;
-# no operation
-:69
-$cgi_textbox =~ s/\[\[([^ \]]+ )?User:([^\]]+)\]\]/[[$1利用者:$2]]/g;
-# no operation
-:70
-$cgi_textbox =~ s/\[\[([^ \]]+ )?User-talk:([^\]]+)\]\]/[[$1利用者-会話:$2]]/g;
-# no operation
 :107
 $title = qq|$db_wiki_name を編集中|;
 $title = qq|$db_wiki_name 을(를) 편집중|;
@@ -618,24 +546,6 @@ $buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&tar
 :1103
 $buffer .= qq|<h2>このグリフで引用している他のグリフ一覧</h2>|;
 $buffer .= qq|<h2>이 글리프에서 인용하고 있는 다른 글리프 일람</h2>|;
-:1122
-$local_using =~ s/^Talk:/ノート:/;
-# no operation
-:1123
-$local_using =~ s/^Glyphwiki-talk:/GlyphWiki-ノート:/;
-# no operation
-:1124
-$local_using =~ s/^User:/利用者:/;
-# no operation
-:1125
-$local_using =~ s/^User-talk:/利用者-会話:/;
-# no operation
-:1126
-$local_using =~ s/^Group:/グループ:/;
-# no operation
-:1127
-$local_using =~ s/^Group-talk:/グループ-ノート:/;
-# no operation
 :1167
 my $temp2 = &url_encode("旧部品の更新");
 my $temp2 = &url_encode("헌 부품의 갱신");
