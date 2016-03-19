@@ -10,16 +10,16 @@
 ($new_version, $registered_time) = &put_page($DBH, $target, $user, $ntdata, "エイリアス入れ替え（自動更新）", $env_remoteaddress, $ntrelated, -1, 0);
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/common.pl
-:845
+:833
 $URL_METADATA = &url_encode("メタ情報");
 $URL_METADATA = &url_encode("メタ情報");
-:884
+:907
 $PREFIX_KAIWA = "会話";
 $PREFIX_KAIWA = "会話";
-:885
+:908
 $PREFIX_GROUP = "グループ";
 $PREFIX_GROUP = "グループ";
-:886
+:909
 $PREFIX_NOTE = "ノート";
 $PREFIX_NOTE = "ノート";
 
@@ -54,16 +54,19 @@ $buffer .= qq|<ul><li><a href="http://www.cns11643.gov.tw/AIDB/query_general_vie
 :929
 $buffer .= qq|<h2><a href="/wiki/GlyphWiki:$URL_METADATA">メタ情報</a></h2>|;
 $buffer .= qq|<h2><a href="/wiki/GlyphWiki:$URL_METADATA">メタ情報</a></h2>|;
-:1133
+:1104,1138
+$buffer .= qq|<div class="texts"><dl>省略しています ... <a href="?view=all">表示する</a></dl></div>|;
+$buffer .= qq|<div class="texts"><dl>省略しています ... <a href="?view=all">表示する</a></dl></div>|;
+:1133,1137
 $buffer .= qq|<h2>このグリフを収録するグループおよび引用するドキュメント一覧</h2>|;
 $buffer .= qq|<h2>このグリフを収録するグループおよび引用するドキュメント一覧</h2>|;
-:1319
+:1323
 $buffer .= qq|<h2>ノートの編集</h2>|;
 $buffer .= qq|<h2>ノートの編集</h2>|;
-:1326
+:1330
 <a name="metaedit"><h2>メタ情報の編集</h2></a>
 <a name="metaedit"><h2>メタ情報の編集</h2></a>
-:1332
+:1336
 <noscript><ul><li>「:項目名:値」の形式で１行１データで記述してください。<li>JavaScriptを有効にすると表形式での編集が可能です。<li>項目名に「:」を含めることはできません<li>項目名・値を空にしないでください<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul></noscript>
 <noscript><ul><li>「:項目名:値」の形式で１行１データで記述してください。<li>JavaScriptを有効にすると表形式での編集が可能です。<li>項目名に「:」を含めることはできません<li>項目名・値を空にしないでください<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul></noscript>
 

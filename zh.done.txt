@@ -16,238 +16,235 @@ $temp2 = sprintf("グリフ実装率：%d\% [済%d、未%d]", int($implemented /
 $temp2 = sprintf("作字率：%d\% [已%d、未%d]", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
 
 !/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/common.pl
-:783
-$dbh->do("INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'エイリアス実体変更による自動更新', 0, '$old_buffer', '$ip', $current_related, 1)"); 
-$dbh->do("INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', '别名实体变更引起的自动更新', 0, '$old_buffer', '$ip', $current_related, 1)");
-:784
-$DEBUG .= "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'エイリアス実体変更による自動更新', 0, '$old_buffer', '$ip', $current_related, 1)\n";
-$DEBUG .= "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', '别名实体变更引起的自动更新', 0, '$old_buffer', '$ip', $current_related, 1)\n";
-:824
+:775
+&sql_do($dbh, "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'エイリアス実体変更による自動更新', 0, '$old_buffer', '$ip', $current_related, 1)"); 
+&sql_do($dbh, "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', '别名实体变更引起的自动更新', 0, '$old_buffer', '$ip', $current_related, 1)"); 
+:812
 $URL_USERNAME = &url_encode("ユーザー名");
 $URL_USERNAME = &url_encode("用户名");
-:825
+:813
 $URL_SANDBOX = &url_encode("サンドボックス");
 $URL_SANDBOX = &url_encode("沙盒");
-:826
+:814
 $URL_SEISAKUIRAI = &url_encode("制作依頼");
 $URL_SEISAKUIRAI = &url_encode("★制製★作要求");
-:827
+:815
 $URL_HENSHU = &url_encode("編集の仕方");
 $URL_HENSHU = &url_encode("编辑方法");
-:828
+:816
 $URL_YOUYAKU = &url_encode("常に要約欄に記入する");
 $URL_YOUYAKU = &url_encode("务必填写摘要栏");
-:829
+:817
 $URL_LICENSE = &url_encode("データ・記事のライセンス");
 $URL_LICENSE = &url_encode("著作权与许可协议");
-:830
+:818
 $URL_ABOUT = &url_encode("グリフウィキについて");
 $URL_ABOUT = &url_encode("关于字形维基");
-:831
+:819
 $URL_PRIVACY = &url_encode("プライバシー・ポリシー");
 $URL_PRIVACY = &url_encode("隐私与政策");
-:832
+:820
 $URL_MENSEKI = &url_encode("免責事項");
 $URL_MENSEKI = &url_encode("免责声明");
-:833
+:821
 $URL_RELATED = &url_encode("関連字");
 $URL_RELATED = &url_encode("关联字");
-:834
+:822
 $URL_VARIANT = &url_encode("異体字");
 $URL_VARIANT = &url_encode("异体字");
-:835
+:823
 $URL_BUG = &url_encode("バグ報告");
 $URL_BUG = &url_encode("报告漏洞");
-:836
+:824
 $URL_JOIN = &url_encode("あなたにできること");
 $URL_JOIN = &url_encode("您也可以参与");
-:837
+:825
 $URL_FAQ = &url_encode("よくある質問");
 $URL_FAQ = &url_encode("常见问题");
-:838
+:826
 $URL_HOWTO = &url_encode("どうやって使うのか");
 $URL_HOWTO = &url_encode("使用教程");
-:839
+:827
 $URL_FONT = &url_encode("フォント生成");
 $URL_FONT = &url_encode("生成字体文件");
-:840
+:828
 $URL_ALIAS = &url_encode("エイリアス");
 $URL_ALIAS = &url_encode("别名");
-:841
+:829
 $URL_CAPTCHA = &url_encode("キャプチャ");
 $URL_CAPTCHA = &url_encode("验证码");
-:842
+:830
 $URL_NEWS = &url_encode("お知らせ");
 $URL_NEWS = &url_encode("通知");
-:843
+:831
 $URL_IDOBATA = &url_encode("井戸端");
 $URL_IDOBATA = &url_encode("讨论区");
-:844
+:832
 $URL_GUIDE = &url_encode("命名ガイドライン");
 $URL_GUIDE = &url_encode("命名规范");
-:845
+:833
 $URL_METADATA = &url_encode("メタ情報");
 $URL_METADATA = &url_encode("基本信息");
-:847
+:835
 $WORD_QUERY = "問い合わせ";
 $WORD_QUERY = "您搜索的是";
-:849
+:836
 $WORD_EDITOR = "専用エディタで編集する";
 $WORD_EDITOR = "用字形编辑器编辑";
-:851
+:837
 $WORD_DESCRIPTION = "説明";
 $WORD_DESCRIPTION = "说明";
-:853
+:839
 $WORD_DEFAULT = "メインページ";
 $WORD_DEFAULT = "首页";
-:856
+:842
 $WORD_CONFIRM_EMAIL = "確認用コードを送信する";
 $WORD_CONFIRM_EMAIL = "向电子邮箱发送验证码";
-:859
+:845
 $WORD_REGISTER_EMAIL = "メールアドレスを登録する";
 $WORD_REGISTER_EMAIL = "登记电子邮箱";
-:862
+:848
 $WORD_NEW_PASSWORD = "新しいパスワードをメールで送る";
 $WORD_NEW_PASSWORD = "向电子邮箱发送新的密码";
-:865
+:851
 $WORD_LOGIN = "ログイン";
 $WORD_LOGIN = "登录";
-:869
+:855
 $WORD_FROM = "出典: フリーグリフデータベース『グリフウィキ(GlyphWiki)』";
 $WORD_FROM = "字形维基(GlyphWiki), 自由的字形数据库";
-:871
-$TAB_KAISETSU = "解説";
-$TAB_KAISETSU = "文章";
-:872
-$TAB_SPECIAL = "特別ページ";
-$TAB_SPECIAL = "特殊页面";
-:873
-$TAB_EDIT = "編集";
-$TAB_EDIT = "编辑";
-:874
-$TAB_VIEW_SOURCE = "ソースを表示";
-$TAB_VIEW_SOURCE = "显示源码";
-:875
-$TAB_GLYPH = "グリフ";
-$TAB_GLYPH = "字形";
-:876
-$TAB_RECENT = "履歴";
-$TAB_RECENT = "历史";
-:877
-$TAB_GROUP = "グループ";
-$TAB_GROUP = "字表";
-:878
-$TAB_NOTE = "ノート";
-$TAB_NOTE = "讨论";
-:879
-$TAB_USER = "利用者ページ";
-$TAB_USER = "用户页面";
-:880
-$LABEL_RECENT = "履歴";
-$LABEL_RECENT = "历史";
-:881
-$LABEL_KAIWA = "会話";
-$LABEL_KAIWA = "对话";
-:882
-$LABEL_ANONYMOUS = "匿名利用者";
-$LABEL_ANONYMOUS = "匿名用户";
-:883
-$PREFIX_USER = "利用者";
-$PREFIX_USER = "用户";
-:884
-$PREFIX_KAIWA = "会話";
-$PREFIX_KAIWA = "对话";
-:885
-$PREFIX_GROUP = "グループ";
-$PREFIX_GROUP = "字表";
-:886
-$PREFIX_NOTE = "ノート";
-$PREFIX_NOTE = "讨论";
-:889
+:857
 $WORD_MUSTRELATE = "関連付けるべきグリフ";
 $WORD_MUSTRELATE = "必须有关联字的字形";
-:890
+:858
 $PAGE_MUSTRELATE = "GlyphWiki:関連付けるべきグリフ";
 $PAGE_MUSTRELATE = "GlyphWiki:必须有关联字的字形";
-:893
+:861
 $WORD_HOGOKIROKU = "保護記録";
 $WORD_HOGOKIROKU = "保护记录";
-:894
+:862
 $PAGE_HOGOKIROKU = "GlyphWiki:保護記録";
 $PAGE_HOGOKIROKU = "GlyphWiki:保护记录";
-:897
+:865
 $WORD_HOGO = "保護されたページ";
 $WORD_HOGO = "保护页面";
-:898
+:866
 $PAGE_HOGO = "GlyphWiki:保護されたページ";
 $PAGE_HOGO = "GlyphWiki:保护页面";
-:901
+:869
 $WORD_SAKUJO = "削除の方針";
 $WORD_SAKUJO = "删除规则";
-:902
+:870
 $PAGE_SAKUJO = "GlyphWiki:削除の方針";
 $PAGE_SAKUJO = "GlyphWiki:删除规则";
-:905
+:873
 $WORD_DELETE_LOG = "削除記録";
 $WORD_DELETE_LOG = "删除的记录";
-:906
+:874
 $PAGE_DELETE_LOG = "GlyphWiki:削除記録";
 $PAGE_DELETE_LOG = "GlyphWiki:删除的记录";
-:909
+:877
 $WORD_ACCEPT_AND_SUBMIT = "以上の記述を完全に理解し同意したうえで投稿する";
 $WORD_ACCEPT_AND_SUBMIT = "我理解★并並★完全同意上述事项，提交";
-:912
+:880
 $WORD_PREVIEW = "プレビューを実行";
 $WORD_PREVIEW = "显示预览";
-:916
+:884
 $WORD_KENSAKU = "検索";
 $WORD_KENSAKU = "搜索";
-:920
+:888
 $WORD_HYOUJI = "表示";
 $WORD_HYOUJI = "查看";
-:1046
+:892
+$TAB_KAISETSU = "解説";
+$TAB_KAISETSU = "文章";
+:893
+$TAB_SPECIAL = "特別ページ";
+$TAB_SPECIAL = "特殊页面";
+:894
+$TAB_EDIT = "編集";
+$TAB_EDIT = "编辑";
+:895
+$TAB_VIEW_SOURCE = "ソースを表示";
+$TAB_VIEW_SOURCE = "显示源码";
+:896
+$TAB_GLYPH = "グリフ";
+$TAB_GLYPH = "字形";
+:897
+$TAB_RECENT = "履歴";
+$TAB_RECENT = "历史";
+:898
+$TAB_GROUP = "グループ";
+$TAB_GROUP = "字表";
+:899
+$TAB_NOTE = "ノート";
+$TAB_NOTE = "讨论";
+:900
+$TAB_USER = "利用者ページ";
+$TAB_USER = "用户页面";
+:902
+$LABEL_RECENT = "履歴";
+$LABEL_RECENT = "历史";
+:903
+$LABEL_KAIWA = "会話";
+$LABEL_KAIWA = "对话";
+:904
+$LABEL_ANONYMOUS = "匿名利用者";
+$LABEL_ANONYMOUS = "匿名用户";
+:906
+$PREFIX_USER = "利用者";
+$PREFIX_USER = "用户";
+:907
+$PREFIX_KAIWA = "会話";
+$PREFIX_KAIWA = "对话";
+:908
+$PREFIX_GROUP = "グループ";
+$PREFIX_GROUP = "字表";
+:909
+$PREFIX_NOTE = "ノート";
+$PREFIX_NOTE = "讨论";
+:1034
 return sprintf("%04d年%d月%d日(%s) %02d:%02d", $year + 1900, $mon + 1, $mday, qw(日 月 火 水 木 金 土)[$wday], $hour, $min);
 return sprintf("%04d年%d月%d日(%s) %02d:%02d", $year + 1900, $mon + 1, $mday, qw(星期日 星期一 星期二 星期三 星期四 星期五 星期六)[$wday], $hour, $min);
-:1144
+:1130
 my $subject = 'Password reminder from GlyphWiki (グリフウィキからのパスワードのお知らせ)';
 my $subject = '来自字形维基的密码提示邮件';
-:1146
+:1132
 どなたか（$ip のIPアドレスの使用者）がグリフウィキ（http://glyphwiki.org/）
 来自IP地址 $1 的用户（可能是您）
-:1147
+:1133
 のログイン用パスワードの再発行を依頼しました。
 请求我们向您的邮箱发送新密码。
-:1149
+:1135
 利用者 "$name" のパスワードを "$temp_password" に変更しました。
 用户“$name”的密码现在变为了“$temp_password”。
-:1150
+:1136
 ログインして別のパスワードに変更してください。
 请以此密码登录★并並★更换新密码。
-:1518
+:1483
 my $subject = 'GlyphWiki メールアドレスの確認';
 my $subject = '字形维基电子邮箱地址确认';
-:1526
+:1491
 どなたか（IPアドレス $ip の使用者）がこのメールアドレスを
 来自IP地址 $ip 的用户（可能是您）
-:1527
+:1492
 GlyphWiki のアカウント "$name" に登録しました。
 用这个邮箱地址★注註★册了一个账户 "$name"
-:1529
+:1494
 このアカウントがあなたのものであるか確認してください。
 请确定这个账户是不是您创建的。
-:1530
+:1495
 あなたの登録したアカウントであるならば、GlyphWiki
 确认这个账户属于您★并並★且启用字形维基的邮件通知功能，
-:1531
+:1496
 のメール通知機能を有効にするために、以下のURLにアクセスしてください:
 请打开以下链接：
-:1535
+:1500
 もし GlyphWiki について身に覚えがない場合は、リンクを開かないでください。
 如果不是您★注註★册的用户，请不要点击这个链接。
-:1536
+:1501
 確認用コードは $expire に期限切れになります。
 验证会在 $expire 失效。
-:1839
+:1798
 unshift(@tocresult, qq(<div class="toc"><h1>目次</h1>));
 unshift(@tocresult, qq(<div class="toc"><h1>目录</h1>));
 
@@ -576,94 +573,97 @@ $buffer_related .= "<p>(未定义)</p>";
 :1023
 $buffer .= qq|<h2>関連グリフ</h2>|;
 $buffer .= qq|<h2>关联字形</h2>|;
-:1062
-$buffer_quoting .= "<br><p>（残りは省略されています ... <a href=\"?view=all\">すべて表示する</a>）</p>";
-$buffer_quoting .= "<br><p>（还有一些已省略，<a href=\"?view=all\">查看全部</a>）</p>";
-:1079
+:1054
 $buffer .= qq|<h2>このグリフの<a href="/wiki/GlyphWiki:$URL_ALIAS">エイリアス</a>（別名）一覧</h2>|;
 $buffer .= qq|<h2>本字形的<a href="/wiki/GlyphWiki:Aliases">别名</a>一览</h2>|;
-:1083
-$buffer .= qq|<h2>このグリフを内部で引用している他のグリフ一覧</h2>|;
-$buffer .= qq|<h2>引用了本字形的其他字形</h2>|;
-:1086
-$buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&target=$wiki_name">部品グリフを別のグリフに置き換える</a></div>|;
-$buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&target=$wiki_name">用其他字形替换部件字形</a></div>|;
-:1103
+:1071
 $buffer .= qq|<h2>このグリフで引用している他のグリフ一覧</h2>|;
 $buffer .= qq|<h2>本字形内引用的其他字形</h2>|;
-:1133
+:1090
+$buffer_quoting .= "<br><p>（残りは省略されています ... <a href=\"?view=all\">すべて表示する</a>）</p>";
+$buffer_quoting .= "<br><p>（还有一些已省略，<a href=\"?view=all\">查看全部</a>）</p>";
+:1096,1103
+$buffer .= qq|<h2>このグリフを内部で引用している他のグリフ一覧</h2>|;
+$buffer .= qq|<h2>引用了本字形的其他字形</h2>|;
+:1099
+$buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&target=$wiki_name">部品グリフを別のグリフに置き換える</a></div>|;
+$buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&target=$wiki_name">用其他字形替换部件字形</a></div>|;
+:1104,1138
+$buffer .= qq|<div class="texts"><dl>省略しています ... <a href="?view=all">表示する</a></dl></div>|;
+$buffer .= qq|<div class="texts"><dl>已省略，<a href="?view=all">查看全部</a></dl></div>|;
+:1133,1137
 $buffer .= qq|<h2>このグリフを収録するグループおよび引用するドキュメント一覧</h2>|;
 $buffer .= qq|<h2>收录本字形的字表与文档一览</h2>|;
-:1167
+:1171
 my $temp2 = &url_encode("旧部品の更新");
 my $temp2 = &url_encode("更新旧的部件");
-:1168
+:1172
 $buffer .= qq|<h2>引用する旧部品の更新</h2>|;
 $buffer .= qq|<h2>更新引用的旧部件</h2>|;
-:1169
+:1173
 $buffer .= qq|<div class="texts">現在：<img class="glyph compare" src="/glyph/$db_wiki_name\@$newest_version.png" border="0"> |;
 $buffer .= qq|<div class="texts">当前：<img class="glyph compare" src="/glyph/$db_wiki_name\@$newest_version.png" border="0"> |;
-:1170
+:1174
 $buffer .= qq|最新部品を利用：<img class="glyph compare" src="/get_preview_glyph.cgi?data=$temp" border="0"> |;
 $buffer .= qq|使用最新部件：<img class="glyph compare" src="/get_preview_glyph.cgi?data=$temp" border="0"> |;
-:1171
+:1175
 $buffer .= qq|<a href="?action=edit&buttons=$URL_PREVIEW&textbox=$temp&related=$url_related&summary=$temp2">更新する</a></div>|;
 $buffer .= qq|<a href="?action=edit&buttons=$URL_PREVIEW&textbox=$temp&related=$url_related&summary=$temp2">更新</a></div>|;
-:1196
+:1200
 $buffer .= qq|<h2>このグループを引用するグループ一覧</h2>|;
 $buffer .= qq|<h2>引用了本字表的其他字表</h2>|;
-:1205
+:1209
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>諸橋轍次『大漢和辞典』番号は <a href="/wiki/dkw-$num0$num1">dkw-$num0$num1</a> のように数字5桁を指定してください</ul></div>|;
 $buffer .= qq|<div class="panel"><span class="warning">这个名字可能没有遵循<a href="/wiki/GlyphWiki:$URL_GUIDE">命名规范</a>。请确认或者修正。</span><ul><li>諸橋轍次『大汉和辞典』号码应该用形如 <a href="/wiki/dkw-$num0$num1">dkw-$num0$num1</a> 的5位数字指定</ul></div>|;
-:1210
+:1214
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>法務省戸籍統一文字番号は <a href="/wiki/koseki-$num0$num1">koseki-$num0$num1</a> のように数字6桁を指定してください</ul></div>|;
 $buffer .= qq|<div class="panel"><span class="warning">这个名字可能没有遵循<a href="/wiki/GlyphWiki:$URL_GUIDE">命名规范</a>。请确认或者修正。</span><ul><li>法务省统一文字番号应该用形如 <a href="/wiki/koseki-$num0$num1">koseki-$num0$num1</a> 的6位数字指定</ul></div>|;
-:1213
+:1217
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>baseparts- は廃止されました</ul></div>|;
 $buffer .= qq|<div class="panel"><span class="warning">这个名字可能没有遵循<a href="/wiki/GlyphWiki:$URL_GUIDE">命名规范</a>。请确认或者修正。</span><ul><li>baseparts- 前缀已经停用</ul></div>|;
-:1215
+:1219
 $buffer .= qq|<div class="panel"><span class="warning">グリフウィキには現在この名前の項目はありません。</span><ul><li><a href="/wiki/$url_db_wiki_name?action=edit" class="recommend">&quot;$db_wiki_name&quot;という項目を新規作成する</a>。または<a href="/wiki/GlyphWiki:$URL_SEISAKUIRAI">制作依頼</a>する。<li>既存の項目から<a href="/wiki/Special:Search?action=fulltext&search=$url_db_wiki_name">&quot;$db_wiki_name&quot;を検索する</a>。</ul><hr><ul><li>もしこの項目を作成したことがあるのにこのメッセージがでる場合、データベースの更新が遅れているために表示できないか、既に削除されています（<a href="/wiki/$URL_SAKUJO">$WORD_SAKUJO</a>に削除された理由が記載されているかもしれません）。<a href="/wiki/$URL_DELETE_LOG">$WORD_DELETE_LOG</a>も確認してください。</ul></div>|;
 $buffer .= qq|<div class="panel"><span class="warning">字形维基还没有收录这个名字的项目。</span><ul><li><a href="/wiki/$url_db_wiki_name?action=edit" class="recommend">&quot;$db_wiki_name&quot;创建本项目</a>。请参考<a href="/wiki/GlyphWiki:$URL_SEISAKUIRAI">★制製★作要求</a>。<li>请先在已有的项目中<a href="/wiki/Special:Search?action=fulltext&search=$url_db_wiki_name">&quot;$db_wiki_name&quot;搜索</a>。</ul><hr><ul><li>如果您刚刚创建了本条目，却出现了此消息，可能是因为数据库更新需要一点时间而不能立即反映。请稍等后再刷新。也有可能是因为被删除（<a href="/wiki/$URL_SAKUJO">$WORD_SAKUJO</a>记载了删除理由）。以及参考<a href="/wiki/$URL_DELETE_LOG">$WORD_DELETE_LOG</a>。</ul></div>|;
-:1248
+:1252
 $buffer .= qq|<h2>あなたのグリフ</h2>|;
 $buffer .= qq|<h2>您的字形</h2>|;
-:1261
+:1265
 $buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">関連字</a> (入力必須): <input type="text" name="related" value="$temp2" size="6"><br>|; 
 $buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">关联字</a>（必需）：<input type="text" name="related" value="$temp2" size="6"><br>|;
-:1269
+:1273
 $buffer .= qq|<div class="message"><div class="title">■投稿する前に以下の事柄を確認してください■</div><ol><li>GlyphWikiに投稿したデータは著作権の譲渡を行ったことになり、その<span class="notice">データがいかなる形態で改変・使用されることもあなたは許諾し、以後著作者人格権を主張・使用しないことを了承するものとみなします</span>。<li><span class="notice">他のフォントや印刷物などからグリフを無断で転載・コピー・トレースしないでください</span>。それ以外にも投稿内容に問題がある場合、<a href="/wiki/$URL_SAKUJO">削除の方針</a>に基づき削除されます。また、グリフウィキの運営方針についてはこれから決定していきますが、<span class="notice">最終的な決定権は管理者にあるものとします</span>。これらのことにあなたはあらかじめ同意したものとみなします。 <li>GlyphWikiのデータ・記事のライセンスはWikipediaの記事のライセンス(GFDL)とは異なります。詳しくは <a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a> を参照してください。</ol></div>|;
 $buffer .= qq|<div class="message"><div class="title">■提交前请确认以下事项■</div><ol><li>在字形维基发布的数据，意味着将著作权转让给字形维基，您同意<span class="notice">这些数据可被修改、以任何形式使用，★并並★承认对后续的使用不持有著作权</span>。<li><span class="notice">请不要擅自从其他字体或出版物转载或复★制制★内容</span>。如果内容有问题，管理员会根据<a href="/wiki/$URL_SAKUJO">删除规则</a>予以删除。此外，字形维基的管理政策可能改变，<span class="notice">最终决定权属于管理员</span>。提交视为您同意服从管理。 <li>字形维基的数据、文档的使用许可与Wikipedia的文章使用许可（GFDL）不同，详情请参考 <a href="/wiki/GlyphWiki:$URL_LICENSE">著作权与许可协议</a> 。</ol></div>|;
-:1271,1343
+:1275,1347
 $buffer .= qq|<div class="toolbox"><a href="/wiki/GlyphWiki:$URL_YOUYAKU">編集内容の要約</a>: <input type="text" name="summary" value="$html_summary" size="100"><br>|;
 $buffer .= qq|<div class="toolbox"><a href="/wiki/GlyphWiki:$URL_YOUYAKU">编辑内容的摘要</a>: <input type="text" name="summary" value="$html_summary" size="100"><br>|;
-:1273,1345
+:1277,1349
 $buffer .= "要約のプレビュー: <span class=\"summary\">($html_summary)</span><br>";
 $buffer .= "摘要预览：<span class=\"summary\">($html_summary)</span><br>";
-:1282,1354
+:1286,1358
 $buffer .= qq*<a href="/wiki/$url_wiki_name">中止</a> | <a href="/wiki/GlyphWiki:$URL_HENSHU" target="_blank">編集の仕方</a> （新しいウィンドウが開きます）</div>*;
 $buffer .= qq*<a href="/wiki/$url_wiki_name">取消</a> | <a href="/wiki/GlyphWiki:$URL_HENSHU" target="_blank">编辑帮助</a>（新窗口打开）</div>*;
-:1287
+:1291
 $buffer .= qq|<div class="message2">以下にソースを表示しています:</div>|;
 $buffer .= qq|<div class="message2">以下是源码：</div>|;
-:1291
+:1295
 $buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">関連字</a>: <input type="text" name="related" value="$temp2" size="6"><br>|; 
 $buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">关联字</a>: <input type="text" name="related" value="$temp2" size="6"><br>|;
-:1298
+:1302
 $buffer .= qq|<div class="message"><a href="/wiki/$url_db_wiki_name">$db_wiki_name</a> に戻る。</div>|;
 $buffer .= qq|<div class="message">回到<a href="/wiki/$url_db_wiki_name">$db_wiki_name</a>。</div>|;
-:1319
+:1323
 $buffer .= qq|<h2>ノートの編集</h2>|;
 $buffer .= qq|<h2>编辑讨论</h2>|;
-:1326
+:1330
 <a name="metaedit"><h2>メタ情報の編集</h2></a>
 <a name="metaedit"><h2>编辑基本信息</h2></a>
-:1332
+:1336
 <noscript><ul><li>「:項目名:値」の形式で１行１データで記述してください。<li>JavaScriptを有効にすると表形式での編集が可能です。<li>項目名に「:」を含めることはできません<li>項目名・値を空にしないでください<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul></noscript>
 <noscript><ul><li>请用“:项目名:值”的形式每行记录一项数据。<li>启用JavaScript可以用表格形式编辑。<li>项目名不能含有“:”<li>项目名或者值不能为空<li>最终登记入数据库需要“提交”</ul></noscript>
-:1341
+:1345
 $buffer .= qq|<div class="message"><div class="title">■投稿する前に以下の事柄を確認してください■</div><ol><li>GlyphWikiに投稿した記事は著作権の譲渡を行ったことになり、その<span class="notice">記事がいかなる形態で改変・使用されることもあなたは許諾し、以後著作者人格権を主張・使用しないことを了承するものとみなします</span>。<li><span class="notice">他のWebページや出版物などから文章を無断で転載・コピー・トレースしないでください</span>。それ以外にも投稿内容に問題がある場合、<a href="/wiki/$URL_SAKUJO">削除の方針</a>に基づき削除されます。また、グリフウィキの運営方針についてはこれから決定していきますが、<span class="notice">最終的な決定権は管理者にあるものとします</span>。これらのことにあなたはあらかじめ同意したものとみなします。 <li>GlyphWikiのデータ・記事のライセンスはWikipediaの記事のライセンス(GFDL)とは異なります。詳しくは<a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a>を参照してください。</ol></div>|;
 $buffer .= qq|<div class="message"><div class="title">■提交前请确认以下事项■</div><ol><li>在字形维基发布的文档，意味着将著作权转让给字形维基，您同意<span class="notice">这些文档可被修改、以任何形式使用，★并並★承认对后续的使用不持有著作权</span>。<li><span class="notice">请不要擅自从其他网页或出版物转载或复★制制★内容</span>。如果内容有问题，管理员会根据<a href="/wiki/$URL_SAKUJO">删除规则</a>予以删除。此外，字形维基的管理政策可能改变，<span class="notice">最终决定权属于管理员</span>。提交视为您同意服从管理。 <li>字形维基的数据、文档的使用许可与Wikipedia的文章使用许可（GFDL）不同，详情请参考<a href="/wiki/GlyphWiki:$URL_LICENSE">著作权与许可协议</a>。</ol></div>|;
-:1357
+:1361
 $buffer .= qq|<h2>あなたの更新内容</h2>|;
 $buffer .= qq|<h2>您的更新内容</h2>|;
 
