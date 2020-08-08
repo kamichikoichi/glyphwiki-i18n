@@ -1,14 +1,22 @@
 use utf8;
 binmode STDOUT, ":utf8";
 
-$target_lang2 = "zh";
-$target_lang = "zhs";
-$target_cur = "$target_lang2.txt";
-$target_unused = "$target_lang2.unused.txt";
-$target_done = "$target_lang2.done.txt";
-$target_notyet = "$target_lang2.notyet.txt";
-$target_done_new = "$target_lang2.done.new.txt";
-$target_notyet_new = "$target_lang2.notyet.new.txt";
+if($#ARGV < 0){
+  print "ERROR: no targets ... use en/ko/zh/zhs/zht\n";
+  exit;
+}
+if($ARGV[0] !~ m/^(en|ko|zh|zhs|zht)$/){
+  print "ERROR: wrong target ... use en/ko/zh/zhs/zht\n";
+  exit;
+}
+
+$target_lang = $ARGV[0];
+$target_cur = "$target_lang.txt";
+$target_unused = "$target_lang.unused.txt";
+$target_done = "$target_lang.done.txt";
+$target_notyet = "$target_lang.notyet.txt";
+$target_done_new = "$target_lang.done.new.txt";
+$target_notyet_new = "$target_lang.notyet.new.txt";
 
 $done = "";
 $notyet = "";
@@ -56,12 +64,16 @@ while(<$fh>){
 close $fh;
 %current2 = %current;
 
+$BASEDIR = '/cygdrive/c';
 @files = ();
-push(@files, "/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi");
-opendir($dh, "/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/") or die $!;
+#push(@files, "/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi");
+push(@files, "/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi");
+#opendir($dh, "/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/") or die $!;
+opendir($dh, "$BASEDIR/Users/kamichi/Dropbox/kamichi/home/glyphwiki/") or die $!;
 foreach(grep(/(common|config|page.+)\.pl$/, readdir($dh))){
   if($_ !~ m/^(en|ko|zhs|zht)./){
-    push(@files, "/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/$_");
+    #push(@files, "/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/$_");
+    push(@files, "/Users/kamichi/Dropbox/kamichi/home/glyphwiki/$_");
   }
 }
 closedir($dh);

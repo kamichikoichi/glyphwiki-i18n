@@ -1,5 +1,9 @@
 use utf8;
 
+#$BASEDIR = '/cygdrive/c'; # for CYGWIN
+$BASEDIR = ''; # for macos
+$BASEDIR = '/mnt/c'; # for WSL
+
 if($#ARGV < 0){
   print "ERROR: no targets ... use en/ko/zhs/zht/all\n";
   exit;
@@ -21,6 +25,7 @@ foreach(@ARGV){
   $fn = "";
   while(<$fh>){
     if($_ =~ m/^\!(.+)\/(.+?)\n$/){
+    #if($_ =~ m/^\!\/cygdrive\/c(.+)\/(.+?)\n$/){
       if($buffer ne ""){
         if($target eq "index.cgi"){
           $buffer =~ s/LANG = ''/LANG = '$lang'/;
@@ -31,12 +36,12 @@ foreach(@ARGV){
         $buffer = "";
       }
       $target = $2;
-      open $fh2, "<:utf8", "$1/$2";
+      open $fh2, "<:utf8", "$BASEDIR$1/$2";
       while(<$fh2>){
         $buffer .= $_;
       }
       close $fh2;
-      open $fh3, ">:utf8", "$1/$lang.$2";
+      open $fh3, ">:utf8", "$BASEDIR$1/$lang.$2";
     } elsif($_ =~ m/^:.*\n$/){
       $from = <$fh>;
       $to = <$fh>;

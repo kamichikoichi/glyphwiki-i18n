@@ -1,0 +1,5 @@
+まずzhについてdetect_zh.plで最新の状態にする
+zhs*,zht*はすべて削除
+st_conv.plでzh.done.txtからzhs,zhtのdone.txtを生成する
+detect_zhs,zht.plでそれぞれ生成する
+convertをかける
