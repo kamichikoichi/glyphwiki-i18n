@@ -64,16 +64,13 @@ while(<$fh>){
 close $fh;
 %current2 = %current;
 
-$BASEDIR = '/cygdrive/c';
+$BASEDIR = '/home/kamichi/work'; # for WSL
 @files = ();
-#push(@files, "/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi");
-push(@files, "/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi");
-#opendir($dh, "/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/") or die $!;
-opendir($dh, "$BASEDIR/Users/kamichi/Dropbox/kamichi/home/glyphwiki/") or die $!;
+push(@files, "$BASEDIR/www/glyphwiki.org/index.cgi");
+opendir($dh, "$BASEDIR/glyphwiki/script/") or die $!;
 foreach(grep(/(common|config|page.+)\.pl$/, readdir($dh))){
   if($_ !~ m/^(en|ko|zhs|zht)./){
-    #push(@files, "/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/$_");
-    push(@files, "/Users/kamichi/Dropbox/kamichi/home/glyphwiki/$_");
+    push(@files, "$BASEDIR/glyphwiki/script/$_");
   }
 }
 closedir($dh);

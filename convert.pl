@@ -1,8 +1,6 @@
 use utf8;
 
-#$BASEDIR = '/cygdrive/c'; # for CYGWIN
-$BASEDIR = ''; # for macos
-$BASEDIR = '/mnt/c'; # for WSL
+$BASEDIR = ''; # for WSL with symlink(/home/kamichi/work)
 
 if($#ARGV < 0){
   print "ERROR: no targets ... use en/ko/zhs/zht/all\n";

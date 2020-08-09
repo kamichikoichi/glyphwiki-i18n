@@ -1,14 +1,14 @@
-!/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/www/glyphwiki.org/index.cgi
+!/home/kamichi/work/www/glyphwiki.org/index.cgi
 
-!/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/common.pl
+!/home/kamichi/work/glyphwiki/script/common.pl
 
-!/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/config.pl
+!/home/kamichi/work/glyphwiki/script/config.pl
 
-!/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_left.pl
+!/home/kamichi/work/glyphwiki/script/page_left.pl
 
-!/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_others.pl
+!/home/kamichi/work/glyphwiki/script/page_others.pl
 
-!/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_right_general.pl
+!/home/kamichi/work/glyphwiki/script/page_right_general.pl
 
-!/cygdrive/c/Users/kamichi/Dropbox/kamichi/home/glyphwiki/page_right_others.pl
+!/home/kamichi/work/glyphwiki/script/page_right_others.pl
 
