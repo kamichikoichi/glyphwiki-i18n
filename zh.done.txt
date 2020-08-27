@@ -436,8 +436,8 @@ $buffer .= qq|<div class="warning2 notice">这个字形没有按照规范命名�
 $buffer .= qq|<div class="message">このページは編集できないように保護されているか、編集が禁止されています。これにはいくつか理由があります。詳しくは<a href="/wiki/$URL_HOGO">$PAGE_HOGO</a>または<a href="/wiki/$URL_HOGOKIROKU">$PAGE_HOGOKIROKU</a>をご覧ください。</div><hr>|;
 $buffer .= qq|<div class="message">本页面目前被保护，不能编辑。这是有一些原因的。请参考<a href="/wiki/$URL_HOGO">$PAGE_HOGO</a>以及<a href="/wiki/$URL_HOGOKIROKU">$PAGE_HOGOKIROKU</a>。</div><hr>|;
 :435
-$buffer .= qq|<div class=\"warning2\">UCS関連グリフの関連字に別の文字の割り当てや未定義（〓）とすることはできません。別の文字を関連付けたい場合は<a class=\"notice\" href=\"/wiki/GlyphWiki:$URL_MUSTRELATE\">$WORD_MUSTRELATE</a>に記述して異体字としての関連付けを申請してください。</div><hr>|;
-$buffer .= qq|<div class=\"warning2\">UCS关联字形必须有关联字，而不能是未定义（〓）。与其他字完全无关的请按<a class=\"notice\" href=\"/wiki/GlyphWiki:$URL_MUSTRELATE\">$WORD_MUSTRELATE</a>所述提出申请。</div><hr>|;
+$buffer .= qq|<div class=\"warning2\">UCS関連グリフの関連字に別の文字の割り当てや未定義（〓）とすることはできません。別の文字を関連付けたい場合は<a class=\"notice\" href=\"/wiki/$URL_MUSTRELATE\">$WORD_MUSTRELATE</a>に記述して異体字としての関連付けを申請してください。</div><hr>|;
+$buffer .= qq|<div class=\"warning2\">UCS关联字形必须有关联字，而不能是未定义（〓）。与其他字完全无关的请按<a class=\"notice\" href=\"/wiki/$URL_MUSTRELATE\">$WORD_MUSTRELATE</a>所述提出申请。</div><hr>|;
 :447
 $buffer .= qq|<div class=\"warning2\">他のグリフがこのグリフ（あるいはこのグリフの古い版）を引用しているので実際には削除できません。</div><hr>|;
 $buffer .= qq|<div class=\"warning2\">其他字形引用了这个字形（或者其老版本），不能删除。</div><hr>|;
@@ -531,139 +531,142 @@ if($action eq "page" && $wiki_name eq "GlyphWiki:首页"){
 :602
 $buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:ロゴについて\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
 $buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:关于Logo\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
-:645,779
+:645,792
 $parent_info .= "<li>あなたのブラウザでの表示：<span class=\"related\">$parent_char</span>";
 $parent_info .= "<li>您的浏览器中显示：<span class=\"related\">$parent_char</span>";
-:696,789
+:706,802
 $parent_info .= "前の符号位置：<a href=\"/wiki/u$code\"><span class=\"related\">$char</span> (u$code)</a> ";
 $parent_info .= "前一码位：<a href=\"/wiki/u$code\"><span class=\"related\">$char</span> (u$code)</a> ";
-:742,799
+:755,812
 $parent_info .= "次の符号位置：<a href=\"/wiki/u$code\"><span class=\"related\">$char</span> (u$code)</a> ";
 $parent_info .= "后一码位：<a href=\"/wiki/u$code\"><span class=\"related\">$char</span> (u$code)</a> ";
-:768,803,826,835,855,878,905,932
+:781,816,839,850,858,878,901,928,955
 $buffer .= qq|<h2>文字コード関連情報</h2>|;
 $buffer .= qq|<h2>文字编码相关信息</h2>|;
-:815,894,921
+:828,917,944
 $parent_info .= "前の番号：<a href=\"/wiki/$codechar\"><img class=\"thumb related\" src=\"/glyph/$codechar.50px.png\"> ($codechar)</a><br>";
 $parent_info .= "前一编号：<a href=\"/wiki/$codechar\"><img class=\"thumb related\" src=\"/glyph/$codechar.50px.png\"> ($codechar)</a><br>";
-:821,900,927
+:834,923,950
 $parent_info .= "次の番号：<a href=\"/wiki/$codechar\"><img class=\"thumb related\" src=\"/glyph/$codechar.50px.png\"> ($codechar)</a><br>";
 $parent_info .= "后一编号：<a href=\"/wiki/$codechar\"><img class=\"thumb related\" src=\"/glyph/$codechar.50px.png\"> ($codechar)</a><br>";
-:828
-$buffer .= qq|法務省 戸籍統一文字情報 <a href="http://kosekimoji.moj.go.jp/kosekimojidb/mjko/PeopleList/EXECUTE?ihid_clickedButtonName=iimag_Moji\&ihid_SelectedKskMjBng=$parent_code\&ihid_SearchCount=0&itxt_Yomi1=&itxt_Yomi2=&itxt_Yomi3=&islc_Jis=0&islc_Kakusu1=0&irdo_Code=1&itxt_Code=$parent_code&ihid_SearchCount=1">文字情報</a><br>|;
-$buffer .= qq|法务省 户籍统一文字情报 <a href="http://kosekimoji.moj.go.jp/kosekimojidb/mjko/PeopleList/EXECUTE?ihid_clickedButtonName=iimag_Moji\&ihid_SelectedKskMjBng=$parent_code\&ihid_SearchCount=0&itxt_Yomi1=&itxt_Yomi2=&itxt_Yomi3=&islc_Jis=0&islc_Kakusu1=0&irdo_Code=1&itxt_Code=$parent_code&ihid_SearchCount=1">文字情报</a><br>|;
-:837
-$buffer .= qq|<ul><li><a href="http://www.cns11643.gov.tw/AIDB/query_general_view.do?page=$1\&code=$2">台湾国家発展委員会 全字庫</a> <img src=\"/images/external.png\"> (<a href="http://www.cns11643.gov.tw/MAIDB/welcome.do">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
-$buffer .= qq|<ul><li><a href="http://www.cns11643.gov.tw/AIDB/query_general_view.do?page=$1\&code=$2">台湾国家发展委员会 全字库</a> <img src=\"/images/external.png\"> (<a href="http://www.cns11643.gov.tw/MAIDB/welcome.do">首页</a> <img src=\"/images/external.png\">)</ul>|;
-:907,934
+:841
+$buffer .= qq|法務省 戸籍統一文字情報 (<a href="http://houmukyoku.moj.go.jp/KOSEKIMOJIDB/M01.html">トップページ</a> <img src=\"/images/external.png\">)<br>|;
+$buffer .= qq|日本法务省 户籍统一文字情报 (<a href="http://houmukyoku.moj.go.jp/KOSEKIMOJIDB/M01.html">首页</a> <img src=\"/images/external.png\">)<br>|;
+:852
+$buffer .= qq|<ul><li><a href="https://www.cns11643.gov.tw/wordView.jsp?ID=$code">台湾国家発展委員会 全字庫</a> <img src=\"/images/external.png\"> (<a href="https://www.cns11643.gov.tw/index.jsp">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
+$buffer .= qq|<ul><li><a href="https://www.cns11643.gov.tw/wordView.jsp?ID=$code">台湾国家发展委员会 全字库</a> <img src=\"/images/external.png\"> (<a href="https://www.cns11643.gov.tw/index.jsp">首页</a> <img src=\"/images/external.png\">)</ul>|;
+:860
+$buffer .= qq|<ul><li><a href="https://mojikiban.ipa.go.jp/search/detail/MJ$1">文字情報基盤データベース</a> <img src=\"/images/external.png\"> (<a href="https://mojikiban.ipa.go.jp/search/home">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
+$buffer .= qq|<ul><li><a href="https://mojikiban.ipa.go.jp/search/detail/MJ$1">日本IPA文字信息基础数据库</a> <img src=\"/images/external.png\"> (<a href="https://mojikiban.ipa.go.jp/search/home">首页</a> <img src=\"/images/external.png\">)</ul>|;
+:930,957
 $buffer .= qq|諸橋轍次『大漢和辞典』<br>|;
 $buffer .= qq|諸橋轍次《大汉和辞典》<br>|;
-:945
+:968
 $buffer .= qq|<h2><a href="/wiki/GlyphWiki:$URL_METADATA">メタ情報</a></h2>|;
 $buffer .= qq|<h2><a href="/wiki/GlyphWiki:$URL_METADATA">基本信息</a></h2>|;
-:968
+:991
 $buffer_related .= qq|<table border="0"><tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_RELATED">関連字</a>:</nobr>|;
 $buffer_related .= qq|<table border="0"><tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_RELATED">关联字</a>:</nobr>|;
-:1004,1012
+:1027,1035
 $buffer_related .= qq|<tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_VARIANT">異体字</a>:</nobr><td valign="top" style="width: 16em; background-color: 
 $buffer_related .= qq|<tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_VARIANT">异体字</a>:</nobr><td valign="top" style="width: 16em; background-color: 
-:1035
+:1058
 $buffer_related .= "<p>(未設定)</p>";
 $buffer_related .= "<p>(未定义)</p>";
-:1039
+:1062
 $buffer .= qq|<h2>関連グリフ</h2>|;
 $buffer .= qq|<h2>关联字形</h2>|;
-:1070
+:1093
 $buffer .= qq|<h2>このグリフの<a href="/wiki/GlyphWiki:$URL_ALIAS">エイリアス</a>（別名）一覧</h2>|;
 $buffer .= qq|<h2>本字形的<a href="/wiki/GlyphWiki:Aliases">别名</a>一览</h2>|;
-:1087
+:1110
 $buffer .= qq|<h2>このグリフで引用している他のグリフ一覧</h2>|;
 $buffer .= qq|<h2>本字形内引用的其他字形</h2>|;
-:1106
+:1129
 $buffer_quoting .= "<br><p>（残りは省略されています ... <a href=\"?view=all\">すべて表示する</a>）</p>";
 $buffer_quoting .= "<br><p>（还有一些已省略，<a href=\"?view=all\">查看全部</a>）</p>";
-:1112,1119
+:1135,1142
 $buffer .= qq|<h2>このグリフを内部で引用している他のグリフ一覧</h2>|;
 $buffer .= qq|<h2>引用了本字形的其他字形</h2>|;
-:1115
+:1138
 $buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&target=$wiki_name">部品グリフを別のグリフに置き換える</a></div>|;
 $buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&target=$wiki_name">用其他字形替换部件字形</a></div>|;
-:1120,1154
+:1143,1177
 $buffer .= qq|<div class="texts"><dl>省略しています ... <a href="?view=all">表示する</a></dl></div>|;
 $buffer .= qq|<div class="texts"><dl>已省略，<a href="?view=all">查看全部</a></dl></div>|;
-:1149,1153
+:1172,1176
 $buffer .= qq|<h2>このグリフを収録するグループおよび引用するドキュメント一覧</h2>|;
 $buffer .= qq|<h2>收录本字形的字表与文档一览</h2>|;
-:1187
+:1210
 my $temp2 = &url_encode("旧部品の更新");
 my $temp2 = &url_encode("更新旧的部件");
-:1188
+:1211
 $buffer .= qq|<h2>引用する旧部品の更新</h2>|;
 $buffer .= qq|<h2>更新引用的旧部件</h2>|;
-:1189
+:1212
 $buffer .= qq|<div class="texts">現在：<img class="glyph compare" src="/glyph/$db_wiki_name\@$newest_version.png" border="0"> |;
 $buffer .= qq|<div class="texts">当前：<img class="glyph compare" src="/glyph/$db_wiki_name\@$newest_version.png" border="0"> |;
-:1190
+:1213
 $buffer .= qq|最新部品を利用：<img class="glyph compare" src="/get_preview_glyph.cgi?data=$temp" border="0"> |;
 $buffer .= qq|使用最新部件：<img class="glyph compare" src="/get_preview_glyph.cgi?data=$temp" border="0"> |;
-:1191
+:1214
 $buffer .= qq|<a href="?action=edit&buttons=$URL_PREVIEW&textbox=$temp&related=$url_related&summary=$temp2">更新する</a></div>|;
 $buffer .= qq|<a href="?action=edit&buttons=$URL_PREVIEW&textbox=$temp&related=$url_related&summary=$temp2">更新</a></div>|;
-:1216
+:1239
 $buffer .= qq|<h2>このグループを引用するグループ一覧</h2>|;
 $buffer .= qq|<h2>引用了本字表的其他字表</h2>|;
-:1225
+:1248
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>諸橋轍次『大漢和辞典』番号は <a href="/wiki/dkw-$num0$num1">dkw-$num0$num1</a> のように数字5桁を指定してください</ul></div>|;
 $buffer .= qq|<div class="panel"><span class="warning">这个名字可能没有遵循<a href="/wiki/GlyphWiki:$URL_GUIDE">命名规范</a>。请确认或者修正。</span><ul><li>諸橋轍次『大汉和辞典』号码应该用形如 <a href="/wiki/dkw-$num0$num1">dkw-$num0$num1</a> 的5位数字指定</ul></div>|;
-:1230
+:1253
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>法務省戸籍統一文字番号は <a href="/wiki/koseki-$num0$num1">koseki-$num0$num1</a> のように数字6桁を指定してください</ul></div>|;
 $buffer .= qq|<div class="panel"><span class="warning">这个名字可能没有遵循<a href="/wiki/GlyphWiki:$URL_GUIDE">命名规范</a>。请确认或者修正。</span><ul><li>法务省统一文字番号应该用形如 <a href="/wiki/koseki-$num0$num1">koseki-$num0$num1</a> 的6位数字指定</ul></div>|;
-:1233
+:1256
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>baseparts- は廃止されました</ul></div>|;
 $buffer .= qq|<div class="panel"><span class="warning">这个名字可能没有遵循<a href="/wiki/GlyphWiki:$URL_GUIDE">命名规范</a>。请确认或者修正。</span><ul><li>baseparts- 前缀已经停用</ul></div>|;
-:1235
+:1258
 $buffer .= qq|<div class="panel"><span class="warning">グリフウィキには現在この名前の項目はありません。</span><ul><li><a href="/wiki/$url_db_wiki_name?action=edit" class="recommend">&quot;$db_wiki_name&quot;という項目を新規作成する</a>。または<a href="/wiki/GlyphWiki:$URL_SEISAKUIRAI">制作依頼</a>する。<li>既存の項目から<a href="/wiki/Special:Search?action=fulltext&search=$url_db_wiki_name">&quot;$db_wiki_name&quot;を検索する</a>。</ul><hr><ul><li>もしこの項目を作成したことがあるのにこのメッセージがでる場合、データベースの更新が遅れているために表示できないか、既に削除されています（<a href="/wiki/$URL_SAKUJO">$WORD_SAKUJO</a>に削除された理由が記載されているかもしれません）。<a href="/wiki/$URL_DELETE_LOG">$WORD_DELETE_LOG</a>も確認してください。</ul></div>|;
 $buffer .= qq|<div class="panel"><span class="warning">字形维基还没有收录这个名字的项目。</span><ul><li><a href="/wiki/$url_db_wiki_name?action=edit" class="recommend">&quot;$db_wiki_name&quot;创建本项目</a>。请参考<a href="/wiki/GlyphWiki:$URL_SEISAKUIRAI">★制製★作要求</a>。<li>请先在已有的项目中<a href="/wiki/Special:Search?action=fulltext&search=$url_db_wiki_name">&quot;$db_wiki_name&quot;搜索</a>。</ul><hr><ul><li>如果您刚刚创建了本条目，却出现了此消息，可能是因为数据库更新需要一点时间而不能立即反映。请稍等后再刷新。也有可能是因为被删除（<a href="/wiki/$URL_SAKUJO">$WORD_SAKUJO</a>记载了删除理由）。以及参考<a href="/wiki/$URL_DELETE_LOG">$WORD_DELETE_LOG</a>。</ul></div>|;
-:1268
+:1291
 $buffer .= qq|<h2>あなたのグリフ</h2>|;
 $buffer .= qq|<h2>您的字形</h2>|;
-:1281
+:1304
 $buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">関連字</a> (入力必須): <input type="text" name="related" value="$temp2" size="6"><br>|; 
 $buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">关联字</a>（必需）：<input type="text" name="related" value="$temp2" size="6"><br>|;
-:1289
+:1312
 $buffer .= qq|<div class="message"><div class="title">■投稿する前に以下の事柄を確認してください■</div><ol><li>GlyphWikiに投稿したデータは著作権の譲渡を行ったことになり、その<span class="notice">データがいかなる形態で改変・使用されることもあなたは許諾し、以後著作者人格権を主張・使用しないことを了承するものとみなします</span>。<li><span class="notice">他のフォントや印刷物などからグリフを無断で転載・コピー・トレースしないでください</span>。それ以外にも投稿内容に問題がある場合、<a href="/wiki/$URL_SAKUJO">削除の方針</a>に基づき削除されます。また、グリフウィキの運営方針についてはこれから決定していきますが、<span class="notice">最終的な決定権は管理者にあるものとします</span>。これらのことにあなたはあらかじめ同意したものとみなします。 <li>GlyphWikiのデータ・記事のライセンスはWikipediaの記事のライセンス(GFDL)とは異なります。詳しくは <a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a> を参照してください。</ol></div>|;
 $buffer .= qq|<div class="message"><div class="title">■提交前请确认以下事项■</div><ol><li>在字形维基发布的数据，意味着将著作权转让给字形维基，您同意<span class="notice">这些数据可被修改、以任何形式使用，★并並★承认对后续的使用不持有著作权</span>。<li><span class="notice">请不要擅自从其他字体或出版物转载或复★制制★内容</span>。如果内容有问题，管理员会根据<a href="/wiki/$URL_SAKUJO">删除规则</a>予以删除。此外，字形维基的管理政策可能改变，<span class="notice">最终决定权属于管理员</span>。提交视为您同意服从管理。 <li>字形维基的数据、文档的使用许可与Wikipedia的文章使用许可（GFDL）不同，详情请参考 <a href="/wiki/GlyphWiki:$URL_LICENSE">著作权与许可协议</a> 。</ol></div>|;
-:1291,1363
+:1314,1386
 $buffer .= qq|<div class="toolbox"><a href="/wiki/GlyphWiki:$URL_YOUYAKU">編集内容の要約</a>: <input type="text" name="summary" value="$html_summary" size="100"><br>|;
 $buffer .= qq|<div class="toolbox"><a href="/wiki/GlyphWiki:$URL_YOUYAKU">编辑内容的摘要</a>: <input type="text" name="summary" value="$html_summary" size="100"><br>|;
-:1293,1365
+:1316,1388
 $buffer .= "要約のプレビュー: <span class=\"summary\">($html_summary)</span><br>";
 $buffer .= "摘要预览：<span class=\"summary\">($html_summary)</span><br>";
-:1302,1374
+:1325,1397
 $buffer .= qq*<a href="/wiki/$url_wiki_name">中止</a> | <a href="/wiki/GlyphWiki:$URL_HENSHU" target="_blank">編集の仕方</a> （新しいウィンドウが開きます）</div>*;
 $buffer .= qq*<a href="/wiki/$url_wiki_name">取消</a> | <a href="/wiki/GlyphWiki:$URL_HENSHU" target="_blank">编辑帮助</a>（新窗口打开）</div>*;
-:1307
+:1330
 $buffer .= qq|<div class="message2">以下にソースを表示しています:</div>|;
 $buffer .= qq|<div class="message2">以下是源码：</div>|;
-:1311
+:1334
 $buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">関連字</a>: <input type="text" name="related" value="$temp2" size="6"><br>|; 
 $buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">关联字</a>: <input type="text" name="related" value="$temp2" size="6"><br>|;
-:1318
+:1341
 $buffer .= qq|<div class="message"><a href="/wiki/$url_db_wiki_name">$db_wiki_name</a> に戻る。</div>|;
 $buffer .= qq|<div class="message">回到<a href="/wiki/$url_db_wiki_name">$db_wiki_name</a>。</div>|;
-:1339
+:1362
 $buffer .= qq|<h2>ノートの編集</h2>|;
 $buffer .= qq|<h2>编辑讨论</h2>|;
-:1346
+:1369
 <a name="metaedit"><h2>メタ情報の編集</h2></a>
 <a name="metaedit"><h2>编辑基本信息</h2></a>
-:1352
+:1375
 <noscript><ul><li>「:項目名:値」の形式で１行１データで記述してください。<li>JavaScriptを有効にすると表形式での編集が可能です。<li>項目名に「:」を含めることはできません<li>項目名・値を空にしないでください<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul></noscript>
 <noscript><ul><li>请用“:项目名:值”的形式每行记录一项数据。<li>启用JavaScript可以用表格形式编辑。<li>项目名不能含有“:”<li>项目名或者值不能为空<li>最终登记入数据库需要“提交”</ul></noscript>
-:1361
+:1384
 $buffer .= qq|<div class="message"><div class="title">■投稿する前に以下の事柄を確認してください■</div><ol><li>GlyphWikiに投稿した記事は著作権の譲渡を行ったことになり、その<span class="notice">記事がいかなる形態で改変・使用されることもあなたは許諾し、以後著作者人格権を主張・使用しないことを了承するものとみなします</span>。<li><span class="notice">他のWebページや出版物などから文章を無断で転載・コピー・トレースしないでください</span>。それ以外にも投稿内容に問題がある場合、<a href="/wiki/$URL_SAKUJO">削除の方針</a>に基づき削除されます。また、グリフウィキの運営方針についてはこれから決定していきますが、<span class="notice">最終的な決定権は管理者にあるものとします</span>。これらのことにあなたはあらかじめ同意したものとみなします。 <li>GlyphWikiのデータ・記事のライセンスはWikipediaの記事のライセンス(GFDL)とは異なります。詳しくは<a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a>を参照してください。</ol></div>|;
 $buffer .= qq|<div class="message"><div class="title">■提交前请确认以下事项■</div><ol><li>在字形维基发布的文档，意味着将著作权转让给字形维基，您同意<span class="notice">这些文档可被修改、以任何形式使用，★并並★承认对后续的使用不持有著作权</span>。<li><span class="notice">请不要擅自从其他网页或出版物转载或复★制制★内容</span>。如果内容有问题，管理员会根据<a href="/wiki/$URL_SAKUJO">删除规则</a>予以删除。此外，字形维基的管理政策可能改变，<span class="notice">最终决定权属于管理员</span>。提交视为您同意服从管理。 <li>字形维基的数据、文档的使用许可与Wikipedia的文章使用许可（GFDL）不同，详情请参考<a href="/wiki/GlyphWiki:$URL_LICENSE">著作权与许可协议</a>。</ol></div>|;
-:1377
+:1400
 $buffer .= qq|<h2>あなたの更新内容</h2>|;
 $buffer .= qq|<h2>您的更新内容</h2>|;
 
@@ -687,8 +690,8 @@ $buffer .= qq|<span class="text">找不到</span>|;
 $title = qq|古い部品を引用しているグリフの一括更新|;
 $title = qq|更新所有使用旧部件的字|;
 :123
-$buffer .= qq|<div class="texts">更新対象：<a href="/wiki/$cgi_target"><img class="thumb related" src="/glyph/$cgi_target.50px.png" border="0"></a> <a href="/wiki/$cgi_target">$cgi_target</a></div>|;
-$buffer .= qq|<div class="texts">更新对象：<a href="/wiki/$cgi_target"><img class="thumb related" src="/glyph/$cgi_target.50px.png" border="0"></a> <a href="/wiki/$cgi_target">$cgi_target</a></div>|;
+$buffer .= qq|<div class="texts">更新対象：<a href="/wiki/$cgi_target"><img class="thumb related" loading="lazy" src="/glyph/$cgi_target.50px.png" border="0"></a> <a href="/wiki/$cgi_target">$cgi_target</a></div>|;
+$buffer .= qq|<div class="texts">更新对象：<a href="/wiki/$cgi_target"><img class="thumb related" loading="lazy" src="/glyph/$cgi_target.50px.png" border="0"></a> <a href="/wiki/$cgi_target">$cgi_target</a></div>|;
 :127,272,277
 $cgi_value = "(指定した値が不正です)";
 $cgi_value = "（指定的值不正确）";
@@ -696,8 +699,8 @@ $cgi_value = "（指定的值不正确）";
 if($cgi_value eq "" || $cgi_value eq "(指定した値が不正です)"){
 if($cgi_value eq "" || $cgi_value eq "（指定的值不正确）"){
 :193
-$mustrenew_list .= "<li class=\"history\"><a href=\"/wiki/$name\">$name</a> 現在 : <a href=\"/wiki/$name\"><img class=\"thumb100\" src=\"/glyph/$name\@$version.100px.png\" border=\"0\"></a> vs 最新部品 : ";
-$mustrenew_list .= "<li class=\"history\"><a href=\"/wiki/$name\">$name</a> 当前：<a href=\"/wiki/$name\"><img class=\"thumb100\" src=\"/glyph/$name\@$version.100px.png\" border=\"0\"></a> vs 最新部件：";
+$mustrenew_list .= "<li class=\"history\"><a href=\"/wiki/$name\">$name</a> 現在 : <a href=\"/wiki/$name\"><img class=\"thumb100\" loading=\"lazy\" src=\"/glyph/$name\@$version.100px.png\" border=\"0\"></a> vs 最新部品 : ";
+$mustrenew_list .= "<li class=\"history\"><a href=\"/wiki/$name\">$name</a> 当前 : <a href=\"/wiki/$name\"><img class=\"thumb100\" loading=\"lazy\" src=\"/glyph/$name\@$version.100px.png\" border=\"0\"></a> vs 最新部件 : ";
 :195
 $mustrenew_list .= "<input type=\"checkbox\" name=\"target:$name\@$version\" value=\"update\" id=\"$name\"><label for=\"$name\">最新部品に更新する</label>";
 $mustrenew_list .= "<input type=\"checkbox\" name=\"target:$name\@$version\" value=\"update\" id=\"$name\"><label for=\"$name\">用最新部件更新</label>";
@@ -762,14 +765,14 @@ $buffer .= qq|<div class="texts">没有找到对应的字形。<br><br><a href=\
 $title = qq|部品の一括更新|;
 $title = qq|部件批量更新|;
 :287
-$buffer .= qq|<div class="texts">更新対象：<a href="/wiki/$cgi_target"><img class="thumb related" src="/glyph/$cgi_target.50px.png" border="0"></a> <a href="/wiki/$cgi_target">$cgi_target</a> → <a href="/wiki/$vg"><img class="thumb related" src="/glyph/$vg.50px.png" border="0"></a> <a href="/wiki/$vg">$vg</a></div>|;
-$buffer .= qq|<div class="texts">更新对象：<a href="/wiki/$cgi_target"><img class="thumb related" src="/glyph/$cgi_target.50px.png" border="0"></a> <a href="/wiki/$cgi_target">$cgi_target</a> → <a href="/wiki/$vg"><img class="thumb related" src="/glyph/$vg.50px.png" border="0"></a> <a href="/wiki/$vg">$vg</a></div>|;
+$buffer .= qq|<div class="texts">更新対象：<a href="/wiki/$cgi_target"><img class="thumb related" loading="lazy" src="/glyph/$cgi_target.50px.png" border="0"></a> <a href="/wiki/$cgi_target">$cgi_target</a> → <a href="/wiki/$vg"><img class="thumb related" loading="lazy" src="/glyph/$vg.50px.png" border="0"></a> <a href="/wiki/$vg">$vg</a></div>|;
+$buffer .= qq|<div class="texts">更新对象：<a href="/wiki/$cgi_target"><img class="thumb related" loading="lazy" src="/glyph/$cgi_target.50px.png" border="0"></a> <a href="/wiki/$cgi_target">$cgi_target</a> → <a href="/wiki/$vg"><img class="thumb related" loading="lazy" src="/glyph/$vg.50px.png" border="0"></a> <a href="/wiki/$vg">$vg</a></div>|;
 :289
-$buffer .= qq|<div class="texts">更新対象：<a href="/wiki/$cgi_target"><img class="thumb related" src="/glyph/$cgi_target.50px.png" border="0"></a> <a href="/wiki/$cgi_target">$cgi_target</a> → （まだ指定されていません）</div>|;
-$buffer .= qq|<div class="texts">更新对象：<a href="/wiki/$cgi_target"><img class="thumb related" src="/glyph/$cgi_target.50px.png" border="0"></a> <a href="/wiki/$cgi_target">$cgi_target</a> → （未指定）</div>|;
+$buffer .= qq|<div class="texts">更新対象：<a href="/wiki/$cgi_target"><img class="thumb related" loading="lazy" src="/glyph/$cgi_target.50px.png" border="0"></a> <a href="/wiki/$cgi_target">$cgi_target</a> → （まだ指定されていません）</div>|;
+$buffer .= qq|<div class="texts">更新对象：<a href="/wiki/$cgi_target"><img class="thumb related" loading="lazy" src="/glyph/$cgi_target.50px.png" border="0"></a> <a href="/wiki/$cgi_target">$cgi_target</a> → （未指定）</div>|;
 :349
-$mustrenew_list .= "<li class=\"history\"><a href=\"/wiki/$name\">$name</a> 現在 : <a href=\"/wiki/$name\"><img class=\"thumb100\" src=\"/glyph/$name\@$version.100px.png\" border=\"0\"></a> vs 更新後 : ";
-$mustrenew_list .= "<li class=\"history\"><a href=\"/wiki/$name\">$name</a> 当前：<a href=\"/wiki/$name\"><img class=\"thumb100\" src=\"/glyph/$name\@$version.100px.png\" border=\"0\"></a> vs 更新后：";
+$mustrenew_list .= "<li class=\"history\"><a href=\"/wiki/$name\">$name</a> 現在 : <a href=\"/wiki/$name\"><img class=\"thumb100\" loading=\"lazy\" src=\"/glyph/$name\@$version.100px.png\" border=\"0\"></a> vs 更新後 : ";
+$mustrenew_list .= "<li class=\"history\"><a href=\"/wiki/$name\">$name</a> 当前 : <a href=\"/wiki/$name\"><img class=\"thumb100\" loading=\"lazy\" src=\"/glyph/$name\@$version.100px.png\" border=\"0\"></a> vs 更新后 : ";
 :351
 $mustrenew_list .= "<input type=\"checkbox\" name=\"target:$name\@$version\" value=\"update\" id=\"$name\"><label for=\"$name\">部品を更新する</label>";
 $mustrenew_list .= "<input type=\"checkbox\" name=\"target:$name\@$version\" value=\"update\" id=\"$name\"><label for=\"$name\">更新部件</label>";

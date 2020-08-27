@@ -10,9 +10,6 @@
 ($new_version, $registered_time) = &put_page($DBH, $target, $user, $ntdata, "エイリアス入れ替え（自動更新）", $env_remoteaddress, $ntrelated, -1, 0);
 
 !/home/kamichi/work/glyphwiki/script/common.pl
-:733
-$URL_METADATA = &url_encode("メタ情報");
-$URL_METADATA = &url_encode("メタ情報");
 :807
 $PREFIX_KAIWA = "会話";
 $PREFIX_KAIWA = "会話";
@@ -51,28 +48,28 @@ $buffer .= qq| <a href="?action=swap">（このグリフが実体となるよう
 :572
 $buffer .= qq| <span class="text glyph_link"><a href="/glyph/$db_wiki_name.ttf">(1字フォント)</a></span><br>|;
 $buffer .= qq| <span class="text glyph_link"><a href="/glyph/$db_wiki_name.ttf">(1字フォント)</a></span><br>|;
-:597
-$temp =~ s/----\r\nMETADATA\r\n----\r\n/* メタ情報\r\n/;
-$temp =~ s/----\r\nMETADATA\r\n----\r\n/* メタ情報\r\n/;
-:837
-$buffer .= qq|<ul><li><a href="http://www.cns11643.gov.tw/AIDB/query_general_view.do?page=$1\&code=$2">台湾国家発展委員会 全字庫</a> <img src=\"/images/external.png\"> (<a href="http://www.cns11643.gov.tw/MAIDB/welcome.do">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
-$buffer .= qq|<ul><li><a href="http://www.cns11643.gov.tw/AIDB/query_general_view.do?page=$1\&code=$2">台湾国家発展委員会 全字庫</a> <img src=\"/images/external.png\"> (<a href="http://www.cns11643.gov.tw/MAIDB/welcome.do">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
-:945
+:852
+$buffer .= qq|<ul><li><a href="https://www.cns11643.gov.tw/wordView.jsp?ID=$code">台湾国家発展委員会 全字庫</a> <img src=\"/images/external.png\"> (<a href="https://www.cns11643.gov.tw/index.jsp">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
+$buffer .= qq|<ul><li><a href="https://www.cns11643.gov.tw/wordView.jsp?ID=$code">台湾国家発展委員会 全字庫</a> <img src=\"/images/external.png\"> (<a href="https://www.cns11643.gov.tw/index.jsp">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
+:860
+$buffer .= qq|<ul><li><a href="https://mojikiban.ipa.go.jp/search/detail/MJ$1">文字情報基盤データベース</a> <img src=\"/images/external.png\"> (<a href="https://mojikiban.ipa.go.jp/search/home">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
+$buffer .= qq|<ul><li><a href="https://mojikiban.ipa.go.jp/search/detail/MJ$1">文字情報基盤データベース</a> <img src=\"/images/external.png\"> (<a href="https://mojikiban.ipa.go.jp/search/home">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
+:968
 $buffer .= qq|<h2><a href="/wiki/GlyphWiki:$URL_METADATA">メタ情報</a></h2>|;
 $buffer .= qq|<h2><a href="/wiki/GlyphWiki:$URL_METADATA">メタ情報</a></h2>|;
-:1120,1154
+:1143,1177
 $buffer .= qq|<div class="texts"><dl>省略しています ... <a href="?view=all">表示する</a></dl></div>|;
 $buffer .= qq|<div class="texts"><dl>省略しています ... <a href="?view=all">表示する</a></dl></div>|;
-:1149,1153
+:1172,1176
 $buffer .= qq|<h2>このグリフを収録するグループおよび引用するドキュメント一覧</h2>|;
 $buffer .= qq|<h2>このグリフを収録するグループおよび引用するドキュメント一覧</h2>|;
-:1339
+:1362
 $buffer .= qq|<h2>ノートの編集</h2>|;
 $buffer .= qq|<h2>ノートの編集</h2>|;
-:1346
+:1369
 <a name="metaedit"><h2>メタ情報の編集</h2></a>
 <a name="metaedit"><h2>メタ情報の編集</h2></a>
-:1352
+:1375
 <noscript><ul><li>「:項目名:値」の形式で１行１データで記述してください。<li>JavaScriptを有効にすると表形式での編集が可能です。<li>項目名に「:」を含めることはできません<li>項目名・値を空にしないでください<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul></noscript>
 <noscript><ul><li>「:項目名:値」の形式で１行１データで記述してください。<li>JavaScriptを有効にすると表形式での編集が可能です。<li>項目名に「:」を含めることはできません<li>項目名・値を空にしないでください<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul></noscript>
 
