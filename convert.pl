@@ -46,6 +46,7 @@ foreach(@ARGV){
       $from =~ s/\n$//;
       $to =~ s/\n$//;
       $from = quotemeta($from);
+#      $to = quotemeta($to);
       $buffer =~ s/$from/$to/g;
     }
   }

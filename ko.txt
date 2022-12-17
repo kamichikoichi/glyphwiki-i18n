@@ -639,13 +639,13 @@ $buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">관련글자</a> (입력필
 :1323
 $buffer .= qq|<div class="message"><div class="title">■投稿する前に以下の事柄を確認してください■</div><ol><li>GlyphWikiに投稿したデータは著作権の譲渡を行ったことになり、その<span class="notice">データがいかなる形態で改変・使用されることもあなたは許諾し、以後著作者人格権を主張・使用しないことを了承するものとみなします</span>。<li><span class="notice">他のフォントや印刷物などからグリフを無断で転載・コピー・トレースしないでください</span>。それ以外にも投稿内容に問題がある場合、<a href="/wiki/$URL_SAKUJO">削除の方針</a>に基づき削除されます。また、グリフウィキの運営方針についてはこれから決定していきますが、<span class="notice">最終的な決定権は管理者にあるものとします</span>。これらのことにあなたはあらかじめ同意したものとみなします。 <li>GlyphWikiのデータ・記事のライセンスはWikipediaの記事のライセンス(GFDL)とは異なります。詳しくは <a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a> を参照してください。</ol></div>|;
 $buffer .= qq|<div class="message"><div class="title">■투고하기 전에 아래의 사항을 확인해 주십시요■</div><ol><li>GlyphWiki 에 투고한 데이터는 저작권을 양도한 것이 되고, 그<span class="notice">데이터가 어떠한 형태로 변경 및 사용되는 것도 허락하고, 이후 저작자의 인격권을 주장 및 사용하지 않을 것을 승낙한 것으로 간주합니다</span>.<li><span class="notice">다른 폰트나 인쇄물등에서 글리프를 무단으로 전재 및 복사를 하지 마십시요</span>. 그 외에도 투고내용에 문제가 있는 경우,<a href="/wiki/$URL_SAKUJO">삭제방침</a>에 의거해 삭제됩니다. 또, 글리프위키의 운영방침에 관해서는 지금부터 결정해 가겠습니다만, <span class="notice">최종적인 결정권은 관리자에 있습니다</span>. 위의 글에 대해 당신은 이미 동의했다고 간주합니다.<li>GlyphWiki 의 데이터 및 기사의 라이센스는Wikipedia 기사의 라이센스(GFDL)와는 다릅니다. 자세한 것은 <a href="/wiki/GlyphWiki:$URL_LICENSE">데이터 및 기사의 라이센스</a> 를 참조해 주십시요.</ol></div>|;
-:1325,1397
+:1325,1400
 $buffer .= qq|<div class="toolbox"><a href="/wiki/GlyphWiki:$URL_YOUYAKU">編集内容の要約</a>: <input type="text" name="summary" value="$html_summary" size="100"><br>|;
 $buffer .= qq|<div class="toolbox"><a href="/wiki/GlyphWiki:$URL_YOUYAKU">편집내용의 요약</a>: <input type="text" name="summary" value="$html_summary" size="100"><br>|;
-:1327,1399
+:1327,1402
 $buffer .= "要約のプレビュー: <span class=\"summary\">($html_summary)</span><br>";
 $buffer .= "요약 미리보기: <span class=\"summary\">($html_summary)</span><br>";
-:1336,1408
+:1336,1411
 $buffer .= qq*<a href="/wiki/$url_wiki_name">中止</a> | <a href="/wiki/GlyphWiki:$URL_HENSHU" target="_blank">編集の仕方</a> （新しいウィンドウが開きます）</div>*;
 $buffer .= qq*<a href="/wiki/$url_wiki_name">중지</a> | <a href="/wiki/GlyphWiki:$URL_HENSHU" target="_blank">편집방법</a> (새로운 윈도우가 열립니다)</div>*;
 :1341
@@ -666,10 +666,13 @@ $buffer .= qq|<h2>ノートの編集</h2>|;
 :1386
 <noscript><ul><li>「:項目名:値」の形式で１行１データで記述してください。<li>JavaScriptを有効にすると表形式での編集が可能です。<li>項目名に「:」を含めることはできません<li>項目名・値を空にしないでください<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul></noscript>
 <noscript><ul><li>「:項目名:値」の形式で１行１データで記述してください。<li>JavaScriptを有効にすると表形式での編集が可能です。<li>項目名に「:」を含めることはできません<li>項目名・値を空にしないでください<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul></noscript>
-:1395
+:1390
+var tmsg = new Array("<tr style=\"background-color: #444; color: white;\"><th>項目名<th>値<th class=\"lastth\">操作","編集","削除","更新","破棄","追加","<ul><li>項目名に「:」を含めることはできません<li>項目名・値を空にすることはできません<li>既存のレコードを編集した場合は「更新」をクリックしてください。<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul>");
+var tmsg = new Array("<tr style=\"background-color: #444; color: white;\"><th>項目名<th>値<th class=\"lastth\">操作","編集","削除","更新","破棄","追加","<ul><li>項目名に「:」を含めることはできません<li>項目名・値を空にすることはできません<li>既存のレコードを編集した場合は「更新」をクリックしてください。<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul>");
+:1398
 $buffer .= qq|<div class="message"><div class="title">■投稿する前に以下の事柄を確認してください■</div><ol><li>GlyphWikiに投稿した記事は著作権の譲渡を行ったことになり、その<span class="notice">記事がいかなる形態で改変・使用されることもあなたは許諾し、以後著作者人格権を主張・使用しないことを了承するものとみなします</span>。<li><span class="notice">他のWebページや出版物などから文章を無断で転載・コピー・トレースしないでください</span>。それ以外にも投稿内容に問題がある場合、<a href="/wiki/$URL_SAKUJO">削除の方針</a>に基づき削除されます。また、グリフウィキの運営方針についてはこれから決定していきますが、<span class="notice">最終的な決定権は管理者にあるものとします</span>。これらのことにあなたはあらかじめ同意したものとみなします。 <li>GlyphWikiのデータ・記事のライセンスはWikipediaの記事のライセンス(GFDL)とは異なります。詳しくは<a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a>を参照してください。</ol></div>|;
 $buffer .= qq|<div class="message"><div class="title">■투고하기 전에 아래의 사항을 확인해 주십시요■</div><ol><li>GlyphWiki 에 투고한 기사는 저작권을 양도한 것이 되고, 그<span class="notice">기사가 어떠한 형태로 변형 및 사용되는 것도 허락하고, 이후 저작자의 인격권을 주장 및 사용하지 않을 것을 승낙한 것으로 간주합니다</span>.<li><span class="notice">다른 Web페이지나 출판물등에서 문장을 무단으로 전재 및 복사하지 마십시요</span>. 이 이외에도 투고내용에 문제가 있는 경우,<a href="/wiki/$URL_SAKUJO">삭제방침</a>에 의거해 삭제됩니다. 또, 글리프위키의 운영방침에 관해서는 지금부터 결정해 가겠습니다만,<span class="notice">최종적인 결정권은 관리자에 있습니다</span>. 위의 글에 대해 당신은 이미 동의했다고 간주합니다.<li>GlyphWiki 의 데이터 및 기사의 라이센스는 Wikipedia기사의 라이센스(GFDL)와는 다릅니다. 자세한 것은<a href="/wiki/GlyphWiki:$URL_LICENSE">데이터 및 기사의 라이센스</a>를 참조해 주십시요.</ol></div>|;
-:1411
+:1414
 $buffer .= qq|<h2>あなたの更新内容</h2>|;
 $buffer .= qq|<h2>당신의 갱신내용</h2>|;
 
