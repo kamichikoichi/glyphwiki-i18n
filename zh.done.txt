@@ -18,7 +18,7 @@ $temp2 = sprintf("作字率：%d\% [已%d、未%d]", int($implemented / ($unimpl
 !/home/kamichi/work/glyphwiki/script/common.pl
 :675
 &sql_do($dbh, "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', 'エイリアス実体変更による自動更新', 0, '$old_buffer', '$ip', $current_related, 1)"); 
-&sql_do($dbh, "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', '别名实体变更引起的自动更新', 0, '$old_buffer', '$ip', $current_related, 1)"); 
+&sql_do($dbh, "INSERT INTO wiki VALUES (DEFAULT, '$wikiname', COALESCE((SELECT max(version) FROM wiki WHERE name = '$wikiname'), 0) + 1, $time, '$user', '别名实体更改引起的自动更新', 0, '$old_buffer', '$ip', $current_related, 1)"); 
 :712
 $URL_USERNAME = &url_encode("ユーザー名");
 $URL_USERNAME = &url_encode("用户名");
@@ -946,16 +946,16 @@ $temp = "メインページ";
 $temp = "主页";
 :1086
 $buffer .= qq|<h1>$temp の変更履歴</h1>|;
-$buffer .= qq|<h1>${temp}的变更历史</h1>|;
+$buffer .= qq|<h1>${temp}的历史记录</h1>|;
 :1087
 $title = qq|$temp の変更履歴|;
-$title = qq|${temp}的变更历史|;
+$title = qq|${temp}的历史记录|;
 :1090
 $buffer .= "<div class=\"texts\">凡例:日時はJST</div>";
-$buffer .= "<div class=\"texts\">凡例：日本标准时间</div>";
+$buffer .= "<div class=\"texts\">说明：使用日本标准时间</div>";
 :1092
 $buffer .= "<div class=\"texts\">凡例:(最新版) = 最新版との比較、(前の版) = 直前の版との比較、日時はJST</div>";
-$buffer .= "<div class=\"texts\">(最新版) = 与最新版比较, (前一版) = 与前一版比较，日本标准时间</div>";
+$buffer .= "<div class=\"texts\">说明：(最新版) = 与最新版比较, (前一版) = 与前一版比较，日本标准时间</div>";
 :1131
 $history_list .= "(最新版) ";
 $history_list .= "(最新版) "; # zhs
@@ -973,7 +973,7 @@ $buffer .= qq|<div class="texts">（残りは省略されています ... <a hre
 $buffer .= qq|<div class="texts">（还有一些已省略，<a href="?action=history&view=all">查看全部</a>）</div>|;
 :1156
 $buffer .= qq|<span class="text">このページには変更履歴がありません。</span>|;
-$buffer .= qq|<span class="text">本页面没有变更历史。</span>|;
+$buffer .= qq|<span class="text">本页面没有历史记录。</span>|;
 :1177
 $title = qq|検索|;
 $title = qq|搜索结果|;
