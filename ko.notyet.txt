@@ -1,11 +1,11 @@
 !/home/kamichi/work/www/glyphwiki.org/index.cgi
-:960
+:917
 ($new_version, $registered_time) = &put_page($DBH, $db_wiki_name, $user, $nadata, "エイリアス入れ替え", $env_remoteaddress, $narelated, -1, 0);
 ($new_version, $registered_time) = &put_page($DBH, $db_wiki_name, $user, $nadata, "エイリアス入れ替え", $env_remoteaddress, $narelated, -1, 0);
-:967
+:924
 ($new_version, $registered_time) = &put_page($DBH, $oname, $user, $ntdata, "エイリアス入れ替え（自動更新）", $env_remoteaddress, $orelated, -1, 0);
 ($new_version, $registered_time) = &put_page($DBH, $oname, $user, $ntdata, "エイリアス入れ替え（自動更新）", $env_remoteaddress, $orelated, -1, 0);
-:972
+:929
 ($new_version, $registered_time) = &put_page($DBH, $target, $user, $ntdata, "エイリアス入れ替え（自動更新）", $env_remoteaddress, $ntrelated, -1, 0);
 ($new_version, $registered_time) = &put_page($DBH, $target, $user, $ntdata, "エイリアス入れ替え（自動更新）", $env_remoteaddress, $ntrelated, -1, 0);
 
@@ -48,28 +48,34 @@ $buffer .= qq| <a href="?action=swap">（このグリフが実体となるよう
 :574
 $buffer .= qq| <span class="text glyph_link"><a href="/glyph/$db_wiki_name.ttf">(1字フォント)</a></span><br>|;
 $buffer .= qq| <span class="text glyph_link"><a href="/glyph/$db_wiki_name.ttf">(1字フォント)</a></span><br>|;
-:855
+:862
 $buffer .= qq|<ul><li><a href="https://www.cns11643.gov.tw/wordView.jsp?ID=$code">台湾国家発展委員会 全字庫</a> <img src=\"/images/external.png\"> (<a href="https://www.cns11643.gov.tw/index.jsp">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
 $buffer .= qq|<ul><li><a href="https://www.cns11643.gov.tw/wordView.jsp?ID=$code">台湾国家発展委員会 全字庫</a> <img src=\"/images/external.png\"> (<a href="https://www.cns11643.gov.tw/index.jsp">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
-:863
-$buffer .= qq|<ul><li><a href="https://mojikiban.ipa.go.jp/search/detail/MJ$1">文字情報基盤データベース</a> <img src=\"/images/external.png\"> (<a href="https://mojikiban.ipa.go.jp/search/home">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
-$buffer .= qq|<ul><li><a href="https://mojikiban.ipa.go.jp/search/detail/MJ$1">文字情報基盤データベース</a> <img src=\"/images/external.png\"> (<a href="https://mojikiban.ipa.go.jp/search/home">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
-:971
+:870
+$buffer .= qq|<ul><li><a href="https://moji.or.jp/mojikibansearch/info?MJ%E6%96%87%E5%AD%97%E5%9B%B3%E5%BD%A2%E5%90%8D=MJ$1">文字情報基盤検索システム</a> <img src=\"/images/external.png\"> (<a href="https://moji.or.jp/mojikibansearch/basic">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
+$buffer .= qq|<ul><li><a href="https://moji.or.jp/mojikibansearch/info?MJ%E6%96%87%E5%AD%97%E5%9B%B3%E5%BD%A2%E5%90%8D=MJ$1">文字情報基盤検索システム</a> <img src=\"/images/external.png\"> (<a href="https://moji.or.jp/mojikibansearch/basic">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
+:978
 $buffer .= qq|<h2><a href="/wiki/GlyphWiki:$URL_METADATA">メタ情報</a></h2>|;
 $buffer .= qq|<h2><a href="/wiki/GlyphWiki:$URL_METADATA">メタ情報</a></h2>|;
-:1146,1180
+:981
+$buffer .= qq|<p><a href="/wiki/Talk:$wiki_name?action=edit#metaedit">メタ情報の編集</a></p>|;
+$buffer .= qq|<p><a href="/wiki/Talk:$wiki_name?action=edit#metaedit">メタ情報の編集</a></p>|;
+:985
+$buffer .= qq|<p>(<a href="/wiki/Talk:$wiki_name?action=edit#metaedit">メタ情報の編集</a>)</p>|;
+$buffer .= qq|<p>(<a href="/wiki/Talk:$wiki_name?action=edit#metaedit">メタ情報の編集</a>)</p>|;
+:1153,1187
 $buffer .= qq|<div class="texts"><dl>省略しています ... <a href="?view=all">表示する</a></dl></div>|;
 $buffer .= qq|<div class="texts"><dl>省略しています ... <a href="?view=all">表示する</a></dl></div>|;
-:1175,1179
+:1182,1186
 $buffer .= qq|<h2>このグリフを収録するグループおよび引用するドキュメント一覧</h2>|;
 $buffer .= qq|<h2>このグリフを収録するグループおよび引用するドキュメント一覧</h2>|;
-:1366
-$buffer .= qq|<h2>ノートの編集</h2>|;
-$buffer .= qq|<h2>ノートの編集</h2>|;
 :1373
+$buffer .= qq|<h2>ノートの編集</h2>|;
+$buffer .= qq|<h2>ノートの編集</h2>|;
+:1380
 <a name="metaedit"><h2>メタ情報の編集</h2></a>
 <a name="metaedit"><h2>メタ情報の編集</h2></a>
-:1379
+:1386
 <noscript><ul><li>「:項目名:値」の形式で１行１データで記述してください。<li>JavaScriptを有効にすると表形式での編集が可能です。<li>項目名に「:」を含めることはできません<li>項目名・値を空にしないでください<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul></noscript>
 <noscript><ul><li>「:項目名:値」の形式で１行１データで記述してください。<li>JavaScriptを有効にすると表形式での編集が可能です。<li>項目名に「:」を含めることはできません<li>項目名・値を空にしないでください<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul></noscript>
 
@@ -78,11 +84,11 @@ $buffer .= qq|<h2>ノートの編集</h2>|;
 $byuser = " $cgi_user に";
 $byuser = " $cgi_user に";
 :864
-$buffer .= qq(他ユーザー占有グリフの編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu&hideuserex=0$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir">表示</a>);
-$buffer .= qq(他ユーザー占有グリフの編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu&hideuserex=0$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir">表示</a>);
+$buffer .= qq(他ユーザー占有グリフの編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu&hideuserex=0$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">表示</a>);
+$buffer .= qq(他ユーザー占有グリフの編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu&hideuserex=0$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">表示</a>);
 :866
-$buffer .= qq(他ユーザー占有グリフの編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu&hideuserex=1$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir">隠す</a>);
-$buffer .= qq(他ユーザー占有グリフの編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu&hideuserex=1$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir">隠す</a>);
+$buffer .= qq(他ユーザー占有グリフの編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu&hideuserex=1$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">隠す</a>);
+$buffer .= qq(他ユーザー占有グリフの編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu&hideuserex=1$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">隠す</a>);
 :882
 $buffer .= qq(sandboxグリフを<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hideuserex$hidemyself$hideauto&hidesandbox=0$listtype$offset$offsetdir$setuser">表示</a>);
 $buffer .= qq(sandboxグリフを<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hideuserex$hidemyself$hideauto&hidesandbox=0$listtype$offset$offsetdir$setuser">表示</a>);

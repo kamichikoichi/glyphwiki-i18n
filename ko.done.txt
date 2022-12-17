@@ -1,8 +1,8 @@
 !/home/kamichi/work/www/glyphwiki.org/index.cgi
-:1117
+:1074
 $temp = sprintf("<div class=\"texts\"><p>グリフ実装率：%d\% (実装済：%dグリフ、未実装：%dグリフ)</p></div>", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
 $temp = sprintf("<div class=\"texts\"><p>글리프의 실장율：%d\% (실장필：%d글리프、미실장：%d글리프)</p></div>", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
-:1118
+:1075
 $temp2 = sprintf("グリフ実装率：%d\% [済%d、未%d]", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
 $temp2 = sprintf("글리프의 실장율：%d\% [필%d、미%d]", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
 
@@ -187,46 +187,46 @@ $PREFIX_USER = "이용자";
 :936
 return sprintf("%04d年%d月%d日(%s) %02d:%02d", $year + 1900, $mon + 1, $mday, qw(日 月 火 水 木 金 土)[$wday], $hour, $min);
 return sprintf("%04d年%d月%d日(%s) %02d:%02d", $year + 1900, $mon + 1, $mday, qw(일 월 화 수 목 금 토)[$wday], $hour, $min);
-:1032
+:1046
 my $subject = 'Password reminder from GlyphWiki (グリフウィキからのパスワードのお知らせ)';
 my $subject = 'Password reminder from GlyphWiki (글리프위키로부터 비밀번호의 공지)';
-:1034
+:1048
 どなたか（$ip のIPアドレスの使用者）がグリフウィキ（http://glyphwiki.org/）
 누군가（$ip 의 IP주소의 사용자) 가 글리프위키（http://glyphwiki.org/）
-:1035
+:1049
 のログイン用パスワードの再発行を依頼しました。
 의 로그인용 비밀번호의 재발행을 의뢰했습니다.
-:1037
+:1051
 利用者 "$name" のパスワードを "$temp_password" に変更しました。
 이용자 "$name" 의 비밀번호를 "$temp_password" 로 변경했습니다.
-:1038
+:1052
 ログインして別のパスワードに変更してください。
 로그인해서 다른 비밀번호로 변경해 주십시요.
-:1385
+:1399
 my $subject = 'GlyphWiki メールアドレスの確認';
 my $subject = 'GlyphWiki 메일주소의 확인';
-:1393
+:1407
 どなたか（IPアドレス $ip の使用者）がこのメールアドレスを
 누군가 (IP주소 $ip 의 사용자)가 이 메일주소를
-:1394
+:1408
 GlyphWiki のアカウント "$name" に登録しました。
 GlyphWiki 의 계정 "$name" 에 등록했습니다.
-:1396
+:1410
 このアカウントがあなたのものであるか確認してください。
 이 계정이 당신의 것인지 확인해 주십시요.
-:1397
+:1411
 あなたの登録したアカウントであるならば、GlyphWiki
 당신이 등록한 계정이라면, GlyphWiki
-:1398
+:1412
 のメール通知機能を有効にするために、以下のURLにアクセスしてください:
 의 메일통지기능을 유효화하기 위해, 아래의 URL에 액서스해 주십시요
-:1402
+:1416
 もし GlyphWiki について身に覚えがない場合は、リンクを開かないでください。
 만약 GlyphWiki에 관해서 기억이 없는 경우는, 링크를 열지 마십시요.
-:1403
+:1417
 確認用コードは $expire に期限切れになります。
 확인용 코드는 $expire 에 기한을 초과하게 됩니다.
-:1700
+:1714
 unshift(@tocresult, qq(<div class="toc"><h1>目次</h1>));
 unshift(@tocresult, qq(<div class="toc"><h1>목차</h1>));
 
@@ -474,133 +474,133 @@ $buffer .= qq|<div class="texts" style="margin: 1em 0 0 1em;"><a class="wiki" hr
 :572
 $buffer .= qq|<span class="text glyph_link"><a href="/glyph/$db_wiki_name.svg">(SVG画像)</a></span>|;
 $buffer .= qq|<span class="text glyph_link"><a href="/glyph/$db_wiki_name.svg">(SVG화상)</a></span>|;
-:579
+:580
 $buffer .= qq|<span class="text glyph_link"><a href="/glyph/$db_wiki_name\@$query_version.svg">（SVG画像）</a></span>|;
 $buffer .= qq|<span class="text glyph_link"><a href="/glyph/$db_wiki_name\@$query_version.svg">（SVG화상）</a></span>|;
-:585
+:586
 $buffer .= qq|<div class="message">このページ（この版）は<span class="notice">管理者によって削除されました</span>。詳細は<a href="/wiki/$URL_DELETE_LOG">$WORD_DELETE_LOG</a>を参照してください。</div>|;
 $buffer .= qq|<div class="message">이 페이지(이 버전)는<span class="notice">관리자에 의해 삭제되었습니</span>. 자세한 사항은<a href="/wiki/$URL_DELETE_LOG">$WORD_DELETE_LOG</a>를 참조 하십시오.</div>|;
-:599
+:600
 $temp =~ s/----\r\nMETADATA\r\n----\r\n/* メタ情報\r\n/;
 $temp =~ s/----\r\nMETADATA\r\n----\r\n/* 메타데이터\r\n/;
-:603
+:604
 if($action eq "page" && $wiki_name eq "GlyphWiki:メインページ"){
 if($action eq "page" && $wiki_name eq "GlyphWiki:대문"){
-:604
+:605
 $buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:ロゴについて\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
 $buffer .= "<div class=\"document_text\"><a href=\"http://glyphwiki.org/wiki/GlyphWiki:로고에대해\"><img align=\"right\" src=\"/images/logo400.jpg\" border=\"0\"></a>$temp</div>";
-:648,795
+:649,802
 $parent_info .= "<li>あなたのブラウザでの表示：<span class=\"related\">$parent_char</span>";
 $parent_info .= "<li>당신의 브라우저에서의 표시：<span class=\"related\">$parent_char</span>";
-:709,805
+:713,812
 $parent_info .= "前の符号位置：<a href=\"/wiki/u$code\"><span class=\"related\">$char</span> (u$code)</a> ";
 $parent_info .= "앞의 부호의 위치：<a href=\"/wiki/u$code\"><span class=\"related\">$char</span> (u$code)</a> ";
-:758,815
+:765,822
 $parent_info .= "次の符号位置：<a href=\"/wiki/u$code\"><span class=\"related\">$char</span> (u$code)</a> ";
 $parent_info .= "다음 부호의 위치：<a href=\"/wiki/u$code\"><span class=\"related\">$char</span> (u$code)</a> ";
-:784,819,842,853,861,881,904,931,958
+:791,826,849,860,868,888,911,938,965
 $buffer .= qq|<h2>文字コード関連情報</h2>|;
 $buffer .= qq|<h2>문자코드관련정보</h2>|;
-:831,920,947
+:838,927,954
 $parent_info .= "前の番号：<a href=\"/wiki/$codechar\"><img class=\"thumb related\" src=\"/glyph/$codechar.50px.png\"> ($codechar)</a><br>";
 $parent_info .= "앞 번호：<a href=\"/wiki/$codechar\"><img class=\"thumb related\" src=\"/glyph/$codechar.50px.png\"> ($codechar)</a><br>";
-:837,926,953
+:844,933,960
 $parent_info .= "次の番号：<a href=\"/wiki/$codechar\"><img class=\"thumb related\" src=\"/glyph/$codechar.50px.png\"> ($codechar)</a><br>";
 $parent_info .= "다음 번호：<a href=\"/wiki/$codechar\"><img class=\"thumb related\" src=\"/glyph/$codechar.50px.png\"> ($codechar)</a><br>";
-:844
+:851
 $buffer .= qq|法務省 戸籍統一文字情報 (<a href="http://houmukyoku.moj.go.jp/KOSEKIMOJIDB/M01.html">トップページ</a> <img src=\"/images/external.png\">)<br>|;
 $buffer .= qq|법무성 호적통일문자정보 (<a href="http://houmukyoku.moj.go.jp/KOSEKIMOJIDB/M01.html">톱페이지</a> <img src=\"/images/external.png\">)<br>|;
-:933,960
+:940,967
 $buffer .= qq|諸橋轍次『大漢和辞典』<br>|;
 $buffer .= qq|모로하시 테츠지 [대한화사전]<br>|;
-:994
+:1001
 $buffer_related .= qq|<table border="0"><tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_RELATED">関連字</a>:</nobr>|;
 $buffer_related .= qq|<table border="0"><tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_RELATED">관련글자</a>:</nobr>|;
-:1030,1038
+:1037,1045
 $buffer_related .= qq|<tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_VARIANT">異体字</a>:</nobr><td valign="top" style="width: 16em; background-color: 
 $buffer_related .= qq|<tr><td align="right" valign="top"><nobr><a href="/wiki/GlyphWiki:$URL_VARIANT">이체문자</a>:</nobr><td valign="top" style="width: 16em; background-color: 
-:1061
+:1068
 $buffer_related .= "<p>(未設定)</p>";
 $buffer_related .= "<p>(미설정)</p>";
-:1065
+:1072
 $buffer .= qq|<h2>関連グリフ</h2>|;
 $buffer .= qq|<h2>관련글리프</h2>|;
-:1096
+:1103
 $buffer .= qq|<h2>このグリフの<a href="/wiki/GlyphWiki:$URL_ALIAS">エイリアス</a>（別名）一覧</h2>|;
 $buffer .= qq|<h2>이 글리프의<a href="/wiki/GlyphWiki:$URL_ALIAS">에일리언스</a>(별명) 일람</h2>|;
-:1113
+:1120
 $buffer .= qq|<h2>このグリフで引用している他のグリフ一覧</h2>|;
 $buffer .= qq|<h2>이 글리프에서 인용하고 있는 다른 글리프 일람</h2>|;
-:1132
+:1139
 $buffer_quoting .= "<br><p>（残りは省略されています ... <a href=\"?view=all\">すべて表示する</a>）</p>";
 $buffer_quoting .= "<br><p>（나머지는 생략되어 있습니다 ... <a href=\"?view=all\">전부 표시하기</a>）</p>";
-:1138,1145
+:1145,1152
 $buffer .= qq|<h2>このグリフを内部で引用している他のグリフ一覧</h2>|;
 $buffer .= qq|<h2>이 글리프를 내부에서 인용하고 있는 다른 글리프 일람</h2>|;
-:1141
+:1148
 $buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&target=$wiki_name">部品グリフを別のグリフに置き換える</a></div>|;
 $buffer .= qq|<div class="texts"><a href="/wiki/Special:Renewall?view=listup&target=$wiki_name">부품글리프를 다른 글리프에 바꿔넣기</a></div>|;
-:1213
+:1220
 my $temp2 = &url_encode("旧部品の更新");
 my $temp2 = &url_encode("헌 부품의 갱신");
-:1214
+:1221
 $buffer .= qq|<h2>引用する旧部品の更新</h2>|;
 $buffer .= qq|<h2>인용하는 헌 부품의 갱신</h2>|;
-:1215
+:1222
 $buffer .= qq|<div class="texts">現在：<img class="glyph compare" src="/glyph/$db_wiki_name\@$newest_version.png" border="0"> |;
 $buffer .= qq|<div class="texts">현재：<img class="glyph compare" src="/glyph/$db_wiki_name\@$newest_version.png" border="0"> |;
-:1216
+:1223
 $buffer .= qq|最新部品を利用：<img class="glyph compare" src="/get_preview_glyph.cgi?data=$temp" border="0"> |;
 $buffer .= qq|최신부품을 이용：<img class="glyph compare" src="/get_preview_glyph.cgi?data=$temp" border="0"> |;
-:1217
+:1224
 $buffer .= qq|<a href="?action=edit&buttons=$URL_PREVIEW&textbox=$temp&related=$url_related&summary=$temp2">更新する</a></div>|;
 $buffer .= qq|<a href="?action=edit&buttons=$URL_PREVIEW&textbox=$temp&related=$url_related&summary=$temp2">갱신하기</a></div>|;
-:1242
+:1249
 $buffer .= qq|<h2>このグループを引用するグループ一覧</h2>|;
 $buffer .= qq|<h2>이 그룹을 인용하는 그룹 일람</h2>|;
-:1251
+:1258
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>諸橋轍次『大漢和辞典』番号は <a href="/wiki/dkw-$num0$num1">dkw-$num0$num1</a> のように数字5桁を指定してください</ul></div>|;
 $buffer .= qq|<div class="panel"><span class="warning">이 이름은<a href="/wiki/GlyphWiki:$URL_GUIDE">명명가이드라인</a>에 따르지 않았을 가능성이 있습니다. 확인후 틀린 점이 있다면 수정해 주십시요.</span><ul><li>모로하시 테츠지[대한화사전]번호는 <a href="/wiki/dkw-$num0$num1">dkw-$num0$num1</a> 처럼 숫자 5자리를 지정해 주십시요.</ul></div>|;
-:1256
+:1263
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>法務省戸籍統一文字番号は <a href="/wiki/koseki-$num0$num1">koseki-$num0$num1</a> のように数字6桁を指定してください</ul></div>|;
 $buffer .= qq|<div class="panel"><span class="warning">이 이름은<a href="/wiki/GlyphWiki:$URL_GUIDE">명명가이드라인</a>에 따르지 않았을 가능성이 있습니다. 확인후 틀린 점이 있다면 수정해 주십시요.</span><ul><li>법무성 호적통일문자번호는 <a href="/wiki/koseki-$num0$num1">koseki-$num0$num1</a>처럼 숫자 6자리를 지정해 주십시요</ul></div>|;
-:1259
+:1266
 $buffer .= qq|<div class="panel"><span class="warning">この名前は<a href="/wiki/GlyphWiki:$URL_GUIDE">命名ガイドライン</a>に沿っていない可能性があります。確認のうえ正しくなければ修正してください。</span><ul><li>baseparts- は廃止されました</ul></div>|;
 $buffer .= qq|<div class="panel"><span class="warning">이 이름은<a href="/wiki/GlyphWiki:$URL_GUIDE">명명가이드라인</a>에 따르지 않았을 가능성이 있습니다. 확인후 틀린 점이 있다면 수정해 주십시요.</span><ul><li>baseparts- 은(는)  폐지되었습니다</ul></div>|;
-:1261
+:1268
 $buffer .= qq|<div class="panel"><span class="warning">グリフウィキには現在この名前の項目はありません。</span><ul><li><a href="/wiki/$url_db_wiki_name?action=edit" class="recommend">&quot;$db_wiki_name&quot;という項目を新規作成する</a>。または<a href="/wiki/GlyphWiki:$URL_SEISAKUIRAI">制作依頼</a>する。<li>既存の項目から<a href="/wiki/Special:Search?action=fulltext&search=$url_db_wiki_name">&quot;$db_wiki_name&quot;を検索する</a>。</ul><hr><ul><li>もしこの項目を作成したことがあるのにこのメッセージがでる場合、データベースの更新が遅れているために表示できないか、既に削除されています（<a href="/wiki/$URL_SAKUJO">$WORD_SAKUJO</a>に削除された理由が記載されているかもしれません）。<a href="/wiki/$URL_DELETE_LOG">$WORD_DELETE_LOG</a>も確認してください。</ul></div>|;
 $buffer .= qq|<div class="panel"><span class="warning">글리프위키에는 현재 이 이름의 항목은 없습니다.</span><ul><li><a href="/wiki/$url_db_wiki_name?action=edit" class="recommend">&quot;$db_wiki_name&quot;(이)라고 하는 항목을 신규작성하기</a>. 또는<a href="/wiki/GlyphWiki:$URL_SEISAKUIRAI">제작의뢰</a>하기.<li>기존항목에서<a href="/wiki/Special:Search?action=fulltext&search=$url_db_wiki_name">&quot;$db_wiki_name&quot;을(를) 검색하기</a>.</ul><hr><ul><li>만약 이 항목을 작성한 적이 있음에도 이 메시지가 뜰 경우, 데이터베이스의 갱신이 늦어서 표시되지 않든지, 이미 삭제되었습니다(<a href="/wiki/$URL_SAKUJO">$WORD_SAKUJO</a>에 삭제된 이유가 기재되어 있을 수가 있습니다). <a href="/wiki/$URL_DELETE_LOG">$WORD_DELETE_LOG</a>도 확인해 주십시요.</ul></div>|;
-:1294
+:1301
 $buffer .= qq|<h2>あなたのグリフ</h2>|;
 $buffer .= qq|<h2>당신의 글리프</h2>|;
-:1308
+:1315
 $buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">関連字</a> (入力必須): <input type="text" name="related" value="$temp2" size="6"><br>|; 
 $buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">관련글자</a> (입력필수): <input type="text" name="related" value="$temp2" size="6"><br>|; 
-:1316
+:1323
 $buffer .= qq|<div class="message"><div class="title">■投稿する前に以下の事柄を確認してください■</div><ol><li>GlyphWikiに投稿したデータは著作権の譲渡を行ったことになり、その<span class="notice">データがいかなる形態で改変・使用されることもあなたは許諾し、以後著作者人格権を主張・使用しないことを了承するものとみなします</span>。<li><span class="notice">他のフォントや印刷物などからグリフを無断で転載・コピー・トレースしないでください</span>。それ以外にも投稿内容に問題がある場合、<a href="/wiki/$URL_SAKUJO">削除の方針</a>に基づき削除されます。また、グリフウィキの運営方針についてはこれから決定していきますが、<span class="notice">最終的な決定権は管理者にあるものとします</span>。これらのことにあなたはあらかじめ同意したものとみなします。 <li>GlyphWikiのデータ・記事のライセンスはWikipediaの記事のライセンス(GFDL)とは異なります。詳しくは <a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a> を参照してください。</ol></div>|;
 $buffer .= qq|<div class="message"><div class="title">■투고하기 전에 아래의 사항을 확인해 주십시요■</div><ol><li>GlyphWiki 에 투고한 데이터는 저작권을 양도한 것이 되고, 그<span class="notice">데이터가 어떠한 형태로 변경 및 사용되는 것도 허락하고, 이후 저작자의 인격권을 주장 및 사용하지 않을 것을 승낙한 것으로 간주합니다</span>.<li><span class="notice">다른 폰트나 인쇄물등에서 글리프를 무단으로 전재 및 복사를 하지 마십시요</span>. 그 외에도 투고내용에 문제가 있는 경우,<a href="/wiki/$URL_SAKUJO">삭제방침</a>에 의거해 삭제됩니다. 또, 글리프위키의 운영방침에 관해서는 지금부터 결정해 가겠습니다만, <span class="notice">최종적인 결정권은 관리자에 있습니다</span>. 위의 글에 대해 당신은 이미 동의했다고 간주합니다.<li>GlyphWiki 의 데이터 및 기사의 라이센스는Wikipedia 기사의 라이센스(GFDL)와는 다릅니다. 자세한 것은 <a href="/wiki/GlyphWiki:$URL_LICENSE">데이터 및 기사의 라이센스</a> 를 참조해 주십시요.</ol></div>|;
-:1318,1390
+:1325,1397
 $buffer .= qq|<div class="toolbox"><a href="/wiki/GlyphWiki:$URL_YOUYAKU">編集内容の要約</a>: <input type="text" name="summary" value="$html_summary" size="100"><br>|;
 $buffer .= qq|<div class="toolbox"><a href="/wiki/GlyphWiki:$URL_YOUYAKU">편집내용의 요약</a>: <input type="text" name="summary" value="$html_summary" size="100"><br>|;
-:1320,1392
+:1327,1399
 $buffer .= "要約のプレビュー: <span class=\"summary\">($html_summary)</span><br>";
 $buffer .= "요약 미리보기: <span class=\"summary\">($html_summary)</span><br>";
-:1329,1401
+:1336,1408
 $buffer .= qq*<a href="/wiki/$url_wiki_name">中止</a> | <a href="/wiki/GlyphWiki:$URL_HENSHU" target="_blank">編集の仕方</a> （新しいウィンドウが開きます）</div>*;
 $buffer .= qq*<a href="/wiki/$url_wiki_name">중지</a> | <a href="/wiki/GlyphWiki:$URL_HENSHU" target="_blank">편집방법</a> (새로운 윈도우가 열립니다)</div>*;
-:1334
+:1341
 $buffer .= qq|<div class="message2">以下にソースを表示しています:</div>|;
 $buffer .= qq|<div class="message2">아래에 소스를 표시하고 있습니다:</div>|;
-:1338
+:1345
 $buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">関連字</a>: <input type="text" name="related" value="$temp2" size="6"><br>|; 
 $buffer .= qq|<a href="/wiki/GlyphWiki:$URL_RELATED">관련글자</a>: <input type="text" name="related" value="$temp2" size="6"><br>|; 
-:1345
+:1352
 $buffer .= qq|<div class="message"><a href="/wiki/$url_db_wiki_name">$db_wiki_name</a> に戻る。</div>|;
 $buffer .= qq|<div class="message"><a href="/wiki/$url_db_wiki_name">$db_wiki_name</a> 에 돌아가기.</div>|;
-:1388
+:1395
 $buffer .= qq|<div class="message"><div class="title">■投稿する前に以下の事柄を確認してください■</div><ol><li>GlyphWikiに投稿した記事は著作権の譲渡を行ったことになり、その<span class="notice">記事がいかなる形態で改変・使用されることもあなたは許諾し、以後著作者人格権を主張・使用しないことを了承するものとみなします</span>。<li><span class="notice">他のWebページや出版物などから文章を無断で転載・コピー・トレースしないでください</span>。それ以外にも投稿内容に問題がある場合、<a href="/wiki/$URL_SAKUJO">削除の方針</a>に基づき削除されます。また、グリフウィキの運営方針についてはこれから決定していきますが、<span class="notice">最終的な決定権は管理者にあるものとします</span>。これらのことにあなたはあらかじめ同意したものとみなします。 <li>GlyphWikiのデータ・記事のライセンスはWikipediaの記事のライセンス(GFDL)とは異なります。詳しくは<a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a>を参照してください。</ol></div>|;
 $buffer .= qq|<div class="message"><div class="title">■투고하기 전에 아래의 사항을 확인해 주십시요■</div><ol><li>GlyphWiki 에 투고한 기사는 저작권을 양도한 것이 되고, 그<span class="notice">기사가 어떠한 형태로 변형 및 사용되는 것도 허락하고, 이후 저작자의 인격권을 주장 및 사용하지 않을 것을 승낙한 것으로 간주합니다</span>.<li><span class="notice">다른 Web페이지나 출판물등에서 문장을 무단으로 전재 및 복사하지 마십시요</span>. 이 이외에도 투고내용에 문제가 있는 경우,<a href="/wiki/$URL_SAKUJO">삭제방침</a>에 의거해 삭제됩니다. 또, 글리프위키의 운영방침에 관해서는 지금부터 결정해 가겠습니다만,<span class="notice">최종적인 결정권은 관리자에 있습니다</span>. 위의 글에 대해 당신은 이미 동의했다고 간주합니다.<li>GlyphWiki 의 데이터 및 기사의 라이센스는 Wikipedia기사의 라이센스(GFDL)와는 다릅니다. 자세한 것은<a href="/wiki/GlyphWiki:$URL_LICENSE">데이터 및 기사의 라이센스</a>를 참조해 주십시요.</ol></div>|;
-:1404
+:1411
 $buffer .= qq|<h2>あなたの更新内容</h2>|;
 $buffer .= qq|<h2>당신의 갱신내용</h2>|;
 
@@ -786,29 +786,29 @@ $buffer .= qq(최근의 <a href="/wiki/Special:Recentchanges?view=50$hidebots$hi
 $buffer .= qq(表示の対象: <a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hideuserex$hidemyself$hideauto$hidesandbox&listtype=glyph$offset$offsetdir$setuser">グリフのみ</a> | <a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hideuserex$hidemyself$hideauto$hidesandbox&listtype=document$offset$offsetdir$setuser">文章のみ</a> | <a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hideuserex$hidemyself$hideauto$hidesandbox&listtype=both$offset$offsetdir$setuser">いずれも</a><br>);
 $buffer .= qq(표시대상: <a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hideuserex$hidemyself$hideauto$hidesandbox&listtype=glyph$offset$offsetdir$setuser">글리프만</a> | <a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hideuserex$hidemyself$hideauto$hidesandbox&listtype=document$offset$offsetdir$setuser">문장만</a> | <a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hideuserex$hidemyself$hideauto$hidesandbox&listtype=both$offset$offsetdir$setuser">아무거나</a><br>);
 :846
-$buffer .= qq(ボットの編集を<a href="/wiki/Special:Recentchanges?view=$limit&hidebots=0$hideanons$hideliu$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir">表示</a>);
-$buffer .= qq(보트의 편집을<a href="/wiki/Special:Recentchanges?view=$limit&hidebots=0$hideanons$hideliu$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir">표시</a>);
+$buffer .= qq(ボットの編集を<a href="/wiki/Special:Recentchanges?view=$limit&hidebots=0$hideanons$hideliu$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">表示</a>);
+$buffer .= qq(보트의 편집을<a href="/wiki/Special:Recentchanges?view=$limit&hidebots=0$hideanons$hideliu$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">표시</a>);
 :848
-$buffer .= qq(ボットの編集を<a href="/wiki/Special:Recentchanges?view=$limit&hidebots=1$hideanons$hideliu$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir">隠す</a>);
-$buffer .= qq(보트의 편집을<a href="/wiki/Special:Recentchanges?view=$limit&hidebots=1$hideanons$hideliu$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir">감추기</a>);
+$buffer .= qq(ボットの編集を<a href="/wiki/Special:Recentchanges?view=$limit&hidebots=1$hideanons$hideliu$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">隠す</a>);
+$buffer .= qq(보트의 편집을<a href="/wiki/Special:Recentchanges?view=$limit&hidebots=1$hideanons$hideliu$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">감추기</a>);
 :852
-$buffer .= qq(匿名利用者の編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots&hideanons=0$hideliu$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir">表示</a>);
-$buffer .= qq(익명이용자의 편집을<a href="/wiki/Special:Recentchanges?view=$limit$hidebots&hideanons=0$hideliu$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir">표시</a>);
+$buffer .= qq(匿名利用者の編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots&hideanons=0$hideliu$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">表示</a>);
+$buffer .= qq(익명이용자의 편집을<a href="/wiki/Special:Recentchanges?view=$limit$hidebots&hideanons=0$hideliu$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">표시</a>);
 :854
-$buffer .= qq(匿名利用者の編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots&hideanons=1$hideliu$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir">隠す</a>);
-$buffer .= qq(익명이용자의 편집을<a href="/wiki/Special:Recentchanges?view=$limit$hidebots&hideanons=1$hideliu$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir">감추기</a>);
+$buffer .= qq(匿名利用者の編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots&hideanons=1$hideliu$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">隠す</a>);
+$buffer .= qq(익명이용자의 편집을<a href="/wiki/Special:Recentchanges?view=$limit$hidebots&hideanons=1$hideliu$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">감추기</a>);
 :858
-$buffer .= qq(登録利用者の編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons&hideliu=0$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir">表示</a>);
-$buffer .= qq(등록이용자의 편집을<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons&hideliu=0$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir">표시</a>);
+$buffer .= qq(登録利用者の編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons&hideliu=0$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">表示</a>);
+$buffer .= qq(등록이용자의 편집을<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons&hideliu=0$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">표시</a>);
 :860
-$buffer .= qq(登録利用者の編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons&hideliu=1$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir">隠す</a>);
-$buffer .= qq(등록이용자의 편집을<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons&hideliu=1$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir">감추기</a>);
+$buffer .= qq(登録利用者の編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons&hideliu=1$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">隠す</a>);
+$buffer .= qq(등록이용자의 편집을<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons&hideliu=1$hideuserex$hidemyself$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">감추기</a>);
 :870
-$buffer .= qq(自分の編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hideuserex&hidemyself=0$hideauto$hidesandbox$listtype$offset$offsetdir">表示</a>);
-$buffer .= qq(자신의 편집을<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hideuserex&hidemyself=0$hideauto$hidesandbox$listtype$offset$offsetdir">표시</a>);
+$buffer .= qq(自分の編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hideuserex&hidemyself=0$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">表示</a>);
+$buffer .= qq(자신의 편집을<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hideuserex&hidemyself=0$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">표시</a>);
 :872
-$buffer .= qq(自分の編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hideuserex&hidemyself=1$hideauto$hidesandbox$listtype$offset$offsetdir">隠す</a>);
-$buffer .= qq(자신의 편집을<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hideuserex&hidemyself=1$hideauto$hidesandbox$listtype$offset$offsetdir">감추기</a>);
+$buffer .= qq(自分の編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hideuserex&hidemyself=1$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">隠す</a>);
+$buffer .= qq(자신의 편집을<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hideuserex&hidemyself=1$hideauto$hidesandbox$listtype$offset$offsetdir$setuser">감추기</a>);
 :876
 $buffer .= qq(自動編集を<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hideuserex$hidemyself&hideauto=0$hidesandbox$listtype$offset$offsetdir$setuser">表示</a>);
 $buffer .= qq(자동편집을<a href="/wiki/Special:Recentchanges?view=$limit$hidebots$hideanons$hideliu$hideuserex$hidemyself&hideauto=0$hidesandbox$listtype$offset$offsetdir$setuser">표시</a>);
