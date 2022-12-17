@@ -11,13 +11,13 @@
 !/home/kamichi/work/glyphwiki/script/page_right_general.pl
 :870
 $buffer .= qq|<ul><li><a href="https://moji.or.jp/mojikibansearch/info?MJ%E6%96%87%E5%AD%97%E5%9B%B3%E5%BD%A2%E5%90%8D=MJ$1">文字情報基盤検索システム</a> <img src=\"/images/external.png\"> (<a href="https://moji.or.jp/mojikibansearch/basic">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
-$buffer .= qq|<ul><li><a href="https://moji.or.jp/mojikibansearch/info?MJ%E6%96%87%E5%AD%97%E5%9B%B3%E5%BD%A2%E5%90%8D=MJ$1">文字情報基盤検索システム</a> <img src=\"/images/external.png\"> (<a href="https://moji.or.jp/mojikibansearch/basic">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
+$buffer .= qq|<ul><li><a href="https://moji.or.jp/mojikibansearch/info?MJ%E6%96%87%E5%AD%97%E5%9B%B3%E5%BD%A2%E5%90%8D=MJ$1">文字信息基础搜索系统（MJ文字）</a> <img src=\"/images/external.png\"> (<a href="https://moji.or.jp/mojikibansearch/basic">首页</a> <img src=\"/images/external.png\">)</ul>|;
 :981
 $buffer .= qq|<p><a href="/wiki/Talk:$wiki_name?action=edit#metaedit">メタ情報の編集</a></p>|;
-$buffer .= qq|<p><a href="/wiki/Talk:$wiki_name?action=edit#metaedit">メタ情報の編集</a></p>|;
+$buffer .= qq|<p><a href="/wiki/Talk:$wiki_name?action=edit#metaedit">编辑基本信息</a></p>|;
 :985
 $buffer .= qq|<p>(<a href="/wiki/Talk:$wiki_name?action=edit#metaedit">メタ情報の編集</a>)</p>|;
-$buffer .= qq|<p>(<a href="/wiki/Talk:$wiki_name?action=edit#metaedit">メタ情報の編集</a>)</p>|;
+$buffer .= qq|<p>(<a href="/wiki/Talk:$wiki_name?action=edit#metaedit">编辑基本信息</a>)</p>|;
 
 !/home/kamichi/work/glyphwiki/script/page_right_others.pl
 
