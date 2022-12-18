@@ -201,7 +201,7 @@ $PREFIX_GROUP = "グループ";
 $PREFIX_GROUP = "字表";
 :809
 $PREFIX_NOTE = "ノート";
-$PREFIX_NOTE = "讨论";
+$PREFIX_NOTE = "信息";
 :936
 return sprintf("%04d年%d月%d日(%s) %02d:%02d", $year + 1900, $mon + 1, $mday, qw(日 月 火 水 木 金 土)[$wday], $hour, $min);
 return sprintf("%04d年%d月%d日(%s) %02d:%02d", $year + 1900, $mon + 1, $mday, qw(星期日 星期一 星期二 星期三 星期四 星期五 星期六)[$wday], $hour, $min);
@@ -659,7 +659,7 @@ $buffer .= qq|<div class="message"><a href="/wiki/$url_db_wiki_name">$db_wiki_na
 $buffer .= qq|<div class="message">回到<a href="/wiki/$url_db_wiki_name">$db_wiki_name</a>。</div>|;
 :1373
 $buffer .= qq|<h2>ノートの編集</h2>|;
-$buffer .= qq|<h2>编辑讨论</h2>|;
+$buffer .= qq|<h2>编辑信息</h2>|;
 :1380
 <a name="metaedit"><h2>メタ情報の編集</h2></a>
 <a name="metaedit"><h2>编辑基本信息</h2></a>
