@@ -177,7 +177,7 @@ $TAB_GROUP = "グループ";
 $TAB_GROUP = "group";
 :799
 $TAB_NOTE = "ノート";
-$TAB_NOTE = "discussion";
+$TAB_NOTE = "note";
 :800
 $TAB_USER = "利用者ページ";
 $TAB_USER = "user page";
