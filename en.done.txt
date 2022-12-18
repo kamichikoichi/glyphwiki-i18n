@@ -201,7 +201,7 @@ $PREFIX_GROUP = "グループ";
 $PREFIX_GROUP = "Group";
 :809
 $PREFIX_NOTE = "ノート";
-$PREFIX_NOTE = "talk";
+$PREFIX_NOTE = "Note";
 :936
 return sprintf("%04d年%d月%d日(%s) %02d:%02d", $year + 1900, $mon + 1, $mday, qw(日 月 火 水 木 金 土)[$wday], $hour, $min);
 return sprintf("%02d:%02d, %d %s %d", $hour, $min, $mday, qw(January February March April May June July August September October November December)[$mon], $year + 1900);
@@ -650,7 +650,7 @@ $buffer .= qq|<div class="message"><a href="/wiki/$url_db_wiki_name">$db_wiki_na
 $buffer .= qq|<div class="message">Return to <a href="/wiki/$url_db_wiki_name">$db_wiki_name</a>.</div>|;
 :1373
 $buffer .= qq|<h2>ノートの編集</h2>|;
-$buffer .= qq|<h2>Edit talk page</h2>|;
+$buffer .= qq|<h2>Edit note page</h2>|;
 :1380
 <a name="metaedit"><h2>メタ情報の編集</h2></a>
 <a name="metaedit"><h2>Edit metadata</h2></a>
