@@ -1213,7 +1213,7 @@ $base = "登录或★注註★册";
 <h1>欢迎，$cgi_name！</h1>
 :1738,1796
 <p><a href="/wiki/$cgi_returnto">$html_returnto</a> に戻る。
-<p>返回<a href="/wiki/$cgi_returnto">$html_returnto</a>.
+<p>返回<a href="/wiki/$cgi_returnto">$html_returnto</a>。
 :1752
 <h2>パスワードを設定しなおす</h2>
 <h2>重设密码</h2>
