@@ -300,7 +300,7 @@ $buffer .= qq|其他语言|;
 !/home/kamichi/work/glyphwiki/script/page_others.pl
 :48
 $buffer = "最終更新 ".&local_localtime($lastupdate)."。";
-$buffer = "最后修订于".&local_localtime($lastupdate).".";
+$buffer = "最后修订于".&local_localtime($lastupdate)."。";
 :56
 <a href="/wiki/GlyphWiki:$URL_LICENSE">データ・記事のライセンス</a>
 <a href="/wiki/GlyphWiki:$URL_LICENSE">著作权与许可协议</a>
@@ -318,7 +318,7 @@ $buffer .= qq|<div class="loginned"><div><img src="/images/user.gif"> <a href="/
 $buffer .= qq|<div class="loginned"><div><img src="/images/user.gif"> <a href="/wiki/User:$loginname">$loginname</a></div> <div><a href="/wiki/User-talk:$loginname">讨论页</a></div> <div><a href="/wiki/Special:Confirmemail">电子邮件★注註★册、确认</a></div> <div><a href="/wiki/Special:Userlogout?returnto=$url_query">退出</a></div></div>|;
 :77
 $buffer .= qq|<div class="login"><img src="/images/user.gif"> <a href="/wiki/Special:Userlogin?returnto=$url_query">ログインまたはアカウント作成</a></div>|;
-$buffer .= qq|<div class="login"><img src="/images/user.gif"> <a href="/wiki/Special:Userlogin?returnto=$url_query">登录或★注註★册帐户</a></div>|;
+$buffer .= qq|<div class="login"><img src="/images/user.gif"> <a href="/wiki/Special:Userlogin?returnto=$url_query">登录或★注註★册账户</a></div>|;
 
 !/home/kamichi/work/glyphwiki/script/page_right_general.pl
 :107
@@ -1231,10 +1231,10 @@ $base = "登录或★注註★册";
 <tr><td>&nbsp;<td><input type="submit" name="buttons" value="修改密码★并並★重新登录">
 :1788
 my $title = "ログアウト";
-my $title = "登出";
+my $title = "退出";
 :1794
 <p><span class="notice">ログアウトしました。</span>このままグリフウィキを匿名で使い続けることができます。もう一度ログインして元の、あるいは別の利用者として使うこともできます。</p>
-<p><span class="notice">您已登出。</span> 您可以继续匿名使用字形维基，或者重新登录另一个账户。</p>
+<p><span class="notice">您已退出。</span> 您可以继续匿名使用字形维基，或者重新登录另一个账户。</p>
 :1795
 <p>※いくつかのページはブラウザのキャッシュをクリアするまでログインしているかのように表示されることがあります。</p>
 <p>※★注注★意某些页面可能由于浏览器缓存还显示为已登录状态，清除缓存即可。</p>
