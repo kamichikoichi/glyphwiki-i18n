@@ -10,10 +10,10 @@
 ($new_version, $registered_time) = &put_page($DBH, $target, $user, $ntdata, "别名替换（自动更新）", $env_remoteaddress, $ntrelated, -1, 0);
 :1074
 $temp = sprintf("<div class=\"texts\"><p>グリフ実装率：%d\% (実装済：%dグリフ、未実装：%dグリフ)</p></div>", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
-$temp = sprintf("<div class=\"texts\"><p>作字率 ：%d\% (已作：%d字、未作：%d字)</p></div>", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
+$temp = sprintf("<div class=\"texts\"><p>作字率 ：%d\%（已作：%d字、未作：%d字）</p></div>", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
 :1075
 $temp2 = sprintf("グリフ実装率：%d\% [済%d、未%d]", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
-$temp2 = sprintf("作字率：%d\% [已%d、未%d]", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
+$temp2 = sprintf("作字率：%d\% [已作%d字，未作%d字]", int($implemented / ($unimplemented + $implemented) * 100), $implemented, $unimplemented);
 
 !/home/kamichi/work/glyphwiki/script/common.pl
 :675
