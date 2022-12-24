@@ -201,7 +201,7 @@ $PREFIX_GROUP = "グループ";
 $PREFIX_GROUP = "Group";
 :809
 $PREFIX_NOTE = "ノート";
-$PREFIX_NOTE = "talk";
+$PREFIX_NOTE = "Talk";
 :936
 return sprintf("%04d年%d月%d日(%s) %02d:%02d", $year + 1900, $mon + 1, $mday, qw(日 月 火 水 木 金 土)[$wday], $hour, $min);
 return sprintf("%02d:%02d, %d %s %d", $hour, $min, $mday, qw(January February March April May June July August September October November December)[$mon], $year + 1900);
