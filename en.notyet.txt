@@ -9,16 +9,16 @@
 !/home/kamichi/work/glyphwiki/script/page_others.pl
 
 !/home/kamichi/work/glyphwiki/script/page_right_general.pl
-:870
+:876
 $buffer .= qq|<ul><li><a href="https://moji.or.jp/mojikibansearch/info?MJ%E6%96%87%E5%AD%97%E5%9B%B3%E5%BD%A2%E5%90%8D=MJ$1">文字情報基盤検索システム</a> <img src=\"/images/external.png\"> (<a href="https://moji.or.jp/mojikibansearch/basic">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
 $buffer .= qq|<ul><li><a href="https://moji.or.jp/mojikibansearch/info?MJ%E6%96%87%E5%AD%97%E5%9B%B3%E5%BD%A2%E5%90%8D=MJ$1">文字情報基盤検索システム</a> <img src=\"/images/external.png\"> (<a href="https://moji.or.jp/mojikibansearch/basic">トップページ</a> <img src=\"/images/external.png\">)</ul>|;
-:981
+:987
 $buffer .= qq|<p><a href="/wiki/Talk:$wiki_name?action=edit#metaedit">メタ情報の編集</a></p>|;
 $buffer .= qq|<p><a href="/wiki/Talk:$wiki_name?action=edit#metaedit">メタ情報の編集</a></p>|;
-:985
+:991
 $buffer .= qq|<p>(<a href="/wiki/Talk:$wiki_name?action=edit#metaedit">メタ情報の編集</a>)</p>|;
 $buffer .= qq|<p>(<a href="/wiki/Talk:$wiki_name?action=edit#metaedit">メタ情報の編集</a>)</p>|;
-:1390
+:1396
 var tmsg = new Array("<tr style=\"background-color: #444; color: white;\"><th>項目名<th>値<th class=\"lastth\">操作","編集","削除","更新","破棄","追加","<ul><li>項目名に「:」を含めることはできません<li>項目名・値を空にすることはできません<li>既存のレコードを編集した場合は「更新」をクリックしてください。<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul>");
 var tmsg = new Array("<tr style=\"background-color: #444; color: white;\"><th>項目名<th>値<th class=\"lastth\">操作","編集","削除","更新","破棄","追加","<ul><li>項目名に「:」を含めることはできません<li>項目名・値を空にすることはできません<li>既存のレコードを編集した場合は「更新」をクリックしてください。<li>最終的にデータベースに登録するためには「投稿」が必要です。</ul>");
 
